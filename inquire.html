@@ -464,7 +464,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
           <label>Share photos or files of your space (optional)</label>
           <div class="iq-attach">
             <label class="iq-attach-btn" for="photoInput"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</label>
-            <input type="file" id="photoInput" accept="image/*,video/*" capture="environment" multiple style="display:none" onchange="handleFiles(this.files)">
+            <input type="file" id="photoInput" accept="image/*,video/*" capture="environment" style="display:none" onchange="handleFiles(this.files)">
             <label class="iq-attach-btn" for="fileInput"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</label>
             <input type="file" id="fileInput" accept="image/*,video/*,.pdf,.doc,.docx,.dwg,.sketch,.ai,.heic,.heif" multiple style="display:none" onchange="handleFiles(this.files)">
           </div>
