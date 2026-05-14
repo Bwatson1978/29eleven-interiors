@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NC957DZB4M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NC957DZB4M');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Edit &mdash; Coming Soon &mdash; 29 Eleven Interiors</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+<script>
+// WebP detection for CSS background images
+(function(){var i=new Image;i.onload=i.onerror=function(){
+if(i.height===2)document.documentElement.classList.add('webp')};
+i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';})();
+</script>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+:root{
+  --slate:#1e2630;--slate2:#252f3c;--steel:#2e3d4e;
+  --fog:#8a9aaa;--mist:#b8c4cc;--ice:#dde6ec;
+  --snow:#ffffff;--champ:#d4c89a;--champ2:#b8a870;
+  --nav:210px;
+}
+/* ─── HERO ─── */
+.phero{position:relative;overflow:hidden}
+.phero-overlay{position:absolute;left:0;right:0;bottom:0;height:30%;background:linear-gradient(180deg,transparent 0%,rgba(30,38,48,.78) 100%);z-index:1}
+.phero::before,.phero::after{content:'';position:absolute;left:0;right:0;height:48px;background:var(--slate);z-index:3}
+.phero::before{top:0}
+.phero::after{bottom:0}
+.phero-content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:flex-end;padding:0 72px 84px}
+.phero-eyebrow{font-size:7.5px;letter-spacing:.42em;text-transform:uppercase;color:rgba(254,254,254,.48);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.phero-eyebrow span{width:20px;height:1px;background:rgba(254,254,254,.28);display:block}
+.phero-h1{font-family:'Libre Baskerville',serif;font-size:clamp(44px,5vw,68px);line-height:1.06;color:#fefefe}
+.phero-h1 em{font-style:italic;color:var(--champ);display:block}
+/* ─── INTRO STRIP ─── */
+.intro-strip{background:var(--slate2);padding:44px 72px;display:flex;align-items:center;justify-content:space-between;gap:48px;border-bottom:1px solid rgba(255,255,255,.04)}
+.intro-strip-text{font-family:'Libre Baskerville',serif;font-style:italic;font-size:16px;color:rgba(254,254,254,.55);line-height:1.7;max-width:600px}
+.intro-strip-badge{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.intro-strip-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--champ);animation:pulse 2.5s ease infinite}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+.intro-strip-badge-text{font-size:7.5px;letter-spacing:.3em;text-transform:uppercase;color:rgba(254,254,254,.35)}
+/* ─── COMING SOON ─── */
+.cs-announce{text-align:center;padding:96px 72px 100px;background:var(--slate);position:relative}
+.cs-animated{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:72px}
+.cs-main-text{font-family:'Outfit',sans-serif;font-weight:400;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);opacity:0;animation:csTextFade 1s ease forwards;animation-delay:.2s}
+@keyframes csTextFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.cs-line-wrap{position:relative;width:280px;height:4px;display:flex;align-items:center;justify-content:center}
+.cs-line{position:absolute;height:1px;width:0;background:linear-gradient(90deg,transparent 0%,var(--champ2) 20%,var(--champ2) 80%,transparent 100%);animation:csLineExpand 1.4s ease-out forwards;animation-delay:1s}
+@keyframes csLineExpand{from{width:0}to{width:100%}}
+.cs-sub-text{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:0;animation:csSubFade .8s ease forwards;animation-delay:2.2s}
+@keyframes csSubFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.cs-sub-inner{background:linear-gradient(105deg,#8a7045 0%,#c4956a 20%,#f0d9a8 40%,#ffe8c4 50%,#f0d9a8 60%,#c4956a 80%,#8a7045 100%);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:csShimmer 3s ease-in-out infinite;animation-delay:3s}
+@keyframes csShimmer{0%{background-position:100% 50%}100%{background-position:-100% 50%}}
+.cs-h2{font-family:'Libre Baskerville',serif;font-size:38px;line-height:1.25;color:var(--ice);margin-bottom:18px}
+.cs-h2 em{font-style:italic;color:var(--champ)}
+.cs-body{font-size:12px;line-height:1.9;font-weight:300;color:var(--mist);max-width:420px;margin:0 auto}
+/* ─── PREVIEW GRID (blurred) ─── */
+.preview-wrap{position:relative;height:840px;overflow:hidden}
+.preview-grid{padding:48px 72px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative}
+.preview-grid::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,rgba(255,255,255,.85) 60%,var(--snow) 100%);z-index:2;pointer-events:none}
+.preview-card{position:relative}
+.preview-img{width:100%;aspect-ratio:3/4;background-size:cover;background-position:center;filter:blur(6px) saturate(.7);opacity:.55}
+.preview-info{padding:16px 2px 0;filter:blur(4px);opacity:.4}
+.preview-cat{font-size:7px;letter-spacing:.28em;text-transform:uppercase;color:var(--fog);margin-bottom:6px}
+.preview-title{font-family:'Libre Baskerville',serif;font-size:15px;color:var(--slate);line-height:1.3;margin-bottom:6px}
+.preview-date{font-size:12px;font-weight:300;color:var(--fog);letter-spacing:.06em}
+/* ─── NEWSLETTER CTA ─── */
+.nl-cta{position:absolute;bottom:0;left:0;right:0;z-index:5;text-align:center;padding:0 72px 72px}
+.nl-inner{background:var(--slate);padding:56px 64px;max-width:600px;margin:0 auto}
+.nl-ey{font-size:7.5px;letter-spacing:.36em;text-transform:uppercase;color:var(--champ);margin-bottom:14px}
+.nl-h3{font-family:'Libre Baskerville',serif;font-size:24px;color:#fefefe;line-height:1.3;margin-bottom:12px}
+.nl-h3 em{font-style:italic;color:var(--champ)}
+.nl-p{font-size:11px;line-height:1.8;font-weight:300;color:var(--fog);margin-bottom:24px}
+.nl-form{display:flex;flex-direction:column;gap:12px;max-width:360px;margin:0 auto}
+.nl-input{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:14px 18px;font-family:'Outfit',sans-serif;font-size:11px;color:var(--ice);outline:none;transition:border-color .2s;width:100%;text-align:center}
+.nl-input::placeholder{color:rgba(184,196,204,.35)}
+.nl-input:focus{border-color:var(--champ2)}
+.nl-submit{padding:14px 28px;background:none;border:1px solid var(--champ2);color:var(--champ);font-family:'Outfit',sans-serif;font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:all .3s;font-weight:400}
+.nl-submit:hover{background:var(--champ2);color:var(--slate)}
+.nl-fine{font-size:8px;color:rgba(138,154,170,.4);margin-top:4px}
+/* ─── WHAT TO EXPECT ─── */
+.expect{display:grid;grid-template-columns:1fr 1fr;min-height:70vh}
+.expect-image{position:relative;overflow:hidden}
+.expect-image-bg{position:absolute;inset:0;background:url('./images/general/the-edit-006.jpg') center/cover no-repeat;animation:exKB 20s ease infinite alternate}
+@keyframes exKB{0%{transform:scale(1)}100%{transform:scale(1.05)}}
+.expect-content{background:var(--slate);padding:96px 72px;display:flex;flex-direction:column;justify-content:center}
+.expect-ey{font-size:8px;letter-spacing:.36em;text-transform:uppercase;color:var(--fog);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.expect-ey::before{content:'';width:18px;height:1px;background:var(--champ2)}
+.expect-h2{font-family:'Libre Baskerville',serif;font-size:40px;line-height:1.1;color:#fefefe;margin-bottom:18px}
+.expect-h2 em{font-style:italic;color:var(--champ)}
+.expect-body{font-size:11.5px;line-height:1.9;font-weight:300;color:var(--mist);margin-bottom:28px;max-width:420px}
+.expect-items{margin-bottom:32px}
+.expect-item{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.expect-item-dot{width:5px;height:5px;border-radius:50%;background:var(--champ2);flex-shrink:0}
+.expect-item-text{font-size:10.5px;letter-spacing:.06em;color:var(--mist);font-weight:300}
+/* ─── CTA ─── */
+.cta-strip{position:relative;min-height:340px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.cta-bg{position:absolute;inset:0;background:url('./images/general/the-edit-008.jpg') center/cover no-repeat}
+.cta-bg::after{content:'';position:absolute;inset:0;background:rgba(30,38,48,.65)}
+.cta-inner{position:relative;z-index:2;max-width:500px;padding:64px 32px}
+.cta-eyebrow{font-size:8px;letter-spacing:.36em;text-transform:uppercase;color:var(--champ);margin-bottom:14px}
+.cta-h2{font-family:'Libre Baskerville',serif;font-size:36px;line-height:1.1;color:#fefefe;margin-bottom:14px}
+.cta-h2 em{font-style:italic;color:var(--champ)}
+.cta-p{font-size:11px;line-height:1.8;font-weight:300;color:rgba(254,254,254,.55);margin-bottom:28px}
+.cta-btn{display:inline-block;padding:14px 38px;border:1px solid var(--champ2);font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:#fefefe;text-decoration:none;transition:all .3s}
+.cta-btn:hover{background:var(--champ2);color:var(--slate)}
+/* ─── FOOTER ─── */
+footer{background:var(--slate2);padding:64px 72px 30px}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+/* ─── RESPONSIVE: TABLET ─── */
+@media(max-width:1023px){
+  .phero-content{padding:0 28px 64px}
+  .intro-strip{padding:28px 28px;gap:20px}
+  .intro-strip-text{font-size:13px}
+  .cs-announce{padding:40px 28px 44px}
+  .cs-h2{font-size:28px}
+  .cs-animated{margin-bottom:36px}
+  .cs-body{font-size:11px}
+  .preview-wrap{height:620px}
+  .preview-grid{padding:24px 28px 16px;grid-template-columns:repeat(2,1fr);gap:16px}
+  .nl-cta{padding:0 28px 48px}
+  .nl-inner{padding:40px 36px}
+  .nl-h3{font-size:20px}
+  .expect{grid-template-columns:1fr;min-height:auto}
+  .expect-image{min-height:300px}
+  .expect-content{padding:56px 28px}
+  .expect-h2{font-size:30px}
+  .cta-strip{min-height:260px}
+  .cta-h2{font-size:26px}
+}
+/* ─── RESPONSIVE: PHONE ─── */
+@media(max-width:767px){
+  .phero-content{padding:0 20px 56px}
+  .intro-strip{padding:20px 20px;flex-direction:column;align-items:flex-start;gap:12px}
+  .intro-strip-text{font-size:12px}
+  .cs-announce{padding:32px 20px 36px}
+  .cs-h2{font-size:22px}
+  .cs-body{font-size:10px}
+  .cs-animated{margin-bottom:28px}
+  .preview-wrap{height:540px}
+  .preview-grid{padding:20px 20px 12px;grid-template-columns:1fr 1fr;gap:12px}
+  .nl-cta{padding:0 20px 36px}
+  .nl-inner{padding:32px 20px}
+  .nl-h3{font-size:17px}
+  .expect{grid-template-columns:1fr;min-height:auto}
+  .expect-image{min-height:240px}
+  .expect-content{padding:40px 20px}
+  .expect-h2{font-size:24px}
+  .cta-strip{min-height:240px}
+  .cta-h2{font-size:22px}
+  .cta-inner{padding:40px 20px}
+}
+</style>
+<meta name="description" content="The Edit by 29 Eleven Interiors — design thinking, project reveals, sourcing stories, and current musings. Coming soon.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Edit — 29 Eleven Interiors">
+<meta property="og:description" content="Design thinking, unfiltered. Process notes, sourcing stories, project reveals, and current musings.">
+<meta property="og:image" content="https://29eleveninteriors.com/images/heroes/RGP-1477.jpg">
+<meta property="og:url" content="https://29eleveninteriors.com/the-edit.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+</head>
+<body>
+
+<!-- MOBILE NAV BAR -->
+<div class="mobile-nav">
+  <img class="mobile-nav-logo" src="./images/brand/intro-logo-1.png" alt="29 Eleven Interiors" onclick="document.querySelector('.nav-overlay').classList.add('open')">
+  <button class="mobile-nav-menu" onclick="document.querySelector('.nav-overlay').classList.add('open')">Menu</button>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="nav-overlay">
+  <button class="nav-overlay-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <img class="nav-overlay-logo" src="./images/brand/intro-logo-1.png" alt="29 Eleven Interiors">
+  <div class="nav-overlay-line"></div>
+  <a href="./index.html">Home</a>
+  <a href="./our-story.html">Our Story</a>
+  <a href="./interiors.html">Interiors</a>
+  <a href="./services.html">Services</a>
+  <a href="./shoppe.html">Shoppe</a>
+  <a href="./the-edit.html" class="on">The Edit</a>
+  <a href="./inquire.html">Inquire</a>
+  <div class="nav-overlay-line" style="margin-top:8px"></div>
+  <div class="nav-overlay-loc">Newport Beach, CA</div>
+</div>
+
+<nav class="nav">
+  <div class="nl"><picture><source srcset="./images/general/the-edit-001.webp" type="image/webp"><img src="./images/general/the-edit-001.png" alt="29 Eleven Interiors"></picture></div>
+  <ul class="nlinks">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./our-story.html">Our Story</a></li>
+    <li><a href="./interiors.html">Interiors</a></li>
+    <li><a href="./services.html">Services</a></li>
+    <li><a href="./shoppe.html">Shoppe</a></li>
+    <li class="on"><a href="./the-edit.html">The Edit</a></li>
+    <li><a href="./inquire.html">Inquire</a></li>
+  </ul>
+  <div class="nft">
+    <a href="./inquire.html" class="ncta">+ let&rsquo;s connect</a>
+    <div class="ncity">Newport Beach, CA</div>
+  </div>
+</nav>
+
+<main>
+<div class="page-wrap">
+
+<!-- HERO -->
+<section class="phero">
+  <img src="./images/heroes/RGP-1477.jpg" alt="The Edit – 29 Eleven Interiors" style="width:100%;display:block">
+  <div class="phero-overlay"></div>
+  <div class="phero-content">
+    <h1 class="phero-h1">The<em>Edit</em></h1>
+  </div>
+</section>
+
+
+<!-- COMING SOON ANNOUNCEMENT -->
+<div class="cs-announce">
+  <div class="cs-animated">
+    <div class="cs-main-text">Coming Soon</div>
+    <div class="cs-line-wrap"><div class="cs-line"></div></div>
+    <div class="cs-sub-text"><span class="cs-sub-inner">Design Thinking, Unfiltered</span></div>
+  </div>
+  <h2 class="cs-h2">Something worth<br>reading is <em>on its way</em></h2>
+  <p class="cs-body">I&rsquo;m building a space to share the real side of design. Process notes, sourcing stories, project reveals, + current musings.</p>
+</div>
+
+<!-- PREVIEW GRID (blurred tease) -->
+<div class="preview-wrap">
+<div class="preview-grid">
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/the-edit-006.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-cat">Project Notes</div>
+      <div class="preview-title">Indoor-Outdoor Living</div>
+      <div class="preview-date">Coming Soon</div>
+    </div>
+  </div>
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/the-edit-007.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-cat">Project Reveal</div>
+      <div class="preview-title">Lake Arrowhead Cabin</div>
+      <div class="preview-date">Coming Soon</div>
+    </div>
+  </div>
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/the-edit-008.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-cat">Design Thinking</div>
+      <div class="preview-title">The Deep Breath Theory</div>
+      <div class="preview-date">Coming Soon</div>
+    </div>
+  </div>
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/the-edit-009.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-cat">Living Well</div>
+      <div class="preview-title">Buying Less, Buying Better</div>
+      <div class="preview-date">Coming Soon</div>
+    </div>
+  </div>
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/the-edit-010.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-cat">Sourcing</div>
+      <div class="preview-title">How I Source One-of-a-Kind</div>
+      <div class="preview-date">Coming Soon</div>
+    </div>
+  </div>
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/the-edit-011.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-cat">Design Thinking</div>
+      <div class="preview-title">What Your Layout Says</div>
+      <div class="preview-date">Coming Soon</div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER CTA -->
+<div class="nl-cta">
+  <div class="nl-inner reveal">
+    <div class="nl-ey">Be the First to Read</div>
+    <h3 class="nl-h3">Get The Edit<br><em>before anyone else</em></h3>
+    <p class="nl-p">Sign up + I&rsquo;ll send you the first articles the moment they go live. No spam, no fluff. Just the things I think are worth saying.</p>
+    <div class="nl-form">
+      <input class="nl-input" type="text" placeholder="First name">
+      <input class="nl-input" type="email" placeholder="Email address">
+      <button class="nl-submit">Notify Me</button>
+      <div class="nl-fine">No spam. Unsubscribe any time.</div>
+    </div>
+  </div>
+</div><!-- /preview-wrap -->
+</div>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect">
+  <div class="expect-image">
+    <div class="expect-image-bg"></div>
+  </div>
+  <div class="expect-content">
+    <div class="expect-ey">What to Expect</div>
+    <h2 class="expect-h2">Honest writing<br>about <em>real design</em></h2>
+    <p class="expect-body">The Edit is where the real process lives. The decisions, the mistakes, the sourcing obsessions, + the thinking behind every project.</p>
+    <div class="expect-items">
+      <div class="expect-item"><div class="expect-item-dot"></div><div class="expect-item-text">Project reveals with the real story behind the design</div></div>
+      <div class="expect-item"><div class="expect-item-dot"></div><div class="expect-item-text">Sourcing deep dives + the pieces I keep coming back to</div></div>
+      <div class="expect-item"><div class="expect-item-dot"></div><div class="expect-item-text">Process notes from active builds + renovations</div></div>
+      <div class="expect-item"><div class="expect-item-dot"></div><div class="expect-item-text">Honest takes on materials, trends, + what actually holds up</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div class="cta-eyebrow">In the Meantime</div>
+    <h2 class="cta-h2">Let&rsquo;s start a <em>conversation.</em></h2>
+    <p class="cta-p">Have a project in mind, a question about design, or just want to say hello? I&rsquo;d love to hear from you.</p>
+    <a href="./inquire.html" class="cta-btn">Get in Touch</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftg">
+    <div>
+      <div class="ftlog"><picture><source srcset="./images/general/the-edit-003.webp" type="image/webp"><img loading="lazy" src="./images/general/the-edit-003.png" alt="29 Eleven Interiors"></picture></div>
+      <div class="ft-services">Interior &bull; Architectural Design<br>Renovations &bull; New Construction<br>Fine Furnishings &bull; Home Styling</div>
+    </div>
+    <div>
+      <div class="fth">Studio</div>
+      <ul class="ftul">
+        <li><a href="./our-story.html">Our Story</a></li>
+        <li><a href="./interiors.html">Interiors</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./shoppe.html">Shoppe</a></li>
+        <li><a href="./the-edit.html">The Edit</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fth">Connect</div>
+      <ul class="ftul"><li><a href="./inquire.html">Inquire</a></li><li><a href="#">@29eleveninteriors</a></li><li><a href="#">info@29eleveninteriors.com</a></li><li><a href="tel:9497351284">949-735-1284</a></li></ul>
+    </div>
+    <div>
+      <div class="fth">Location</div>
+      <ul class="ftul"><li><a href="#">Newport Beach, CA</a></li><li><a href="#">Southern California + Beyond</a></li></ul>
+    </div>
+  </div>
+  <div class="ftbot">
+    <span class="ftc">&copy; 2026 29 Eleven Interiors</span>
+    <span class="ftc">29eleveninteriors.com</span>
+  </div>
+</footer>
+
+</div><!-- /.page-wrap -->
+
+<!-- Design N Page Transition -->
+<script>
+(function(){
+  var wrap = document.querySelector(".page-wrap");
+  if(!wrap) return;
+  document.addEventListener("click", function(e){
+    var a = e.target.closest("a");
+    if(!a) return;
+    var href = a.getAttribute("href");
+    if(!href || href.startsWith("#") || href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:") || a.target === "_blank") return;
+    e.preventDefault();
+    wrap.classList.add("designL-out");
+    setTimeout(function(){ window.location.href = href; }, 320);
+  });
+})();
+</script>
+
+</main>
+
+<script>
+// Scroll-based reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

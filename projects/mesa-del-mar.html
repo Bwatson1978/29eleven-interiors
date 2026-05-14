@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NC957DZB4M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NC957DZB4M');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mesa Del Mar — 29 Eleven Interiors</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+
+
+<script>
+// WebP detection for CSS background images
+(function(){var i=new Image;i.onload=i.onerror=function(){
+if(i.height===2)document.documentElement.classList.add('webp')};
+i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';})();
+</script>
+<link rel="stylesheet" href="../css/shared.css">
+<style>
+:root{
+  --slate:#1e2630;--slate2:#252f3c;--steel:#2e3d4e;
+  --fog:#8a9aaa;--mist:#b8c4cc;--ice:#dde6ec;
+  --snow:#ffffff;--champ:#d4c89a;--champ2:#b8a870;
+  --nav:210px;
+}
+/* LEFT NAV */
+.nav{position:fixed;left:0;top:0;bottom:0;width:var(--nav);background:transparent;display:flex;flex-direction:column;padding:40px 28px;z-index:500}
+/* PROJECT HERO */
+.proj-hero{height:100vh;position:relative;overflow:hidden}
+.proj-hero-bg{position:absolute;inset:0;
+  background:url('../images/heroes/RGP-1454.jpg') center/cover no-repeat;
+  background-color:#1e2630}
+.proj-hero-bg::after{display:none}
+.media-badge{position:absolute;top:36px;left:36px;z-index:20;display:flex;align-items:center;gap:8px;padding:7px 14px;background:rgba(30,38,48,.45);backdrop-filter:blur(10px);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:rgba(254,254,254,.55)}
+.media-badge-dot{width:6px;height:6px;background:#d4c89a;border-radius:50%;animation:mbpulse 2s infinite}
+@keyframes mbpulse{0%,100%{opacity:.5}50%{opacity:1}}
+.hero-letterbox{display:none}
+.back-link-bar{padding:14px 72px;text-align:right}
+.back-link-below{font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--fog);text-decoration:none;transition:color .3s}
+.back-link-below:hover{color:var(--champ2)}
+.proj-hero-content{position:absolute;bottom:0;left:0;right:0;z-index:10;padding:0 72px 64px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.proj-breadcrumb{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(254,254,254,.55);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.proj-breadcrumb span{width:20px;height:1px;background:rgba(254,254,254,.35);display:block}
+.proj-h1{font-family:'Libre Baskerville',serif;font-size:clamp(52px,6vw,88px);line-height:.98;color:#fefefe}
+.proj-h1 em{font-style:italic;color:var(--champ);display:block}
+.proj-meta{display:flex;flex-direction:column;gap:16px;text-align:right;flex-shrink:0}
+.meta-label{font-size:7px;letter-spacing:.3em;text-transform:uppercase;color:rgba(254,254,254,.3);display:block;margin-bottom:3px}
+.meta-val{font-size:11px;color:rgba(254,254,254,.7);font-weight:300}
+.scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:6px}
+.scroll-cue-line{width:1px;height:32px;background:rgba(254,254,254,.25);animation:scline 2s infinite}
+@keyframes scline{0%,100%{opacity:.25;transform:scaleY(1)}50%{opacity:.6;transform:scaleY(.7)}}
+.scroll-cue-text{font-size:7px;letter-spacing:.28em;text-transform:uppercase;color:rgba(254,254,254,.3)}
+/* PROJECT INTRO */
+.proj-intro{padding:96px 72px;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start}
+.pi-eyebrow{font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:var(--champ2);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.pi-eyebrow::before{content:'';width:18px;height:1px;background:var(--champ2)}
+.pi-h2{font-family:'Libre Baskerville',serif;font-size:40px;line-height:1.12;color:var(--slate);margin-bottom:24px}
+.pi-h2 em{font-style:italic;color:var(--steel)}
+.pi-body{font-size:12px;line-height:2.1;color:var(--fog);font-weight:300;margin-bottom:14px}
+.pi-pull{margin-top:32px;padding:28px 32px;background:var(--slate);position:relative}
+.pi-pull::before{content:'"';font-family:'Libre Baskerville',serif;font-size:80px;line-height:.8;color:rgba(212,200,154,.15);position:absolute;top:16px;left:20px}
+.pi-pull p{font-family:'Libre Baskerville',serif;font-style:italic;font-size:16px;color:var(--ice);line-height:1.65;position:relative;z-index:1}
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ice);margin-bottom:32px}
+.spec-item{background:var(--snow);padding:22px 20px}
+.spec-label{font-size:7px;letter-spacing:.3em;text-transform:uppercase;color:var(--mist);display:block;margin-bottom:5px}
+.spec-val{font-size:13px;color:var(--slate);font-weight:300}
+.mat-title{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--fog);margin-bottom:16px}
+.mat-swatches{display:flex;gap:8px;flex-wrap:wrap}
+.mat-swatch{width:44px;height:44px;position:relative;cursor:default}
+.mat-swatch::after{content:attr(data-name);position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:7px;letter-spacing:.1em;color:var(--mist);white-space:nowrap;text-align:center}
+.swatch-1{background:#d1c9b8}
+.swatch-2{background:#e8e0d4}
+.swatch-3{background:#7a8c72}
+.swatch-4{background:#b08c6a}
+.swatch-5{background:#2e3d4e}
+.swatch-6{background:#c4a882}
+.swatch-7{background:#5a4a3a}
+/* FULL WIDTH IMAGE */
+.fw-img{padding:0 72px;margin-bottom:4px;position:relative;overflow:hidden;background:var(--snow)}
+.fw-img img{display:block;width:100%;height:auto;transition:transform .9s ease}
+.fw-img:hover img{transform:scale(1.02)}
+/* GALLERY */
+.gallery{padding:0 72px 48px;background:var(--snow);display:flex;flex-direction:column;gap:4px}
+.gallery-row{display:grid;gap:4px;align-items:start}
+.gallery-row.r4{grid-template-columns:1fr 1fr 1fr 1fr}
+.gallery-row.r3{grid-template-columns:1fr 1fr 1fr}
+.gallery-row.r2{grid-template-columns:1fr 1fr}
+.gimg{cursor:pointer;overflow:hidden}
+.gimg img{display:block;width:100%;height:auto;transition:transform .7s ease}
+.gimg:hover img{transform:scale(1.02)}
+/* ROOM SPOTLIGHT */
+.room-spotlight{padding:96px 72px;background:var(--slate);position:relative;overflow:hidden}
+.ghost-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.04}
+.rs-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:64px;align-items:end;position:relative;z-index:1}
+.rs-eyebrow{font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:var(--fog);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.rs-eyebrow::before{content:'';width:18px;height:1px;background:var(--fog)}
+.rs-h2{font-family:'Libre Baskerville',serif;font-size:38px;color:var(--ice);line-height:1.12}
+.rs-h2 em{font-style:italic;color:var(--champ)}
+.rs-body{font-size:12px;line-height:2;color:var(--fog);font-weight:200}
+.rs-rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;position:relative;z-index:1}
+.rs-room{position:relative;overflow:hidden;cursor:pointer}
+.rs-room-bg{height:420px;background-size:cover;background-position:center;transition:transform .7s ease}
+.rs-room:hover .rs-room-bg{transform:scale(1.04)}
+.rs-room-info{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(30,38,48,.8))}
+.rs-room-name{display:block;font-family:'Libre Baskerville',serif;font-size:18px;color:var(--snow);margin-bottom:4px}
+.rs-room-type{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--fog)}
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(30,38,48,.96);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+.lightbox.open{opacity:1;pointer-events:all}
+.lb-close{position:absolute;top:28px;right:36px;width:40px;height:40px;background:none;border:none;color:var(--mist);font-size:22px;cursor:pointer;transition:color .2s;z-index:10}
+.lb-close:hover{color:var(--snow)}
+.lb-img{max-width:82vw;max-height:85vh;object-fit:contain;transition:opacity .3s;position:relative;z-index:1}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:none;border:none;color:var(--mist);font-size:32px;cursor:pointer;transition:color .2s}
+.lb-nav:hover{color:var(--snow)}
+.lb-prev{left:20px}
+.lb-next{right:20px}
+.lb-counter{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.2em;color:var(--fog)}
+/* NEXT PROJECT */
+.next-project{display:block;height:50vh;position:relative;overflow:hidden;text-decoration:none;cursor:pointer}
+.np-bg{position:absolute;inset:0;background:var(--slate);transition:background .4s}
+.next-project:hover .np-bg{background:var(--slate2)}
+.np-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1}
+.np-label{font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:var(--fog);margin-bottom:16px}
+.np-name{font-family:'Libre Baskerville',serif;font-size:clamp(36px,5vw,68px);color:var(--ice);line-height:1.05;text-align:center}
+.np-name em{font-style:italic;color:var(--champ)}
+.np-arrow{font-size:28px;color:var(--champ);margin-top:24px;transition:transform .3s}
+.next-project:hover .np-arrow{transform:translateX(8px)}
+/* FOOTER */
+footer{background:var(--slate);padding:64px 72px 36px}
+.ftg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.ftlog img{width:120px;margin-bottom:14px}
+.fttag{font-size:11px;line-height:1.8;color:var(--fog);font-weight:200;max-width:280px}
+.fth{font-size:7.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--mist);margin-bottom:16px}
+.ftul a{font-size:11px;color:var(--fog);text-decoration:none;font-weight:200;transition:color .2s}
+.ftul a:hover{color:var(--ice)}
+.ftbot{display:flex;justify-content:space-between;padding-top:24px}
+.ftc{font-size:9px;letter-spacing:.12em;color:var(--fog);font-weight:200}
+/* === K.3 SOFT HALO TEXT TREATMENT === */
+.proj-h1{text-shadow:0 2px 10px rgba(30,38,48,0.5),0 4px 30px rgba(30,38,48,0.4),0 8px 60px rgba(30,38,48,0.35),0 12px 100px rgba(30,38,48,0.25);}
+/* ═══ RESPONSIVE — TABLET + PHONE ═══ */
+@media(max-width:1023px){
+  .proj-hero{height:60vh}
+  .proj-hero-content{padding:0 28px 48px}
+  .proj-h1{font-size:clamp(36px,7vw,56px)}
+  .proj-breadcrumb{font-size:9px}
+  .fw-img{padding:0 28px;margin-bottom:4px}
+  .proj-intro{grid-template-columns:1fr;padding:48px 28px;gap:32px}
+  .pi-body{font-size:12px}
+  .pi-pull p{font-size:14px}
+  .pi-h2{font-size:30px}
+  .spec-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery{padding:28px 28px 48px}
+  .gallery-row.r4{grid-template-columns:repeat(2,1fr)}
+  .gallery-row.r3{grid-template-columns:repeat(2,1fr)}
+  .gallery-row.r2{grid-template-columns:repeat(2,1fr)}
+  .gallery-row{gap:8px;margin-bottom:8px}
+  .next-project{min-height:280px}
+  .room-spotlight{padding:48px 28px}
+  .rs-header{grid-template-columns:1fr;gap:32px}
+  .rs-rooms{grid-template-columns:1fr 1fr}
+  footer{padding:48px 28px 24px}
+  .ftg{grid-template-columns:1fr 1fr;gap:32px}
+}
+
+@media(max-width:767px){
+  .proj-hero{height:50vh}
+  .proj-hero-content{padding:0 20px 36px}
+  .proj-h1{font-size:clamp(28px,8vw,40px)}
+  .fw-img{padding:0 16px;margin-bottom:4px}
+  .proj-intro{padding:36px 20px;gap:24px}
+  .pi-pull p{font-size:14px}
+  .pi-h2{font-size:26px}
+  .spec-grid{grid-template-columns:1fr 1fr}
+  .gallery{padding:16px 16px 36px}
+  .gallery-row.r4{grid-template-columns:1fr 1fr}
+  .gallery-row.r3{grid-template-columns:1fr}
+  .gallery-row.r2{grid-template-columns:1fr}
+  .gallery-row{gap:6px;margin-bottom:6px}
+  .next-project{min-height:220px}
+  .rs-rooms{grid-template-columns:1fr}
+  .rs-room-bg{height:260px}
+  footer{padding:36px 20px 20px}
+  .ftg{grid-template-columns:1fr;gap:24px}
+  .back-link-bar{padding:14px 20px}
+  /* Lightbox responsive */
+  .lb-img{max-width:95vw;max-height:80vh}
+  .lb-nav{font-size:24px;padding:8px}
+  .lb-close{top:12px;right:12px;font-size:20px}
+}
+</style>
+<meta name="description" content="Mesa Del Mar — a whole-home interior design project by 29 Eleven Interiors. Coastal warmth meets modern edge.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mesa Del Mar — 29 Eleven Interiors">
+<meta property="og:description" content="Sophisticated, distinct, and layered to stand out. A whole-home design blending rich textures with clean lines.">
+<meta property="og:image" content="https://29eleveninteriors.com/images/projects/mesa-del-mar-001.jpg">
+<meta property="og:url" content="https://29eleveninteriors.com/projects/mesa-del-mar.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+</head>
+<body>
+
+<!-- MOBILE NAV BAR -->
+<div class="mobile-nav">
+  <img class="mobile-nav-logo" src="../images/brand/intro-logo-1.png" alt="29 Eleven Interiors" onclick="document.querySelector('.nav-overlay').classList.add('open')">
+  <button class="mobile-nav-menu" onclick="document.querySelector('.nav-overlay').classList.add('open')">Menu</button>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="nav-overlay">
+  <button class="nav-overlay-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <img class="nav-overlay-logo" src="../images/brand/intro-logo-1.png" alt="29 Eleven Interiors">
+  <div class="nav-overlay-line"></div>
+  <a href="../index.html">Home</a>
+  <a href="../our-story.html">Our Story</a>
+  <a href="../interiors.html" class="on">Interiors</a>
+  <a href="../services.html">Services</a>
+  <a href="../shoppe.html">Shoppe</a>
+  <a href="../the-edit.html">The Edit</a>
+  <a href="../inquire.html">Inquire</a>
+  <div class="nav-overlay-line" style="margin-top:8px"></div>
+  <div class="nav-overlay-loc">Newport Beach, CA</div>
+</div>
+
+<nav class="nav">
+  <div class="nl"><picture><source srcset="../images/projects/mesa-del-mar-001.webp" type="image/webp"><img src="../images/projects/mesa-del-mar-001.png" alt="29 Eleven Interiors"></picture></div>
+  <ul class="nlinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../our-story.html">Our Story</a></li>
+    <li class="on"><a href="../interiors.html">Interiors</a></li>
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../shoppe.html">Shoppe</a></li>
+    <li><a href="../the-edit.html">The Edit</a></li>
+    <li><a href="../inquire.html">Inquire</a></li>
+    
+    
+    
+    
+    
+    
+    
+</ul>
+  <div class="nft">
+    <a href="../inquire.html" class="ncta">+ let’s connect</a>
+    <div class="ncity">Newport Beach, CA</div>
+  </div>
+</nav>
+
+<main>
+<div class="page-wrap">
+
+<!-- PROJECT HERO -->
+<section class="proj-hero">
+  <div class="proj-hero-bg"></div>
+  <div class="proj-hero-content">
+    <div class="proj-hero-left">
+      <div class="proj-breadcrumb"><span></span>Costa Mesa, California</div>
+      <h1 class="proj-h1">Mesa<br><em>Del Mar</em></h1>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <div class="scroll-cue-line"></div>
+    <span class="scroll-cue-text">Scroll</span>
+  </div>
+</section>
+<div class="back-link-bar"><a href="../interiors.html" class="back-link-below">+ Back to Interiors</a></div>
+
+<!-- PROJECT INTRO -->
+<section class="proj-intro">
+  <div class="pi-left">
+    <div class="pi-eyebrow">The Project</div>
+    <h2 class="pi-h2">Sophisticated, distinct<br><em>+ layered to stand out.</em></h2>
+    <p class="pi-body">Mesa Del Mar's transformation brings together timeless elegance and a subtle edge, layered with rich texture, expressive pattern, and thoughtfully curated materials that feel both elevated and deeply livable.</p>
+    <p class="pi-body">Exotic marbles, mixed metals + living finishes create a sense of understated luxury throughout. Bespoke details—from the sculptural kitchen elements, carved stone + woven leather accents to richly layered baths and personality-infused wall treatments— this home has depth and individuality.</p>
+    <p class="pi-body">Designed for effortless California living, the home seamlessly extends outdoors, with entertaining spaces and intimate retreats crafted with the same level of intention as the interiors.</p>
+
+    <div class="pi-pull">
+      <p>The result is a home that feels artful, elevated and deeply personal.</p>
+    </div>
+  </div>
+  <div class="pi-right">
+    <div class="spec-grid">
+      <div class="spec-item">
+        <span class="spec-label">Location</span>
+        <span class="spec-val">Costa Mesa, CA</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Project Type</span>
+        <span class="spec-val">Full Service Renovation</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Lens</span>
+        <span class="spec-val">Ryan Garvin</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label">Style</span>
+        <span class="spec-val">Coastal Contemporary</span>
+      </div>
+
+    </div>
+    <div class="materials">
+      <div class="mat-title">Palette &amp; Materials</div>
+      <div class="mat-swatches">
+        <div class="mat-swatch swatch-1" data-name="Warm Sand"></div>
+        <div class="mat-swatch swatch-2" data-name="Limestone"></div>
+        <div class="mat-swatch swatch-3" data-name="Sage"></div>
+        <div class="mat-swatch swatch-4" data-name="Terracotta"></div>
+        <div class="mat-swatch swatch-5" data-name="Slate"></div>
+        <div class="mat-swatch swatch-6" data-name="Brass"></div>
+        <div class="mat-swatch swatch-7" data-name="Walnut"></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL WIDTH -->
+<div class="fw-img">
+  <img src="../images/projects/mesa-del-mar-g001.jpg" alt="Mesa Del Mar">
+</div>
+
+<!-- GALLERY -->
+<div class="gallery" id="gallery">
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(0)"><img src="../images/projects/mesa-del-mar-g002.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(1)"><img src="../images/projects/mesa-del-mar-g003.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(2)"><img src="../images/projects/mesa-del-mar-g008.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(3)"><img src="../images/projects/mesa-del-mar-g021.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(4)"><img src="../images/projects/mesa-del-mar-g001.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(5)"><img src="../images/projects/mesa-del-mar-g004.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(6)"><img src="../images/projects/mesa-del-mar-g005.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(7)"><img src="../images/projects/mesa-del-mar-g006.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(8)"><img src="../images/projects/mesa-del-mar-g007.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(9)"><img src="../images/projects/mesa-del-mar-g009.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(10)"><img src="../images/projects/mesa-del-mar-g010.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(11)"><img src="../images/projects/mesa-del-mar-g011.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(12)"><img src="../images/projects/mesa-del-mar-g012.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(13)"><img src="../images/projects/mesa-del-mar-g013.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(14)"><img src="../images/projects/mesa-del-mar-g014.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(15)"><img src="../images/projects/mesa-del-mar-g015.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r3">
+    <div class="gimg" onclick="openLightbox(16)"><img src="../images/projects/mesa-del-mar-g023.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(17)"><img src="../images/projects/mesa-del-mar-g032.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(18)"><img src="../images/projects/mesa-del-mar-g041.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(19)"><img src="../images/projects/mesa-del-mar-g016.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(20)"><img src="../images/projects/mesa-del-mar-g017.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(21)"><img src="../images/projects/mesa-del-mar-g018.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(22)"><img src="../images/projects/mesa-del-mar-g019.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(23)"><img src="../images/projects/mesa-del-mar-g020.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(24)"><img src="../images/projects/mesa-del-mar-g022.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(25)"><img src="../images/projects/mesa-del-mar-g024.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(26)"><img src="../images/projects/mesa-del-mar-g025.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(27)"><img src="../images/projects/mesa-del-mar-g026.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(28)"><img src="../images/projects/mesa-del-mar-g027.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(29)"><img src="../images/projects/mesa-del-mar-g028.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(30)"><img src="../images/projects/mesa-del-mar-g029.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(31)"><img src="../images/projects/mesa-del-mar-g045.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(32)"><img src="../images/projects/mesa-del-mar-g046.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(33)"><img src="../images/projects/mesa-del-mar-g050.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(34)"><img src="../images/projects/mesa-del-mar-g051.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(35)"><img src="../images/projects/mesa-del-mar-g030.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(36)"><img src="../images/projects/mesa-del-mar-g031.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(37)"><img src="../images/projects/mesa-del-mar-g033.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(38)"><img src="../images/projects/mesa-del-mar-g034.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(39)"><img src="../images/projects/mesa-del-mar-g035.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(40)"><img src="../images/projects/mesa-del-mar-g036.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(41)"><img src="../images/projects/mesa-del-mar-g037.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(42)"><img src="../images/projects/mesa-del-mar-g038.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(43)"><img src="../images/projects/mesa-del-mar-g039.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(44)"><img src="../images/projects/mesa-del-mar-g040.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(45)"><img src="../images/projects/mesa-del-mar-g042.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(46)"><img src="../images/projects/mesa-del-mar-g043.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r3">
+    <div class="gimg" onclick="openLightbox(47)"><img src="../images/projects/mesa-del-mar-g059.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(48)"><img src="../images/projects/mesa-del-mar-g065.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(49)"><img src="../images/projects/mesa-del-mar-g067.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(50)"><img src="../images/projects/mesa-del-mar-g044.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(51)"><img src="../images/projects/mesa-del-mar-g047.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(52)"><img src="../images/projects/mesa-del-mar-g048.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(53)"><img src="../images/projects/mesa-del-mar-g049.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(54)"><img src="../images/projects/mesa-del-mar-g052.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(55)"><img src="../images/projects/mesa-del-mar-g053.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(56)"><img src="../images/projects/mesa-del-mar-g054.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(57)"><img src="../images/projects/mesa-del-mar-g055.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(58)"><img src="../images/projects/mesa-del-mar-g056.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(59)"><img src="../images/projects/mesa-del-mar-g057.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(60)"><img src="../images/projects/mesa-del-mar-g058.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(61)"><img src="../images/projects/mesa-del-mar-g060.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r3">
+    <div class="gimg" onclick="openLightbox(62)"><img src="../images/projects/mesa-del-mar-g072.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(63)"><img src="../images/projects/mesa-del-mar-g073.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(64)"><img src="../images/projects/mesa-del-mar-g078.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(65)"><img src="../images/projects/mesa-del-mar-g061.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(66)"><img src="../images/projects/mesa-del-mar-g062.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(67)"><img src="../images/projects/mesa-del-mar-g063.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(68)"><img src="../images/projects/mesa-del-mar-g064.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(69)"><img src="../images/projects/mesa-del-mar-g066.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(70)"><img src="../images/projects/mesa-del-mar-g068.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(71)"><img src="../images/projects/mesa-del-mar-g069.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(72)"><img src="../images/projects/mesa-del-mar-g070.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r4">
+    <div class="gimg" onclick="openLightbox(73)"><img src="../images/projects/mesa-del-mar-g071.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(74)"><img src="../images/projects/mesa-del-mar-g074.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(75)"><img src="../images/projects/mesa-del-mar-g075.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(76)"><img src="../images/projects/mesa-del-mar-g076.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r3">
+    <div class="gimg" onclick="openLightbox(77)"><img src="../images/projects/mesa-del-mar-g081.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(78)"><img src="../images/projects/mesa-del-mar-g082.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(79)"><img src="../images/projects/mesa-del-mar-g083.jpg" alt="Mesa Del Mar"></div>
+  </div>
+  <div class="gallery-row r3">
+    <div class="gimg" onclick="openLightbox(80)"><img src="../images/projects/mesa-del-mar-g077.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(81)"><img src="../images/projects/mesa-del-mar-g079.jpg" alt="Mesa Del Mar"></div>
+    <div class="gimg" onclick="openLightbox(82)"><img src="../images/projects/mesa-del-mar-g080.jpg" alt="Mesa Del Mar"></div>
+  </div>
+</div>
+
+
+<!-- NEXT PROJECT -->
+<a href="./lake-arrowhead.html" class="next-project">
+  <div class="np-bg"></div>
+  <div class="np-content">
+    <div class="np-label">Next Project</div>
+    <div class="np-name">Lake Arrowhead<br><em>Cabin</em></div>
+    <div class="np-arrow">+</div>
+  </div>
+</a>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftg">
+    <div>
+      <div class="ftlog"><picture><source srcset="../images/projects/mesa-del-mar-002.webp" type="image/webp"><img loading="lazy" src="../images/projects/mesa-del-mar-002.png" alt="29 Eleven Interiors"></picture></div>
+      <div class="fttag">Full-service interior design rooted in warmth, intention, + the art of living well. Newport Beach, CA — + beyond.</div>
+    </div>
+    <div>
+      <div class="fth">Studio</div>
+      <ul class="ftul">
+        <li><a href="../our-story.html">Our Story</a></li>
+        <li><a href="../interiors.html">Interiors</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../shoppe.html">Shoppe</a></li>
+        <li><a href="../the-edit.html">The Edit</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fth">Connect</div>
+      <ul class="ftul"><li><a href="../inquire.html">Inquire</a></li><li><a href="#">@29eleveninteriors</a></li><li><a href="#">info@29eleveninteriors.com</a></li><li><a href="tel:9497351284">949-735-1284</a></li></ul>
+    </div>
+    <div>
+      <div class="fth">Location</div>
+      <ul class="ftul"><li><a href="#">Newport Beach, CA</a></li><li><a href="#">Southern California + Beyond</a></li></ul>
+    </div>
+  </div>
+  <div class="ftbot">
+    <span class="ftc">© 2026 29 Eleven Interiors</span>
+    <span class="ftc">29eleveninteriors.com</span>
+  </div>
+</footer>
+
+</div><!-- /.page-wrap -->
+
+<!-- Design N Page Transition -->
+<script>
+(function(){
+  var wrap = document.querySelector(".page-wrap");
+  if(!wrap) return;
+  document.addEventListener("click", function(e){
+    var a = e.target.closest("a");
+    if(!a) return;
+    var href = a.getAttribute("href");
+    if(!href || href.startsWith("#") || href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:") || a.target === "_blank") return;
+    e.preventDefault();
+    wrap.classList.add("designL-out");
+    setTimeout(function(){ window.location.href = href; }, 320);
+  });
+})();
+</script>
+
+</main>
+
+<!-- LIGHTBOX (outside page-wrap to avoid stacking context from transform) -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-nav lb-prev" onclick="lbNav(-1);event.stopPropagation()">‹</button>
+  <img class="lb-img" id="lb-img" src="" alt="">
+  <button class="lb-nav lb-next" onclick="lbNav(1);event.stopPropagation()">›</button>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+<script>
+// Lightbox
+const imgs = [
+  '../images/projects/mesa-del-mar-g002.jpg',
+  '../images/projects/mesa-del-mar-g003.jpg',
+  '../images/projects/mesa-del-mar-g008.jpg',
+  '../images/projects/mesa-del-mar-g021.jpg',
+  '../images/projects/mesa-del-mar-g001.jpg',
+  '../images/projects/mesa-del-mar-g004.jpg',
+  '../images/projects/mesa-del-mar-g005.jpg',
+  '../images/projects/mesa-del-mar-g006.jpg',
+  '../images/projects/mesa-del-mar-g007.jpg',
+  '../images/projects/mesa-del-mar-g009.jpg',
+  '../images/projects/mesa-del-mar-g010.jpg',
+  '../images/projects/mesa-del-mar-g011.jpg',
+  '../images/projects/mesa-del-mar-g012.jpg',
+  '../images/projects/mesa-del-mar-g013.jpg',
+  '../images/projects/mesa-del-mar-g014.jpg',
+  '../images/projects/mesa-del-mar-g015.jpg',
+  '../images/projects/mesa-del-mar-g023.jpg',
+  '../images/projects/mesa-del-mar-g032.jpg',
+  '../images/projects/mesa-del-mar-g041.jpg',
+  '../images/projects/mesa-del-mar-g016.jpg',
+  '../images/projects/mesa-del-mar-g017.jpg',
+  '../images/projects/mesa-del-mar-g018.jpg',
+  '../images/projects/mesa-del-mar-g019.jpg',
+  '../images/projects/mesa-del-mar-g020.jpg',
+  '../images/projects/mesa-del-mar-g022.jpg',
+  '../images/projects/mesa-del-mar-g024.jpg',
+  '../images/projects/mesa-del-mar-g025.jpg',
+  '../images/projects/mesa-del-mar-g026.jpg',
+  '../images/projects/mesa-del-mar-g027.jpg',
+  '../images/projects/mesa-del-mar-g028.jpg',
+  '../images/projects/mesa-del-mar-g029.jpg',
+  '../images/projects/mesa-del-mar-g045.jpg',
+  '../images/projects/mesa-del-mar-g046.jpg',
+  '../images/projects/mesa-del-mar-g050.jpg',
+  '../images/projects/mesa-del-mar-g051.jpg',
+  '../images/projects/mesa-del-mar-g030.jpg',
+  '../images/projects/mesa-del-mar-g031.jpg',
+  '../images/projects/mesa-del-mar-g033.jpg',
+  '../images/projects/mesa-del-mar-g034.jpg',
+  '../images/projects/mesa-del-mar-g035.jpg',
+  '../images/projects/mesa-del-mar-g036.jpg',
+  '../images/projects/mesa-del-mar-g037.jpg',
+  '../images/projects/mesa-del-mar-g038.jpg',
+  '../images/projects/mesa-del-mar-g039.jpg',
+  '../images/projects/mesa-del-mar-g040.jpg',
+  '../images/projects/mesa-del-mar-g042.jpg',
+  '../images/projects/mesa-del-mar-g043.jpg',
+  '../images/projects/mesa-del-mar-g059.jpg',
+  '../images/projects/mesa-del-mar-g065.jpg',
+  '../images/projects/mesa-del-mar-g067.jpg',
+  '../images/projects/mesa-del-mar-g044.jpg',
+  '../images/projects/mesa-del-mar-g047.jpg',
+  '../images/projects/mesa-del-mar-g048.jpg',
+  '../images/projects/mesa-del-mar-g049.jpg',
+  '../images/projects/mesa-del-mar-g052.jpg',
+  '../images/projects/mesa-del-mar-g053.jpg',
+  '../images/projects/mesa-del-mar-g054.jpg',
+  '../images/projects/mesa-del-mar-g055.jpg',
+  '../images/projects/mesa-del-mar-g056.jpg',
+  '../images/projects/mesa-del-mar-g057.jpg',
+  '../images/projects/mesa-del-mar-g058.jpg',
+  '../images/projects/mesa-del-mar-g060.jpg',
+  '../images/projects/mesa-del-mar-g072.jpg',
+  '../images/projects/mesa-del-mar-g073.jpg',
+  '../images/projects/mesa-del-mar-g078.jpg',
+  '../images/projects/mesa-del-mar-g061.jpg',
+  '../images/projects/mesa-del-mar-g062.jpg',
+  '../images/projects/mesa-del-mar-g063.jpg',
+  '../images/projects/mesa-del-mar-g064.jpg',
+  '../images/projects/mesa-del-mar-g066.jpg',
+  '../images/projects/mesa-del-mar-g068.jpg',
+  '../images/projects/mesa-del-mar-g069.jpg',
+  '../images/projects/mesa-del-mar-g070.jpg',
+  '../images/projects/mesa-del-mar-g071.jpg',
+  '../images/projects/mesa-del-mar-g074.jpg',
+  '../images/projects/mesa-del-mar-g075.jpg',
+  '../images/projects/mesa-del-mar-g076.jpg',
+  '../images/projects/mesa-del-mar-g081.jpg',
+  '../images/projects/mesa-del-mar-g082.jpg',
+  '../images/projects/mesa-del-mar-g083.jpg',
+  '../images/projects/mesa-del-mar-g077.jpg',
+  '../images/projects/mesa-del-mar-g079.jpg',
+  '../images/projects/mesa-del-mar-g080.jpg'
+];
+let cur = 0;
+function openLightbox(i){
+  cur = i;
+  var img = document.getElementById('lb-img');
+  img.src = imgs[i];
+  img.style.display = 'block';
+  document.getElementById('lb-counter').textContent = (i+1) + ' / ' + imgs.length;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e){
+  if(!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lb-close')){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+function lbNav(dir){
+  cur = (cur + dir + imgs.length) % imgs.length;
+  document.getElementById('lb-img').src = imgs[cur];
+  document.getElementById('lb-counter').textContent = (cur+1) + ' / ' + imgs.length;
+}
+document.addEventListener('keydown', function(e){
+  if(!document.getElementById('lightbox').classList.contains('open')) return;
+  if(e.key === 'ArrowRight') lbNav(1);
+  if(e.key === 'ArrowLeft') lbNav(-1);
+  if(e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>

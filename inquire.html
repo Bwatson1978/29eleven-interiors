@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NC957DZB4M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NC957DZB4M');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inquire &mdash; 29 Eleven Interiors</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+
+
+<script>
+// WebP detection for CSS background images
+(function(){var i=new Image;i.onload=i.onerror=function(){
+if(i.height===2)document.documentElement.classList.add('webp')};
+i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';})();
+</script>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+:root{
+  --slate:#1e2630;--slate2:#252f3c;--steel:#2e3d4e;
+  --fog:#8a9aaa;--mist:#b8c4cc;--ice:#dde6ec;
+  --snow:#ffffff;--champ:#d4c89a;--champ2:#b8a870;
+  --nav:210px;
+}
+/* ─── SPLIT LAYOUT ─── */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}
+/* LEFT &mdash; image + context */
+.split-left{position:sticky;top:0;height:100vh;overflow:hidden}
+.split-bg{position:absolute;inset:0;
+  background:url('./images/general/inquire-003.jpg') center/cover no-repeat;
+  background-color:#1e2630}
+.split-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,38,48,.2) 0%,rgba(30,38,48,.6) 100%)}
+.split-left-content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:flex-end;padding:56px 52px}
+.sl-eyebrow{font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:rgba(254,254,254,.4);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.sl-eyebrow::before{content:'';width:18px;height:1px;background:rgba(254,254,254,.3)}
+.sl-h1{font-family:'Libre Baskerville',serif;font-size:clamp(36px,3.5vw,52px);color:#fefefe;line-height:1.1;margin-bottom:20px}
+.sl-h1 em{font-style:italic;color:var(--champ)}
+.sl-body{font-size:12px;line-height:2;color:rgba(254,254,254,.55);font-weight:300;margin-bottom:40px;max-width:340px}
+/* Trust signals */
+.trust-strip{display:flex;flex-direction:column;gap:14px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1)}
+.trust-item{display:flex;align-items:center;gap:14px}
+.trust-icon{width:28px;height:28px;border:1px solid rgba(212,200,154,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;color:var(--champ2)}
+.trust-text{font-size:10px;color:rgba(254,254,254,.45);font-weight:300}
+.trust-text strong{color:rgba(254,254,254,.7);font-weight:400;display:block;margin-bottom:1px}
+/* RIGHT &mdash; form */
+.split-right{padding:80px 64px;background:var(--snow);overflow-y:auto}
+.form-header{margin-bottom:52px}
+.fh-label{font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:var(--champ2);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.fh-label::before{content:'';width:18px;height:1px;background:var(--champ2)}
+.fh-h2{font-family:'Libre Baskerville',serif;font-size:34px;color:var(--slate);line-height:1.12}
+.fh-h2 em{font-style:italic;color:var(--steel)}
+.fh-sub{font-size:11px;color:var(--fog);font-weight:300;margin-top:10px;line-height:1.85}
+/* Step indicator */
+.steps{display:flex;align-items:center;gap:0;margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--ice)}
+.step{display:flex;align-items:center;gap:10px;flex:1}
+.step-num{width:28px;height:28px;border:1px solid var(--ice);display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:.1em;color:var(--mist);flex-shrink:0;transition:all .3s}
+.step.active .step-num{border-color:var(--champ2);color:var(--champ2);background:rgba(212,200,154,.08)}
+.step.done .step-num{background:var(--champ2);color:var(--slate);border-color:var(--champ2)}
+.step-label{font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);transition:color .3s}
+.step.active .step-label{color:var(--slate)}
+.step-line{flex:1;height:1px;background:var(--ice);margin:0 -4px}
+/* Form fields */
+.form-section{display:none}
+.form-section.active{display:block}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.field-row.solo{grid-template-columns:1fr}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--fog)}
+.field input,
+.field select,
+.field textarea{background:var(--snow);border:1px solid var(--ice);padding:13px 16px;font-family:'Outfit',sans-serif;font-size:12px;color:var(--slate);outline:none;transition:border-color .2s;width:100%;font-weight:300;appearance:none;-webkit-appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238a9aaa'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer}
+.field textarea{resize:vertical;min-height:110px;line-height:1.7}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--champ2)}
+.field input::placeholder,.field textarea::placeholder{color:var(--mist)}
+/* Service chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{padding:9px 16px;border:1px solid var(--ice);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--fog);cursor:pointer;transition:all .2s;user-select:none}
+.chip.selected{border-color:var(--champ2);color:var(--champ2);background:rgba(212,200,154,.07)}
+.chip:hover{border-color:var(--mist)}
+/* Budget slider area */
+.budget-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
+.bopt{padding:12px;border:1px solid var(--ice);text-align:center;cursor:pointer;transition:all .2s}
+.bopt-val{font-size:11px;color:var(--slate);display:block;margin-bottom:3px}
+.bopt-label{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
+.bopt.selected{border-color:var(--champ2);background:rgba(212,200,154,.06)}
+.bopt:hover{border-color:var(--mist)}
+/* Navigation buttons */
+.form-nav{display:flex;align-items:center;justify-content:space-between;margin-top:36px;padding-top:32px;border-top:1px solid var(--ice)}
+.btn-back{padding:12px 24px;border:1px solid var(--ice);font-family:'Outfit',sans-serif;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--fog);background:none;cursor:pointer;transition:all .2s}
+.btn-back:hover{border-color:var(--mist);color:var(--slate)}
+.btn-next{padding:13px 32px;background:var(--slate);font-family:'Outfit',sans-serif;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--snow);border:none;cursor:pointer;transition:background .2s}
+.btn-next:hover{background:var(--champ2);color:var(--slate)}
+.btn-submit{padding:13px 36px;background:var(--champ2);font-family:'Outfit',sans-serif;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);border:none;cursor:pointer;transition:background .2s;font-weight:400}
+.btn-submit:hover{background:var(--champ)}
+.field-note{font-size:9px;color:var(--mist);margin-top:4px;font-weight:300}
+/* Attach buttons */
+.iq-attach{display:flex;gap:10px;margin-bottom:14px;margin-top:20px}
+.iq-attach-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border:1px dashed var(--ice);background:transparent;color:var(--fog);font-family:'Outfit',sans-serif;font-size:8px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:border-color .3s, color .3s;border-radius:3px}
+.iq-attach-btn:hover{border-color:var(--champ2);color:var(--champ2)}
+.iq-attach-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+/* Thank you state */
+.thank-you{display:none;text-align:center;padding:40px 0}
+.ty-icon{font-size:32px;margin-bottom:20px;color:var(--champ2)}
+.ty-h{font-family:'Libre Baskerville',serif;font-size:30px;color:var(--slate);margin-bottom:12px}
+.ty-h em{font-style:italic}
+.ty-body{font-size:12px;line-height:1.9;color:var(--fog);font-weight:300;margin-bottom:28px}
+.ty-next{font-size:10px;color:var(--mist);font-weight:300}
+.ty-next a{color:var(--champ2);text-decoration:none}
+/* ─── FAQ STRIP ─── */
+.faq-strip{background:var(--slate);padding:64px 72px}
+.faq-header{margin-bottom:40px}
+.faq-eyebrow{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--fog);margin-bottom:10px;display:flex;align-items:center;gap:12px}
+.faq-eyebrow::before{content:'';width:18px;height:1px;background:var(--fog)}
+.faq-h2{font-family:'Libre Baskerville',serif;font-size:30px;color:var(--ice);display:flex;align-items:center;gap:14px}
+.faq-icon{flex-shrink:0}
+.faq-icon-circle{stroke-dasharray:88;stroke-dashoffset:88;transition:stroke-dashoffset 1.4s ease}
+.faq-icon-q{opacity:0;transition:opacity .5s ease .8s}
+.faq-icon.in-view .faq-icon-circle{stroke-dashoffset:0}
+.faq-icon.in-view .faq-icon-q{opacity:1}
+.faq-h2 em{font-style:italic;color:var(--champ)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(255,255,255,.07)}
+.faq-item{padding:28px 32px 28px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.faq-item:nth-child(even){padding-left:40px;border-left:1px solid rgba(255,255,255,.07)}
+.faq-q{font-size:13px;color:var(--ice);font-weight:400;margin-bottom:10px;line-height:1.45}
+.faq-a{font-size:11px;line-height:1.85;color:var(--fog);font-weight:200}
+/* ─── FOOTER ─── */
+footer{background:var(--slate2);padding:64px 72px 30px}
+.fp:nth-child(1){background-image:url('./images/general/inquire-004.jpg')}
+.fp:nth-child(2){background-image:url('./images/general/inquire-005.jpg')}
+.fp:nth-child(3){background-image:url('./images/general/inquire-006.jpg')}
+/* Inquire page &mdash; ghost image on dark hero panel */
+.inq-hero{position:relative;overflow:hidden}
+.inq-hero .ghost-bg{
+  position:absolute;inset:0;
+  background:url('./images/general/inquire-007.jpg') center/cover no-repeat;
+  opacity:.1;
+  animation:kb-hero 35s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+/* Letterbox top bar */
+.inq-letterbox{display:none}
+.inq-cin-video{position:absolute;inset:0;z-index:0;overflow:hidden}
+.inq-cin-video video,.inq-cin-video img{width:100%;height:100%;object-fit:cover;opacity:.3}
+.inq-cin-video::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,38,48,.3) 0%,rgba(30,38,48,.88) 100%)}
+/* ─── RESPONSIVE: TABLET ─── */
+@media(max-width:1023px){
+  .split{grid-template-columns:1fr;min-height:auto}
+  .split-left{position:relative;height:60vh;top:auto}
+  .split-left-content{padding:40px 28px}
+  .sl-h1{font-size:36px}
+  .split-right{padding:56px 28px}
+  .fh-h2{font-size:28px}
+  .field-row{grid-template-columns:1fr 1fr;gap:14px}
+  .faq-strip{padding:48px 28px}
+  .faq-grid{grid-template-columns:1fr 1fr}
+  .faq-h2{font-size:26px}
+  .budget-options{grid-template-columns:repeat(3,1fr)}
+  .steps{gap:0;flex-wrap:nowrap}
+  .step-label{font-size:7.5px}
+}
+/* ─── RESPONSIVE: PHONE ─── */
+@media(max-width:767px){
+  .split{grid-template-columns:1fr;min-height:auto}
+  .split-left{position:relative;height:50vh;top:auto}
+  .split-left-content{padding:32px 20px}
+  .sl-h1{font-size:28px}
+  .sl-body{font-size:11px}
+  .split-right{padding:40px 20px}
+  .fh-h2{font-size:24px}
+  .field-row{grid-template-columns:1fr}
+  .chips{gap:6px}
+  .chip{padding:8px 12px;font-size:8px}
+  .budget-options{grid-template-columns:1fr}
+  .faq-strip{padding:40px 20px}
+  .faq-grid{grid-template-columns:1fr}
+  .faq-item:nth-child(even){padding-left:0;border-left:none}
+  .faq-h2{font-size:22px}
+  .steps{flex-wrap:wrap;gap:8px}
+  .step-line{display:none}
+  .step{flex:none}
+  .iq-attach{flex-direction:column}
+  .form-nav{flex-direction:column;gap:12px}
+  .btn-back,.btn-next,.btn-submit{width:100%;text-align:center}
+  .trust-strip{gap:12px}
+}
+</style>
+<meta name="description" content="Start your design journey with 29 Eleven Interiors. Tell us about your project and let's connect.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Inquire — 29 Eleven Interiors">
+<meta property="og:description" content="Ready to transform your space? Tell us about your project and let's create something beautiful together.">
+<meta property="og:image" content="https://29eleveninteriors.com/images/heroes/hero-slide-01.jpg">
+<meta property="og:url" content="https://29eleveninteriors.com/inquire.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+</head>
+<body>
+<div class="inq-letterbox"></div>
+
+<!-- MOBILE NAV BAR -->
+<div class="mobile-nav">
+  <img class="mobile-nav-logo" src="./images/brand/intro-logo-1.png" alt="29 Eleven Interiors" onclick="document.querySelector('.nav-overlay').classList.add('open')">
+  <button class="mobile-nav-menu" onclick="document.querySelector('.nav-overlay').classList.add('open')">Menu</button>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="nav-overlay">
+  <button class="nav-overlay-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <img class="nav-overlay-logo" src="./images/brand/intro-logo-1.png" alt="29 Eleven Interiors">
+  <div class="nav-overlay-line"></div>
+  <a href="./index.html">Home</a>
+  <a href="./our-story.html">Our Story</a>
+  <a href="./interiors.html">Interiors</a>
+  <a href="./services.html">Services</a>
+  <a href="./shoppe.html">Shoppe</a>
+  <a href="./the-edit.html">The Edit</a>
+  <a href="./inquire.html" class="on">Inquire</a>
+  <div class="nav-overlay-line" style="margin-top:8px"></div>
+  <div class="nav-overlay-loc">Newport Beach, CA</div>
+</div>
+
+<nav class="nav">
+  <div class="nl"><picture><source srcset="./images/general/inquire-001.webp" type="image/webp"><img src="./images/general/inquire-001.png" alt="29 Eleven Interiors"></picture></div>
+  <ul class="nlinks">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./our-story.html">Our Story</a></li>
+    <li><a href="./interiors.html">Interiors</a></li>
+    <li><a href="./services.html">Services</a></li>
+    <li><a href="./shoppe.html">Shoppe</a></li>
+    <li><a href="./the-edit.html">The Edit</a></li>
+    <li class="on"><a href="./inquire.html">Inquire</a></li>
+    
+    
+    
+    
+    
+    
+    
+</ul>
+  <div class="nft">
+    <a href="./inquire.html" class="ncta">+ let&rsquo;s connect</a>
+    <div class="ncity">Newport Beach, CA</div>
+  </div>
+</nav>
+
+<main>
+<div class="page-wrap">
+
+<!-- SPLIT LAYOUT -->
+<div class="split">
+
+  <!-- LEFT PANEL -->
+  <div class="split-left">
+    <div class="split-bg"></div>
+    <div class="split-left-content">
+      <div class="sl-eyebrow">Start Here</div>
+      <h1 class="sl-h1">Let's create<br><em>your dream space.</em></h1>
+      <p class="sl-body">Every project starts with a conversation. Tell us about your space, your timeline, + how you want to feel when you walk through the door. We'll take it from there.</p>
+      <div class="trust-strip">
+        <div class="trust-item">
+          <div class="trust-icon">&#10022;</div>
+          <div class="trust-text">
+            <strong>Response within 48 hours</strong>
+            Ashley or a member of the studio team will be in touch personally.
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">&#9671;</div>
+          <div class="trust-text">
+            <strong>No obligation</strong>
+            This is a conversation, not a commitment. No pressure, no sales pitch.
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">&#9672;</div>
+          <div class="trust-text">
+            <strong>Boutique studio</strong>
+            We take on a limited number of projects each year to ensure full attention to every client.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL &mdash; FORM -->
+  <div class="split-right">
+    <!-- CLIENT QUOTE &mdash; social proof above form -->
+    <div style="padding:24px 28px;border-left:2px solid var(--champ2);margin-bottom:32px;background:rgba(30,38,48,.4)">
+      <div style="font-family:'Libre Baskerville',serif;font-size:13px;font-style:italic;color:rgba(255,255,255,.65);line-height:1.7">&ldquo;From our very first call, we knew we were in the right hands. Ashley made us feel heard, + the result was beyond anything we envisioned.&rdquo;</div>
+    </div>
+
+    <div class="form-header">
+      <div class="fh-label">New Project Inquiry</div>
+      <h2 class="fh-h2">Tell us about<br><em>your project.</em></h2>
+      <p class="fh-sub">Takes about 3 minutes. We use this to understand your project before we connect, so our first conversation can actually go somewhere.</p>
+    </div>
+
+    <!-- STEPS -->
+    <div class="steps" id="steps">
+      <div class="step active" id="s1">
+        <div class="step-num">01</div>
+        <div class="step-label">About You</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" id="s2">
+        <div class="step-num">02</div>
+        <div class="step-label">Your Space</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" id="s3">
+        <div class="step-num">03</div>
+        <div class="step-label">The Vision</div>
+      </div>
+    </div>
+
+    <!-- SECTION 1 &mdash; About You -->
+    <div class="form-section active" id="sec1">
+      <div class="field-row">
+        <div class="field">
+          <label>First Name</label>
+          <input type="text" placeholder="First name">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input type="text" placeholder="Last name">
+        </div>
+      </div>
+      <div class="field-row solo" style="margin-bottom:16px">
+        <div class="field">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+      </div>
+      <div class="field-row solo" style="margin-bottom:16px">
+        <div class="field">
+          <label>Phone (optional)</label>
+          <input type="tel" placeholder="(949) 000-0000">
+        </div>
+      </div>
+      <div class="field-row solo">
+        <div class="field">
+          <label>How did you hear about us?</label>
+          <select>
+            <option value="" disabled selected>Select one</option>
+            <option>Instagram</option>
+            <option>Referral from a friend</option>
+            <option>Houzz</option>
+            <option>Google search</option>
+            <option>As Seen In / Press</option>
+            <option>Returning client</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-nav">
+        <span></span>
+        <button class="btn-next" onclick="goStep(2)">Next: Your Space +</button>
+      </div>
+    </div>
+
+    <!-- SECTION 2 &mdash; Your Space -->
+    <div class="form-section" id="sec2">
+      <div class="field-row solo" style="margin-bottom:20px">
+        <div class="field">
+          <label>Project Location</label>
+          <input type="text" placeholder="City, State">
+          <span class="field-note">We serve Southern California + select nationwide projects.</span>
+        </div>
+      </div>
+      <div class="field-row solo" style="margin-bottom:20px">
+        <div class="field">
+          <label>What type of project is this?</label>
+          <select>
+            <option value="" disabled selected>Select one</option>
+            <option>New construction &mdash; full interior</option>
+            <option>Whole home renovation</option>
+            <option>Single floor / partial renovation</option>
+            <option>Primary suite or bedroom</option>
+            <option>Kitchen or bath</option>
+            <option>Furnishings + d&eacute;cor only</option>
+            <option>Staging or styling</option>
+            <option>E-Design (remote)</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row solo" style="margin-bottom:20px">
+        <div class="field">
+          <label>Which services are you most interested in? (select all that apply)</label>
+          <div class="chips" id="chips">
+            <div class="chip" onclick="toggleChip(this)">Full Service Design</div>
+            <div class="chip" onclick="toggleChip(this)">Furnishings + D&eacute;cor</div>
+            <div class="chip" onclick="toggleChip(this)">E-Design</div>
+            <div class="chip" onclick="toggleChip(this)">Styling + Staging</div>
+            <div class="chip" onclick="toggleChip(this)">Not sure yet</div>
+          </div>
+        </div>
+      </div>
+      <div class="field-row solo">
+        <div class="field">
+          <label>Approximate project timeline</label>
+          <select>
+            <option value="" disabled selected>When are you hoping to begin?</option>
+            <option>As soon as possible</option>
+            <option>Within 3 months</option>
+            <option>3&ndash;6 months from now</option>
+            <option>6&ndash;12 months from now</option>
+            <option>Still in planning phase</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-nav">
+        <button class="btn-back" onclick="goStep(1)">+ Back</button>
+        <button class="btn-next" onclick="goStep(3)">Next: The Vision +</button>
+      </div>
+    </div>
+
+    <!-- SECTION 3 &mdash; The Vision -->
+    <div class="form-section" id="sec3">
+      <div class="field-row solo" style="margin-bottom:20px">
+        <div class="field">
+          <label>What's your approximate budget for this project?</label>
+          <input type="text" placeholder="e.g. $150,000">
+          <span class="field-note">An estimate is fine. This helps us understand scope + tailor our approach.</span>
+        </div>
+      </div>
+      <div class="field-row solo" style="margin-bottom:16px">
+        <div class="field">
+          <label>Tell us about your vision &mdash; + how you want your home to feel</label>
+          <textarea placeholder="No need to have it all figured out. Tell us what's exciting you, what isn't working, what kind of life you want to live in this space..."></textarea>
+        </div>
+      </div>
+      <div class="field-row solo">
+        <div class="field">
+          <label>Anything else we should know? (optional)</label>
+          <textarea placeholder="Project constraints, inspiration sources, past design experiences, key dates..."></textarea>
+        </div>
+      </div>
+      <div class="field-row solo">
+        <div class="field">
+          <label>Share photos or files of your space (optional)</label>
+          <div class="iq-attach">
+            <button type="button" class="iq-attach-btn"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</button>
+            <button type="button" class="iq-attach-btn"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</button>
+          </div>
+          <span class="field-note">Floor plans, inspiration images, or photos of your current space help us understand the project faster.</span>
+        </div>
+      </div>
+      <div class="form-nav">
+        <button class="btn-back" onclick="goStep(2)">+ Back</button>
+        <button class="btn-submit" onclick="submitForm()">Submit Inquiry +</button>
+      </div>
+    </div>
+
+    <!-- THANK YOU -->
+    <div class="thank-you" id="thanks">
+      <div class="ty-icon">&#10022;</div>
+      <h3 class="ty-h">Thank you,<br><em>we'll be in touch.</em></h3>
+      <p class="ty-body">Ashley or a member of the studio team will reach out within 48 hours to schedule a discovery call. In the meantime, feel free to explore the interiors or browse the journal.</p>
+      <p class="ty-next"><a href="./interiors.html">View Interiors +</a>&ensp;&middot;&ensp;<a href="./the-edit.html">Read the Edit +</a></p>
+    </div>
+
+  </div><!-- /split-right -->
+</div><!-- /split -->
+
+<!-- FAQ STRIP -->
+<div class="faq-strip">
+  <div class="faq-header">
+    <div class="faq-eyebrow">Good to Know</div>
+    <h2 class="faq-h2"><svg class="faq-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="14" stroke="var(--champ)" stroke-width="1" fill="none" class="faq-icon-circle"/><text x="16" y="22" text-anchor="middle" font-family="Libre Baskerville,serif" font-size="18" font-style="italic" fill="var(--champ)" class="faq-icon-q">?</text></svg> Common <em>questions.</em></h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">How long does a full-service project typically take?</div>
+      <div class="faq-a">Most full-service residential projects run eight to fourteen months from kickoff to install day. New construction projects may run longer depending on build timeline. We'll give you a realistic schedule in your discovery call.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you work with clients outside Southern California?</div>
+      <div class="faq-a">Yes &mdash; we offer E-Design nationwide + have traveled for select full-service projects. If you're outside SoCal, mention your location in the inquiry form + we'll discuss what's possible.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What's included in full-service design?</div>
+      <div class="faq-a">Full service means we handle everything: space planning, material selection, custom furnishings, trade sourcing, contractor coordination, + install day. You're involved in every decision; we handle all the logistics.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is E-Design right for my project?</div>
+      <div class="faq-a">E-Design works well for furnished spaces, single-room refreshes, + clients who want professional direction but prefer to manage purchasing themselves. We'll let you know honestly if we think in-person service would serve you better.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do you structure your fees?</div>
+      <div class="faq-a">We charge a design fee plus a procurement percentage on furnishings + materials. The exact structure depends on project scope + service type. We're transparent about our fee model from the very first conversation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">I'm not sure what service I need. Is that okay?</div>
+      <div class="faq-a">Completely. Many of our best client relationships started with "I'm not sure where to begin." The discovery call is exactly for that &mdash; we'll help you figure out what the project actually needs before any decisions are made.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftg">
+    <div>
+      <div class="ftlog"><picture><source srcset="./images/general/inquire-002.webp" type="image/webp"><img src="./images/general/inquire-002.png" alt="29 Eleven Interiors"></picture></div>
+      <div class="ft-services">Interior &bull; Architectural Design<br>Renovations &bull; New Construction<br>Fine Furnishings &bull; Home Styling</div>
+    </div>
+    <div>
+      <div class="fth">Studio</div>
+      <ul class="ftul">
+        <li><a href="./our-story.html">Our Story</a></li>
+        <li><a href="./interiors.html">Interiors</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./shoppe.html">Shoppe</a></li>
+        <li><a href="./the-edit.html">The Edit</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fth">Connect</div>
+      <ul class="ftul"><li><a href="#">@29eleveninteriors</a></li><li><a href="#">info@29eleveninteriors.com</a></li><li><a href="tel:9497351284">949-735-1284</a></li></ul>
+    </div>
+    <div>
+      <div class="fth">Location</div>
+      <ul class="ftul"><li><a href="#">Newport Beach, CA</a></li><li><a href="#">Southern California + Beyond</a></li></ul>
+    </div>
+  </div>
+  <div class="ftbot">
+    <span class="ftc">&copy; 2026 29 Eleven Interiors</span>
+    <span class="ftc">29eleveninteriors.com</span>
+  </div>
+</footer>
+
+</div><!-- /.page-wrap -->
+
+<!-- Design N Page Transition -->
+<script>
+(function(){
+  var wrap = document.querySelector(".page-wrap");
+  if(!wrap) return;
+  document.addEventListener("click", function(e){
+    var a = e.target.closest("a");
+    if(!a) return;
+    var href = a.getAttribute("href");
+    if(!href || href.startsWith("#") || href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:") || a.target === "_blank") return;
+    e.preventDefault();
+    wrap.classList.add("designL-out");
+    setTimeout(function(){ window.location.href = href; }, 320);
+  });
+})();
+</script>
+
+</main>
+
+<script>
+let cur = 1;
+function goStep(n){
+  document.getElementById('sec'+cur).classList.remove('active');
+  document.getElementById('s'+cur).classList.remove('active');
+  document.getElementById('s'+cur).classList.add('done');
+  cur = n;
+  document.getElementById('sec'+n).classList.add('active');
+  document.getElementById('s'+n).classList.add('active');
+  document.getElementById('s'+n).classList.remove('done');
+  // scroll form back to top
+  document.querySelector('.split-right').scrollTo({top:0,behavior:'smooth'});
+}
+function toggleChip(el){ el.classList.toggle('selected') }
+function selectBudget(el){
+  document.querySelectorAll('.bopt').forEach(b=>b.classList.remove('selected'));
+  el.classList.add('selected');
+}
+function submitForm(){
+  document.getElementById('sec3').classList.remove('active');
+  document.getElementById('steps').style.display='none';
+  document.getElementByI
+});
+</script>
+
+<!-- Nav interceptor removed &mdash; standalone pages use direct URLs -->
+<script>
+// ─── FAQ ICON &mdash; scroll-triggered animation ───
+(function(){
+  var icon = document.querySelector('.faq-icon');
+  if(!icon) return;
+  if(!('IntersectionObserver' in window)){ icon.classList.add('in-view'); return; }
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in-view'); }
+    });
+  }, {threshold:0.5}).observe(icon);
+})();
+</script>
+</body>
+</html>

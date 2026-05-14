@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NC957DZB4M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NC957DZB4M');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>29 Eleven Interiors &mdash; Homepage</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+
+<script>
+// WebP detection for CSS background images
+(function(){var i=new Image;i.onload=i.onerror=function(){
+if(i.height===2)document.documentElement.classList.add('webp')};
+i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';})();
+</script>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+:root{
+  --slate:#1e2630;--slate2:#252f3c;--steel:#2e3d4e;
+  --fog:#8a9aaa;--mist:#b8c4cc;--ice:#dde6ec;
+  --snow:#ffffff;--champ:#d4c89a;--champ2:#b8a870;
+  --white:#fefefe;--nav:210px;
+}
+/* ─── LOGO FADE-IN INTRO ─── */
+/* ─── POPUP ─── */
+#pop{position:fixed;inset:0;z-index:9999;background:rgba(30,38,48,.68);display:flex;align-items:center;justify-content:center;animation:fi .35s ease}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+.pb{background:var(--white);width:610px;max-width:94vw;display:grid;grid-template-columns:220px 1fr;position:relative;overflow:hidden;border-radius:4px}
+.pi{min-height:370px;background:url('./images/heroes/index-004.jpg') center/cover no-repeat;background-color:#1e2630;position:relative}
+.pi::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(30,38,48,.52),transparent 55%)}
+.piq{position:absolute;bottom:22px;left:18px;right:18px;font-family:'Libre Baskerville',serif;font-style:italic;font-size:16px;color:#fefefe;line-height:1.45}
+.pd{padding:40px 32px;display:flex;flex-direction:column;justify-content:center}
+.px{position:absolute;top:13px;right:15px;background:none;border:none;font-size:18px;color:var(--fog);cursor:pointer;line-height:1;transition:color .2s;z-index:2}
+.px:hover{color:var(--slate)}
+.ptag{font-size:7.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--champ2);margin-bottom:13px}
+.ph{font-family:'Libre Baskerville',serif;font-size:24px;font-weight:700;line-height:1.25;color:var(--slate);margin-bottom:11px}
+.pp{font-size:11px;line-height:1.85;color:var(--fog);font-weight:300;margin-bottom:24px}
+.pin{width:100%;padding:11px 15px;border:1px solid var(--ice);background:var(--snow);font-family:'Outfit',sans-serif;font-size:11px;color:var(--slate);outline:none;margin-bottom:9px;transition:border-color .2s;border-radius:3px}
+.pin:focus{border-color:var(--champ2)}
+.pin::placeholder{color:var(--mist)}
+.pbtn{width:100%;padding:13px;background:var(--slate);color:#fff;border:none;cursor:pointer;font-family:'Outfit',sans-serif;font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;transition:background .3s;border-radius:3px}
+.pbtn:hover{background:var(--steel)}
+.psk{margin-top:12px;text-align:center;font-size:9px;color:var(--fog);cursor:pointer;text-decoration:underline}
+.pop-env{stroke-dasharray:72;stroke-dashoffset:72;transition:stroke-dashoffset 1.8s ease .4s}
+.pop-flap{stroke-dasharray:30;stroke-dashoffset:30;transition:stroke-dashoffset 1.2s ease 1s}
+#pop.pop-visible .pop-env,#pop.pop-visible .pop-flap{stroke-dashoffset:0}
+/* ─── LEFT NAV ─── */
+.nav{
+  position:fixed;left:0;top:0;bottom:0;width:var(--nav);
+  background:transparent;
+  display:flex;flex-direction:column;padding:40px 28px;z-index:10001;
+  pointer-events:auto;
+}
+/* nav/footer sizes inherited from shared.css */
+/* ─── HERO &mdash; Cinematic video background (Own The Sky + Luminarc elements) ─── */
+.hero{position:relative;overflow:hidden}
+/* Video background layer */
+.hero-video{display:none;
+  position:absolute;inset:0;z-index:0;
+  background:var(--slate);
+}
+.hero-video video{
+  width:100%;height:100%;object-fit:cover;
+  filter:saturate(.85) brightness(.72);
+  transform:scale(1.04); /* slight scale to allow subtle drift */
+  animation:vd-drift 30s ease-in-out infinite alternate;
+}
+@keyframes vd-drift{
+  0%{transform:scale(1.04) translateX(0) translateY(0)}
+  100%{transform:scale(1.07) translateX(-1%) translateY(-0.5%)}
+}
+/* Still slides layer &mdash; 5-slide hero slideshow */
+.still-layer{
+  position:absolute;inset:0;z-index:1;
+}
+.still{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center bottom;
+  opacity:0;transition:opacity 1.8s ease;
+}
+.still.on{opacity:1}
+.still.s1{opacity:1}
+/* WebP overrides for hero slides */
+.webp .still.s1{background-image:url('./images/heroes/hero-slide-01.webp')}
+.webp .still.s2{background-image:url('./images/heroes/hero-slide-02.webp')}
+.webp .still.s3{background-image:url('./images/heroes/hero-slide-03.webp')}
+.webp .still.s4{background-image:url('./images/heroes/hero-slide-04.webp')}
+.webp .still.s5{background-image:url('./images/heroes/hero-slide-05.webp')}
+
+/* Overlay gradient */
+.hero::before{display:none}
+/* Cinematic letterbox bars &mdash; thin, elegant */
+.hero-letterbox{
+  position:absolute;inset:0;z-index:3;pointer-events:none;
+}
+/* Hero content */
+.hbody{
+  position:absolute;left:0;right:0;bottom:64px;
+  z-index:10;padding:0 72px 0;
+  animation:up .9s ease both;
+}
+.hey{font-size:7.5px;font-weight:300;letter-spacing:.42em;text-transform:uppercase;color:rgba(254,254,254,.5);margin-bottom:16px;display:flex;align-items:center;gap:11px}
+.hey span{width:20px;height:1px;background:rgba(254,254,254,.3);display:block}
+.hh1{font-family:'Libre Baskerville',serif;font-size:clamp(48px,5.2vw,78px);line-height:1.06;color:#fefefe;margin-bottom:0;font-weight:400}
+.hh1 em{font-style:italic;display:block;color:var(--champ);font-weight:400}
+.hdots{position:absolute;right:72px;bottom:64px;z-index:10;text-align:right}
+.dr{display:flex;gap:9px;justify-content:flex-end}
+.dot{width:22px;height:1px;border:none;cursor:pointer;background:rgba(254,254,254,.22);padding:0;transition:background .3s}
+.dot.on{background:rgba(254,254,254,.85)}
+/* Video/photo indicator */
+.media-badge{
+  position:absolute;top:56px;right:72px;z-index:10;
+  font-size:7.5px;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(254,254,254,.28);
+  display:flex;align-items:center;gap:8px;
+}
+.media-badge-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--champ2);opacity:.7;
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+/* Scroll indicator */
+.scroll-hint{
+  position:absolute;bottom:52px;left:50%;transform:translateX(-50%);
+  z-index:10;display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.scroll-line{width:1px;height:24px;background:rgba(255,255,255,.18);animation:sc-anim 2s ease infinite}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+/* ─── HERO SUBTEXT ─── */
+.herotext{background:var(--white);padding:56px 72px 60px;display:flex;align-items:flex-start;justify-content:space-between;gap:48px;border-bottom:1px solid rgba(30,38,48,.08)}
+.ht-left{max-width:560px}
+.ht-tagline{font-family:'Libre Baskerville',serif;font-size:14px;font-style:italic;color:var(--steel);margin-bottom:14px;line-height:1.5;padding-left:14px;border-left:2px solid var(--champ)}
+.ht-h2{font-family:'Libre Baskerville',serif;font-size:clamp(32px,3vw,48px);line-height:1.1;color:var(--slate);margin-bottom:16px}
+.ht-h2 em{font-style:italic;color:var(--steel)}
+.ht-body{font-size:12px;line-height:2;color:var(--fog);font-weight:300}
+.ht-right{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:16px;padding-top:6px;flex-shrink:0}
+.hbw,.hbg{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:15px 36px;font-size:8.5px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:all .3s;min-width:260px}
+.hbw{background:var(--slate);color:#fff}
+.hbw:hover{gap:20px;background:var(--steel)}
+.hbw::after{content:'+'}
+.hbg{color:var(--champ2);border:1px solid rgba(212,200,154,.5);background:transparent}
+.hbg:hover{gap:20px;background:rgba(212,200,154,.1);border-color:var(--champ2)}
+.hbg::after{content:'+'}
+/* ─── PRESS BAR ─── */
+
+/* ─── INTRO ─── */
+.intro{display:grid;grid-template-columns:55% 45%}
+.iphoto{position:relative;overflow:hidden}
+.iphoto-img{display:block;width:100%;height:auto}
+.photo-caption{text-align:center;padding:20px 20px 24px;background:var(--snow)}
+.photo-caption-line{width:32px;height:1.5px;background:var(--champ);margin:0 auto 14px}
+.photo-caption-names{font-family:'Libre Baskerville',serif;font-size:16px;color:var(--slate);margin-bottom:6px}
+.photo-caption-titles{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--fog);font-weight:300}
+.im{position:absolute;inset:0;background:url('./images/heroes/intro-ashley.jpg') center/cover no-repeat;background-color:#1e2630;
+  animation:kb-slow 24s ease-in-out infinite alternate;}
+.webp .im{background-image:url('./images/heroes/intro-ashley.webp')}
+@keyframes kb-slow{0%{transform:scale(1)}100%{transform:scale(1.06) translateX(-1.5%)}}
+.itext{padding:88px 62px;background:var(--snow);display:flex;flex-direction:column;justify-content:center}
+.ey{font-size:8px;letter-spacing:.36em;text-transform:uppercase;color:var(--champ2);margin-bottom:18px;display:flex;align-items:center;gap:13px}
+.ey::before{content:'';width:20px;height:1px;background:var(--champ2)}
+.itag{font-family:'Libre Baskerville',serif;font-size:15px;font-style:italic;color:var(--steel);margin-bottom:22px;line-height:1.55;padding-left:14px;border-left:1.5px solid var(--champ)}
+.ih2{font-family:'Libre Baskerville',serif;font-size:44px;line-height:1.14;color:var(--slate);margin-bottom:24px}
+.ih2 em{font-style:italic;color:var(--steel)}
+.ibody{font-size:12px;line-height:2.1;color:var(--fog);font-weight:300;margin-bottom:32px}
+.tlink{display:inline-flex;align-items:center;gap:11px;font-size:9px;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px;transition:gap .3s}
+.tlink:hover{gap:19px}
+.tlink::after{content:'+'}
+/* ─── PORTFOLIO ─── */
+.interiors{padding:88px 0 88px 72px;background:var(--white);overflow:hidden}
+.sh{display:flex;align-items:baseline;justify-content:space-between;padding-right:72px;margin-bottom:42px}
+.ss{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--fog);margin-bottom:4px}
+.stt{font-family:'Libre Baskerville',serif;font-size:44px;color:var(--slate)}
+.stt em{font-style:italic;color:var(--champ2)}
+.sa{font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--champ2);text-decoration:none;display:flex;align-items:center;gap:8px;transition:gap .3s}
+.sa:hover{gap:16px}
+.sa::after{content:'+'}
+.track{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;cursor:grab;padding-right:72px}
+.track::-webkit-scrollbar{display:none}
+.track:active{cursor:grabbing}
+.pc{flex-shrink:0;position:relative;overflow:hidden;cursor:pointer}
+.pw{width:480px;height:600px}
+.pt{width:300px;height:600px}
+.pbg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s ease}
+.pc:hover .pbg{transform:scale(1.03)}
+.pc:nth-child(1) .pbg{background-image:url('./images/heroes/index-006.jpg');background-color:#1e2630}
+.pc:nth-child(2) .pbg{background-image:url('./images/heroes/index-007.jpg');background-color:#1e2630}
+.pc:nth-child(3) .pbg{background-image:url('./images/heroes/index-008.jpg');background-color:#1e2630}
+.pc:nth-child(4) .pbg{background-image:url('./images/heroes/index-009.jpg');background-color:#1e2630}
+.pc:nth-child(5) .pbg{background-image:url('./images/heroes/index-010.jpg');background-color:#1e2630}
+.pov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 46%,rgba(30,38,48,.9) 100%);opacity:.6;transition:opacity .45s;display:flex;flex-direction:column;justify-content:flex-end;padding:26px}
+.pc:hover .pov{opacity:1}
+.pn{font-family:'Libre Baskerville',serif;font-style:italic;font-size:21px;color:#fefefe;display:block;margin-bottom:5px}
+.pl{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:rgba(254,254,254,.52)}
+.bdg{position:absolute;top:14px;left:14px;z-index:2;padding:5px 11px;font-size:7px;letter-spacing:.2em;text-transform:uppercase}
+.bco{background:var(--slate);color:var(--champ)}
+.bup{border:1px solid rgba(254,254,254,.32);color:rgba(254,254,254,.58);backdrop-filter:blur(4px)}
+/* ─── SERVICES ─── */
+.svcs{padding:96px 72px;background:var(--slate);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.sey{font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:var(--champ2);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.sey::before{content:'';width:18px;height:1px;background:var(--champ2)}
+.sh2{font-family:'Libre Baskerville',serif;font-size:42px;line-height:1.2;color:var(--ice);margin-bottom:22px}
+.sh2 em{font-style:italic;color:var(--champ)}
+.sbody{font-size:12px;line-height:2;color:var(--fog);font-weight:200;max-width:300px;margin-bottom:32px}
+.scard{display:block;text-decoration:none;padding:26px 0;border-top:1px solid rgba(255,255,255,.07);transition:all .35s;position:relative;cursor:pointer}
+.scard:last-of-type{border-bottom:1px solid rgba(255,255,255,.07)}
+.scard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--champ);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.scard:hover::after{transform:scaleX(1)}
+.scnum{font-size:7px;letter-spacing:.36em;text-transform:uppercase;color:var(--champ2);margin-bottom:10px}
+.scname{font-family:'Libre Baskerville',serif;font-size:22px;color:var(--ice);margin-bottom:8px}
+.scdesc{font-size:11px;line-height:1.8;color:var(--fog);font-weight:200}
+.scsubs{margin-top:13px;padding-left:16px;border-left:1px solid rgba(255,255,255,.1)}
+.scsub{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,196,204,.4);margin-bottom:6px}
+.stiles{display:grid;grid-template-columns:1fr 1fr;gap:1px;align-content:start}
+.stiles-4{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.stile{padding:30px 24px;background:rgba(255,255,255,.03);transition:background .3s;cursor:pointer;position:relative}
+.stile:hover{background:rgba(255,255,255,.056)}
+.stile::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--champ);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.stile:hover::after{transform:scaleX(1)}
+.tn{font-family:'Libre Baskerville',serif;font-style:italic;font-size:28px;color:rgba(212,200,154,.47);display:block;margin-bottom:12px;line-height:1}
+.tnm{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ice);font-weight:300;margin-bottom:9px}
+.td{font-size:11px;line-height:1.75;color:var(--fog);font-weight:200}
+.shimmer-subs{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.shimmer-pill{font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--champ2);padding:5px 14px;border:1px solid rgba(212,200,154,.2);border-radius:20px;position:relative;overflow:hidden}
+.shimmer-pill::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(212,200,154,.12),transparent);animation:shimmer-sweep 4s ease-in-out infinite}
+.shimmer-pill:nth-child(2)::after{animation-delay:2s}
+@keyframes shimmer-sweep{0%{left:-100%}40%{left:100%}100%{left:100%}}
+/* ─── PROCESS ─── */
+.process{padding:96px 72px;background:#ffffff;position:relative;overflow:hidden}
+.fw-canvas{position:absolute;inset:0;pointer-events:none;z-index:10}
+.prh{text-align:center;margin-bottom:56px}
+.prey{font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:var(--champ2);margin-bottom:13px}
+.prh2{font-family:'Libre Baskerville',serif;font-size:42px;color:var(--slate)}
+.prh2 em{font-style:italic;color:var(--steel)}
+.progress-track{height:3px;background:var(--ice);margin-bottom:48px;position:relative;overflow:visible;max-width:900px;margin-left:auto;margin-right:auto}
+.progress-fill{height:100%;background:linear-gradient(to right,var(--champ2),var(--champ));width:20%;transition:width .5s ease}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);max-width:900px;margin:0 auto}
+.step{padding:0 20px 0 0;cursor:pointer;transition:all .3s;position:relative}
+.step::before{content:'';position:absolute;top:-62px;left:0;width:1px;height:18px;background:var(--mist);transition:background .3s}
+.step.on::before,.step:hover::before{background:var(--champ2)}
+.step:last-child::after{content:'';position:absolute;top:-62px;right:0;width:1px;height:18px;background:var(--mist);transition:background .3s}
+.step:last-child.on::after{background:var(--champ2)}
+.slbl{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--mist);display:block;margin-bottom:9px;transition:color .3s}
+.step.on .slbl,.step:hover .slbl{color:var(--champ2)}
+.sdsc-label{font-size:9px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:8px;transition:transform .4s ease, color .4s ease;transform-origin:left center}
+.step.on .sdsc-label{transform:scale(1.35);color:var(--champ2)}
+.sdsc{font-size:10px;line-height:1.72;color:var(--fog);font-weight:300}
+/* ─── CTA &mdash; Cinematic video background with Ken Burns fallback (Contact element) ─── */
+.ctas{height:540px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+/* Video background */
+.cta-video-wrap{position:absolute;inset:0;z-index:0}
+.cta-video-wrap video{
+  width:100%;height:100%;object-fit:cover;
+  filter:saturate(.7) brightness(.5);
+}
+/* Ken Burns fallback (shows when video fails) &mdash; Contact page inspiration */
+.ctabg{
+  position:absolute;inset:0;z-index:0;
+  background:url('./images/heroes/index-011.jpg') center/cover no-repeat;
+  background-color:#1e2630;
+  animation:kb-cta 40s ease-in-out infinite alternate;
+}
+@keyframes kb-cta{
+  0%{transform:scale(1) translate(0,0)}
+  25%{transform:scale(1.04) translate(-0.8%,-0.4%)}
+  50%{transform:scale(1.06) translate(-1.2%,0.2%)}
+  75%{transform:scale(1.04) translate(-0.4%,0.6%)}
+  100%{transform:scale(1.08) translate(-1.6%,-0.2%)}
+}
+.ctabg::after{content:'';position:absolute;inset:0;background:rgba(30,38,48,.52)}
+/* Film strip &mdash; stills mixed in (Ralph Lauren element) */
+.ctai{position:relative;z-index:10;max-width:520px;padding:0 36px}
+.ctaey{font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:rgba(254,254,254,.42);margin-bottom:14px}
+.ctah{font-family:'Libre Baskerville',serif;font-size:52px;line-height:1.08;color:#fefefe;margin-bottom:16px}
+.ctah em{font-style:italic;color:var(--champ)}
+.ctap{font-size:12px;line-height:1.85;color:rgba(254,254,254,.6);font-weight:200;margin-bottom:34px}
+.ctabtn{display:inline-flex;align-items:center;gap:14px;padding:18px 44px;background:var(--champ);color:var(--slate);font-size:10px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.ctabtn:hover{background:var(--champ2);gap:22px;transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,168,112,.3)}
+.ctabtn::after{content:'+'}
+/* ─── INQUIRY FORM ─── */
+.inq{display:grid;grid-template-columns:1fr 1fr;min-height:480px;margin-bottom:80px;border-radius:4px;overflow:hidden;max-width:1100px;margin-left:auto;margin-right:auto}
+.iql{position:relative;overflow:hidden}
+/* Inquiry left panel — full image with quote */
+.iql-bg{
+  position:absolute;inset:0;
+  background:url('./images/heroes/inquiry-cta.jpg') center/cover no-repeat;
+  background-color:#1e2630;
+}
+.webp .iql-bg{background-image:url('./images/heroes/inquiry-cta.webp')}
+.iql-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(30,38,48,.52),transparent 55%)}
+.iql-quote{position:absolute;bottom:22px;left:18px;right:18px;font-family:'Libre Baskerville',serif;font-style:italic;font-size:16px;color:#fefefe;line-height:1.45;z-index:1}
+.iqey{font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:var(--champ2);margin-bottom:13px}
+.iqh{font-family:'Libre Baskerville',serif;font-size:24px;line-height:1.25;color:var(--slate);margin-bottom:11px}
+.iqh em{font-style:italic;color:var(--steel)}
+.iqp{font-size:11px;line-height:1.85;color:var(--fog);font-weight:300;margin-bottom:24px}
+.iqr{padding:40px 32px;background:var(--snow);display:flex;flex-direction:column;justify-content:center}
+.iqrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.iqf{margin-bottom:12px}
+.iqlbl{font-size:7px;letter-spacing:.28em;text-transform:uppercase;color:var(--mist);display:block;margin-bottom:7px}
+.iqin,.iqsel,.iqta{width:100%;padding:11px 15px;border:1px solid var(--ice);background:var(--snow);font-family:'Outfit',sans-serif;font-size:11px;color:var(--slate);outline:none;transition:border-color .2s;-webkit-appearance:none;border-radius:3px}
+.iqin:focus,.iqsel:focus,.iqta:focus{border-color:var(--champ2)}
+.iqin::placeholder,.iqta::placeholder{color:var(--mist)}
+.iqta{resize:none;height:80px}
+.iq-attach{display:flex;gap:10px;margin-bottom:14px}
+.iq-attach-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border:1px dashed var(--ice);background:transparent;color:var(--fog);font-family:'Outfit',sans-serif;font-size:8px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:border-color .3s, color .3s;border-radius:3px}
+.iq-attach-btn:hover{border-color:var(--champ2);color:var(--champ2)}
+.iq-attach-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.iqsub{width:100%;margin-top:4px;padding:13px;background:var(--slate);color:#fff;border:none;cursor:pointer;font-family:'Outfit',sans-serif;font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;transition:background .3s;border-radius:3px}
+.iqsub:hover{background:var(--steel)}
+/* footer inherited from shared.css */
+/* === K.3 SOFT HALO TEXT TREATMENT === */
+.hh1{text-shadow:0 2px 10px rgba(30,38,48,0.5),0 4px 30px rgba(30,38,48,0.4),0 8px 60px rgba(30,38,48,0.35),0 12px 100px rgba(30,38,48,0.25);}
+.hey{text-shadow:0 1px 8px rgba(30,38,48,0.5),0 3px 20px rgba(30,38,48,0.3);}
+/* ── LOADING SCREEN &mdash; Golden Pulse ── */
+#site-intro{
+  position:fixed;inset:0;z-index:99999;
+  background:var(--slate);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  pointer-events:none;
+  opacity:1;visibility:visible;
+  transition:opacity .8s ease, visibility .8s ease;
+}
+#site-intro.fade-out{opacity:0;visibility:hidden}
+.intro-wrap{position:relative;display:flex;flex-direction:column;align-items:center}
+.intro-glow{
+  position:absolute;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle, rgba(196,149,106,.18) 0%, rgba(184,168,112,.08) 40%, transparent 70%);
+  opacity:0;filter:blur(50px);
+  top:50%;left:50%;transform:translate(-50%,-50%) scale(.5);
+  transition:all 2s ease;
+}
+.intro-glow.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.intro-logo-wrap{
+  position:relative;width:220px;opacity:0;transform:scale(.92);
+  transition:all 1.6s ease;z-index:2;
+}
+.intro-logo-wrap.on{opacity:1;transform:scale(1)}
+.intro-logo-white{width:100%;display:block;filter:none;opacity:1}
+.intro-logo-color{position:absolute;inset:0;width:100%;mix-blend-mode:lighten;opacity:1}
+.intro-divider{
+  width:0;height:1px;margin-top:24px;z-index:2;position:relative;
+  background:linear-gradient(90deg, transparent, #c4956a, transparent);
+  transition:width .8s ease;
+}
+.intro-divider.on{width:60px}
+.intro-tag{
+  font-family:'Outfit',sans-serif;font-size:7.5px;letter-spacing:.44em;
+  text-transform:uppercase;color:#c4956a;margin-top:14px;
+  opacity:0;z-index:2;position:relative;
+  transition:opacity .8s ease;
+}
+.intro-tag.on{opacity:1}
+
+/* ═══ RESPONSIVE — TABLET + PHONE ═══ */
+@media(max-width:1023px){
+  /* Popup */
+  .pb{grid-template-columns:1fr;width:90vw}
+  .pi{min-height:180px}
+  /* Hero */
+  .hero{min-height:70vh}
+  .hh1{font-size:clamp(36px,7vw,56px)}
+  .herotext{flex-direction:column;padding:36px 28px 40px;gap:24px}
+  .ht-right{flex-direction:row;align-items:center;align-self:flex-start}
+  .hbw,.hbg{min-width:200px;padding:13px 28px}
+  /* Intro */
+  .intro{grid-template-columns:1fr}
+  .iphoto{height:auto;overflow:visible}
+  .iphoto-img{width:100%;height:auto}
+  .itext{padding:48px 28px}
+  .ih2{font-size:32px}
+  /* Portfolio scroll */
+  .interiors{padding:56px 0 56px 28px}
+  .sh{padding-right:28px}
+  .stt{font-size:32px}
+  .pw{width:340px;height:440px}
+  .pt{width:220px;height:440px}
+  /* Services */
+  .svcs{grid-template-columns:1fr;padding:56px 28px;gap:48px}
+  .sh2{font-size:32px}
+  .stiles{gap:1px}
+  /* Process */
+  .process{padding:56px 28px}
+  .prh2{font-size:32px}
+  .steps{grid-template-columns:repeat(5,1fr);gap:8px}
+  .step{padding:0 8px 0 0}
+  .sdsc-label{font-size:8px}
+  .sdsc{font-size:9px}
+  /* CTA */
+  .ctas{height:420px}
+  .ctah{font-size:36px}
+  .ctabtn{padding:14px 32px}
+  /* Inquiry */
+  .inq{grid-template-columns:1fr;max-width:600px}
+  .iql{height:240px}
+  .iqr{padding:28px 24px}
+}
+
+@media(max-width:767px){
+  /* Popup */
+  .pb{width:94vw}
+  .pi{min-height:140px}
+  .pd{padding:28px 20px}
+  .ph{font-size:20px}
+  .px{font-size:24px;top:10px;right:12px;padding:8px}
+  /* Hero */
+  .hero{min-height:60vh}
+  .hh1{font-size:clamp(28px,8vw,40px)}
+  .herotext{padding:24px 20px 28px}
+  .ht-right{flex-direction:column;width:100%}
+  .hbw,.hbg{min-width:100%;justify-content:center}
+  /* Intro */
+  .iphoto{height:auto;overflow:visible}
+  .iphoto-img{width:100%;height:auto}
+  .photo-caption-names{font-size:14px}
+  .itext{padding:36px 20px}
+  .ih2{font-size:26px}
+  /* Portfolio scroll */
+  .interiors{padding:40px 0 40px 20px}
+  .sh{padding-right:20px;flex-direction:column;gap:12px;align-items:flex-start}
+  .stt{font-size:26px}
+  .pw{width:280px;height:360px}
+  .pt{width:180px;height:360px}
+  .pn{font-size:17px}
+  /* Services */
+  .svcs{padding:40px 20px;gap:32px}
+  .sh2{font-size:26px}
+  .stiles{grid-template-columns:1fr}
+  .scname{font-size:18px}
+  /* Process */
+  .process{padding:40px 20px}
+  .prh2{font-size:26px}
+  .steps{grid-template-columns:1fr;gap:24px}
+  .step::before{display:none}
+  .step:last-child::after{display:none}
+  .progress-track{display:none}
+  /* CTA */
+  .ctas{height:360px}
+  .ctah{font-size:28px}
+  .ctap{font-size:11px}
+  .ctabtn{padding:12px 24px;font-size:8px}
+  /* Inquiry */
+  .iqrow{grid-template-columns:1fr}
+  .iql{height:180px}
+  .iqr{padding:24px 16px}
+  .iq-attach{flex-direction:column}
+}
+</style>
+<meta name="description" content="29 Eleven Interiors is a full-service interior design studio in Newport Beach, CA. Curated with purpose, designed with intention.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="29 Eleven Interiors — Newport Beach Interior Design">
+<meta property="og:description" content="Full-service interior design for every season of life. Based in Newport Beach, serving Southern California and beyond.">
+<meta property="og:image" content="https://29eleveninteriors.com/images/heroes/hero-slide-01.jpg">
+<meta property="og:url" content="https://29eleveninteriors.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+</head>
+<body>
+
+<!-- ANIMATED LOADING SCREEN &mdash; Golden Pulse -->
+<div id="site-intro">
+  <div class="intro-wrap">
+    <div class="intro-glow" id="introGlow"></div>
+    <div class="intro-logo-wrap" id="introLogoWrap">
+      <img class="intro-logo-white" src="images/brand/intro-logo-1.png" alt="">
+      <img class="intro-logo-color" src="images/brand/intro-logo-2.png" alt="29 Eleven Interiors">
+    </div>
+    <div class="intro-divider" id="introDiv"></div>
+    <div class="intro-tag" id="introTag">Design with Intention</div>
+  </div>
+</div>
+
+<script>
+// Golden Pulse &mdash; plays the branded intro ONCE per browser session.
+// On subsequent visits (or internal navigation) it is instantly hidden.
+(function(){
+  var si = document.getElementById('site-intro');
+  var played = false;
+  try { played = sessionStorage.getItem('29e-intro-done'); } catch(e){}
+
+  if (played) {
+    // Already played this session &mdash; hide immediately, no animation
+    si.style.display = 'none';
+    return;
+  }
+
+  var glow = document.getElementById('introGlow');
+  var logo = document.getElementById('introLogoWrap');
+  var div  = document.getElementById('introDiv');
+  var tag  = document.getElementById('introTag');
+
+  // ── Phase 1: animate the logo sequence ──
+  setTimeout(function(){ glow.classList.add('on'); }, 300);
+  setTimeout(function(){ logo.classList.add('on'); }, 700);
+  setTimeout(function(){ div.classList.add('on'); }, 1800);
+  setTimeout(function(){ tag.classList.add('on'); }, 2100);
+
+  // ── Phase 2: wait for the page to be ready, then fade out ──
+  var dismissed = false;
+  var animDone  = false;
+  var pageReady = false;
+
+  function dismiss(){
+    if(dismissed) return;
+    if(!animDone || !pageReady) return;
+    dismissed = true;
+    si.classList.add('fade-out');
+    setTimeout(function(){ si.style.display = 'none'; }, 800);
+    try { sessionStorage.setItem('29e-intro-done','1'); } catch(e){}
+  }
+
+  setTimeout(function(){ animDone = true; dismiss(); }, 2800);
+  window.addEventListener('load', function(){ pageReady = true; dismiss(); });
+
+  // Safety net: never hold longer than 8s
+  setTimeout(function(){
+    if(dismissed) return;
+    dismissed = true;
+    si.classList.add('fade-out');
+    setTimeout(function(){ si.style.display = 'none'; }, 800);
+    try { sessionStorage.setItem('29e-intro-done','1'); } catch(e){}
+  }, 8000);
+})();
+</script>
+
+<!-- POPUP -->
+<div id="pop">
+  <div class="pb">
+    <button class="px" onclick="document.getElementById('pop').style.display='none'">&#10005;</button>
+    <div class="pi"><div class="piq">A space for every season of life.</div></div>
+    <div class="pd">
+      <div class="ptag"><svg class="pop-anim" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px"><rect x="1" y="1" width="20" height="16" rx="2" stroke="var(--champ2)" stroke-width="1" fill="none" class="pop-env"/><path d="M1 1 L11 10 L21 1" stroke="var(--champ2)" stroke-width="1" fill="none" class="pop-flap"/></svg>Join the Studio</div>
+      <h3 class="ph">Design notes worth keeping.</h3>
+      <p class="pp">Project reveals, studio ideas, + 29 Eleven inspiration, delivered to your inbox.</p>
+      <input class="pin" type="email" placeholder="Your email address">
+      <button class="pbtn">Subscribe to The Great Indoors</button>
+      <div class="psk" onclick="document.getElementById('pop').style.display='none'">No thanks, continue browsing</div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE NAV BAR -->
+<div class="mobile-nav">
+  <img class="mobile-nav-logo" src="./images/brand/intro-logo-1.png" alt="29 Eleven Interiors" onclick="document.querySelector('.nav-overlay').classList.add('open')">
+  <button class="mobile-nav-menu" onclick="document.querySelector('.nav-overlay').classList.add('open')">Menu</button>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="nav-overlay">
+  <button class="nav-overlay-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <img class="nav-overlay-logo" src="./images/brand/intro-logo-1.png" alt="29 Eleven Interiors">
+  <div class="nav-overlay-line"></div>
+  <a href="./index.html" class="on">Home</a>
+  <a href="./our-story.html">Our Story</a>
+  <a href="./interiors.html">Interiors</a>
+  <a href="./services.html">Services</a>
+  <a href="./shoppe.html">Shoppe</a>
+  <a href="./the-edit.html">The Edit</a>
+  <a href="./inquire.html">Inquire</a>
+  <div class="nav-overlay-line" style="margin-top:8px"></div>
+  <div class="nav-overlay-loc">Newport Beach, CA</div>
+</div>
+
+<!-- LEFT NAV -->
+<nav class="nav">
+  <div class="nl">
+    <picture><source srcset="./images/heroes/index-001.webp" type="image/webp"><img src="./images/heroes/index-001.png" alt="29 Eleven Interiors"></picture>
+  </div>
+  <ul class="nlinks">
+    <li class="on"><a href="./index.html">Home</a></li>
+    <li><a href="./our-story.html">Our Story</a></li>
+    <li><a href="./interiors.html">Interiors</a></li>
+    <li><a href="./services.html">Services</a></li>
+    <li><a href="./shoppe.html">Shoppe</a></li>
+    <li><a href="./the-edit.html">The Edit</a></li>
+    <li><a href="./inquire.html">Inquire</a></li>
+    
+    
+    
+    
+    
+    
+    
+</ul>
+  <div class="nft">
+    <a href="./inquire.html" class="ncta">+ let&rsquo;s connect</a>
+    <div class="ncity">Newport Beach, CA</div>
+  </div>
+</nav>
+
+<main>
+<div class="page-wrap">
+
+<!-- &#9313; HERO &mdash; Cinematic video background (Own The Sky) + stills intercut (Ralph Lauren) -->
+<section class="hero">
+
+  <!-- Cinematic video layer &mdash; Coverr free stock, luxury interior pan shot -->
+  <div class="hero-video" id="hero-video-wrap">
+    <video id="hero-vid" autoplay muted playsinline preload="auto"
+      poster="./images/heroes/index-301.jpg">
+      <!-- Primary: luxury interior living room slow pan &mdash; Coverr CDN -->
+      <source src="./videos/index-video-01.mp4" type="video/mp4">
+      <!-- Fallback: contemporary home with scenic view -->
+      <source src="./videos/index-video-02.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Still photography intercut &mdash; 5-slide hero slideshow -->
+  <div class="still-layer" id="still-layer">
+    <div class="still s1" style="background-image:url('./images/heroes/hero-slide-01.jpg')"></div>
+    <div class="still s2" style="background-image:url('./images/heroes/hero-slide-02.jpg')"></div>
+    <div class="still s3" style="background-image:url('./images/heroes/hero-slide-03.jpg')"></div>
+    <div class="still s4" style="background-image:url('./images/heroes/hero-slide-04.jpg')"></div>
+    <div class="still s5" style="background-image:url('./images/heroes/hero-slide-05.jpg')"></div>
+  </div>
+
+  <!-- Letterbox &mdash; cinematic framing bars -->
+  <div class="hero-letterbox"></div>
+
+  <!-- Gradient overlay -->
+  
+
+  <!-- Live indicator -->
+  <div class="media-badge" id="media-badge">
+    <div class="media-badge-dot"></div>
+    <span id="media-type">Live</span>
+  </div>
+
+  <!-- Hero copy (removed per Design N) -->
+
+  <!-- Dots -->
+  <div class="hdots">
+    <div class="dr">
+      <button class="dot on" onclick="goStill(0)"></button>
+      <button class="dot" onclick="goStill(1)"></button>
+      <button class="dot" onclick="goStill(2)"></button>
+      <button class="dot" onclick="goStill(3)"></button>
+      <button class="dot" onclick="goStill(4)"></button>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-label">Scroll</span>
+  </div>
+
+</section>
+
+<!-- HERO SUBTEXT -->
+<div class="herotext">
+  <div class="ht-left">
+    <div class="ht-tagline">Full-service interior design for every season of life.</div>
+    <h2 class="ht-h2">Curated with purpose,<br><em>designed with intention.</em></h2>
+    <p class="ht-body">We design homes that are beautiful to look at + made to be lived in, reflecting you, your story + what matters most. Because home isn't just a place, it's a feeling.<br><br>Based in Newport Beach, serving Southern California + beyond.</p>
+  </div>
+  <!-- Buttons removed per Design N -->
+</div>
+
+<!-- PRESS BAR -->
+<!-- INTRO -->
+<section class="intro">
+  <div class="iphoto">
+    <picture>
+      <source srcset="./images/heroes/intro-ashley.webp" type="image/webp">
+      <img class="iphoto-img" src="./images/heroes/intro-ashley.jpg" alt="29 Eleven Interiors — Lake Arrowhead">
+    </picture>
+    <div class="photo-caption">
+      <div class="photo-caption-line"></div>
+      <div class="photo-caption-names">Jillian Brunello &nbsp;+&nbsp; Ashley Porter</div>
+      <div class="photo-caption-titles">Senior Designer &nbsp;|&nbsp; Principal Designer + Founder</div>
+    </div>
+  </div>
+  <div class="itext">
+    <div class="ey">Our Story</div>
+    <div class="itag">&ldquo;I design the way I live. With warmth, intention, and a real respect for how a space makes you feel. Making any place feel like home is our love language.&rdquo;</div>
+    <h2 class="ih2">Led by <em>Ashley Porter.</em></h2>
+    <p class="ibody">Ashley and team use a mixed not match-y approach to design. There&rsquo;s an artistic edge present in how Ashley creates a space&ndash; always a bit of structure, a bit of free flow. Every choice is deliberate, every detail intentional, but the result feels effortless. Where the complicated becomes simple and everything just connects.</p>
+    
+    <!-- PRESS SECTION (K.2) -->
+    <div style="padding:22px 0 8px; border-top:1px solid var(--ice); margin-top:24px; margin-bottom:16px;">
+      <div style="font-family:'Inter',sans-serif; font-size:8px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--fog); margin-bottom:14px;">As Featured In</div>
+      <div style="display:flex; gap:40px; align-items:flex-start;">
+        <div style="display:flex; flex-direction:column;">
+          <div style="margin-bottom:6px;"><span style="font-family:'Libre Baskerville',serif; font-size:15px; color:#C49A3C; font-weight:400;">Orange Coast</span></div>
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <span style="font-family:'Libre Baskerville',serif; font-size:9px; color:var(--steel); font-style:italic;">A Romantic Retreat</span>
+            <a href="https://orangecoast.com/style-and-home/step-inside-this-romantic-outdoor-retreat-designed-for-cozy-nights-in/" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif; font-size:7.5px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:#C49A3C; text-decoration:none;">Read Article +</a>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column;">
+          <div style="margin-bottom:6px;"><img src="./images/heroes/index-002.svg" alt="Newport Beach Magazine" style="height:38px; width:auto;"></div>
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <span style="font-family:'Libre Baskerville',serif; font-size:9px; color:var(--steel); font-style:italic;">Outdoor Entertaining, Newport Beach Style</span>
+            <a href="https://www.newportbeachmagazine.com/outdoor-entertainment/" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif; font-size:7.5px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:#2a2a2a; text-decoration:none;">Read Article +</a>
+          </div>
+          <div style="width:100%; height:1px; background:var(--ice); margin:8px 0;"></div>
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <span style="font-family:'Libre Baskerville',serif; font-size:9px; color:var(--steel); font-style:italic;">Ahead of the Curve</span>
+            <a href="https://www.newportbeachmagazine.com/curved-design/" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif; font-size:7.5px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:#2a2a2a; text-decoration:none;">Read Article +</a>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column;">
+          <div style="margin-bottom:6px;"><span style="font-family:'Inter',sans-serif; font-size:13px; color:#1a1a1a; font-weight:800; letter-spacing:.08em; text-transform:uppercase;">Latitude 33</span></div>
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <span style="font-family:'Libre Baskerville',serif; font-size:9px; color:var(--steel); font-style:italic;">Home Is A Feeling</span>
+            <span style="font-family:'Inter',sans-serif; font-size:7.5px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--fog);">Print Feature</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <a href="./our-story.html" class="tlink">Read Our Story</a>
+  </div>
+</section>
+
+<!-- Design N PORTFOLIO -->
+<section class="portfolio-section">
+
+  <div class="portfolio-header">
+    <h2 class="portfolio-header-h2">The <em>Selected</em></h2>
+  </div>
+
+  <div class="portfolio-grid">
+    <a class="pgrid-card" href="./projects/harbor-cove.html">
+      <picture>
+        <source srcset="./images/heroes/portfolio-harbor-cove.webp" type="image/webp">
+        <img class="pgrid-img" src="./images/heroes/portfolio-harbor-cove.jpg" alt="Harbor Cove">
+      </picture>
+      <div class="pgrid-info">
+        <span class="pgrid-name ls-wide">Harbor Cove</span>
+        <span class="pgrid-loc">Newport Beach</span>
+      </div>
+    </a>
+    <a class="pgrid-card" href="./projects/mesa-del-mar.html">
+      <picture>
+        <source srcset="./images/heroes/portfolio-mesa-del-mar.webp" type="image/webp">
+        <img class="pgrid-img" src="./images/heroes/portfolio-mesa-del-mar.jpg" alt="Mesa Del Mar">
+      </picture>
+      <div class="pgrid-info">
+        <span class="pgrid-name ls-wide">Mesa Del Mar</span>
+        <span class="pgrid-loc">Costa Mesa</span>
+      </div>
+    </a>
+    <a class="pgrid-card" href="./projects/lake-arrowhead.html">
+      <picture>
+        <source srcset="./images/heroes/portfolio-lake-arrowhead.webp" type="image/webp">
+        <img class="pgrid-img" src="./images/heroes/portfolio-lake-arrowhead.jpg" alt="Lake Arrowhead">
+      </picture>
+      <div class="pgrid-info">
+        <span class="pgrid-name ls-wide">Lake View Retreat</span>
+        <span class="pgrid-loc">Lake Arrowhead</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- View All Projects link removed per Design N -->
+</section>
+
+<!-- SERVICES -->
+<section class="svcs">
+  <div>
+    <div class="sey">Services</div>
+    <h2 class="sh2">Every space deserves a<br><em>thoughtful</em> approach.</h2>
+    <p class="sbody">Whether you're starting fresh or refining what already exists, we have a service tailored for your project + your life.</p>
+  </div>
+  <div class="stiles stiles-4">
+    <div class="stile">
+      <span class="tn">01</span>
+      <div class="tnm">Full Service Design</div>
+      <div class="td">From first thought to final install, we handle every detail. You just arrive home.</div>
+      <div class="shimmer-subs">
+        <span class="shimmer-pill">New Construction</span>
+        <span class="shimmer-pill">Renovation</span>
+      </div>
+    </div>
+    <div class="stile">
+      <span class="tn">02</span>
+      <div class="tnm">Furnishings + D&eacute;cor</div>
+      <div class="td">Love your layout? We source, curate, + layer in the pieces that finally make it feel like you.</div>
+    </div>
+    <div class="stile">
+      <span class="tn">03</span>
+      <div class="tnm">E-Design</div>
+      <div class="td">The full 29 Eleven experience, delivered remotely. Complete packages with sourcing guides, available nationwide.</div>
+    </div>
+    <div class="stile">
+      <span class="tn">04</span>
+      <div class="tnm">Styling + Staging</div>
+      <div class="td">Final-layer accessory styling for homes ready to be photographed, staged, or simply beautifully finished.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <canvas class="fw-canvas" id="fw-canvas"></canvas>
+  <div class="prh">
+    <div class="prey">The Design Journey</div>
+    <h2 class="prh2">From vision to <em id="reveal-word">Reveal.</em></h2>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="prog"></div></div>
+  <div class="steps">
+    <div class="step on">
+      <div class="slbl">01</div>
+      <div class="sdsc-label">Listen</div>
+      <div class="sdsc">A deep listen. Your life, your style, your home's true purpose.</div>
+    </div>
+    <div class="step">
+      <div class="slbl">02</div>
+      <div class="sdsc-label">Imagine</div>
+      <div class="sdsc">A full design direction. Palette, mood, spatial vision, built around you.</div>
+    </div>
+    <div class="step">
+      <div class="slbl">03</div>
+      <div class="sdsc-label">Craft</div>
+      <div class="sdsc">Every detail documented. Every selection sourced with precision + purpose.</div>
+    </div>
+    <div class="step">
+      <div class="slbl">04</div>
+      <div class="sdsc-label">Source</div>
+      <div class="sdsc">We manage every order, delivery, + trade timeline, without exception.</div>
+    </div>
+    <div class="step">
+      <div class="slbl">05</div>
+      <div class="sdsc-label">Reveal</div>
+      <div class="sdsc">We install, style, + step back. Your only job is to walk through the door.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA removed per Design N -->
+
+<!-- INQUIRY SECTION -->
+<div class="inq">
+  <div class="iql">
+    <div class="iql-bg"></div>
+    <div class="iql-quote"></div>
+  </div>
+  <div class="iqr">
+    <div class="iqey">Begin a Project</div>
+    <h2 class="iqh">Let's design your home <em>together.</em></h2>
+    <p class="iqp">We take on a limited number of projects each year. Every client gets our full attention.</p>
+    <div class="iqrow">
+      <div class="iqf"><label class="iqlbl">First Name</label><input class="iqin" placeholder="Jane"></div>
+      <div class="iqf"><label class="iqlbl">Last Name</label><input class="iqin" placeholder="Smith"></div>
+    </div>
+    <div class="iqf"><label class="iqlbl">Email Address</label><input class="iqin" type="email" placeholder="jane@email.com"></div>
+    <div class="iqf">
+      <label class="iqlbl">Service Interested In</label>
+      <select class="iqsel">
+        <option value="">Select a service</option>
+        <option>Full Service Design, Renovation</option>
+        <option>Full Service Design, New Construction</option>
+        <option>Furnishings + D&eacute;cor</option>
+        <option>E-Design</option>
+        <option>Styling + Staging</option>
+      </select>
+    </div>
+    <div class="iqf"><label class="iqlbl">Tell Us About Your Project</label><textarea class="iqta" placeholder="Share your vision, timeline, and space..."></textarea></div>
+    <div class="iq-attach">
+      <button type="button" class="iq-attach-btn"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</button>
+      <button type="button" class="iq-attach-btn"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</button>
+    </div>
+    <button class="iqsub">Submit Your Inquiry +</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="ftg">
+    <div>
+      <div class="ftlog"><picture><source srcset="./images/heroes/index-003.webp" type="image/webp"><img loading="lazy" src="./images/heroes/index-003.png" alt="29 Eleven Interiors"></picture></div>
+      <div class="ft-services">Interior &bull; Architectural Design<br>Renovations &bull; New Construction<br>Fine Furnishings &bull; Home Styling</div>
+    </div>
+    <div>
+      <div class="fth">Studio</div>
+      <ul class="ftul">
+        <li><a href="./our-story.html">Our Story</a></li>
+        <li><a href="./interiors.html">Interiors</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./shoppe.html">Shoppe</a></li>
+        <li><a href="./the-edit.html">The Edit</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fth">Connect</div>
+      <ul class="ftul">
+        <li><a href="./inquire.html">Inquire</a></li>
+        <li><a href="#">@29eleveninteriors</a></li>
+        <li><a href="#">info@29eleveninteriors.com</a></li>
+        <li><a href="tel:9497351284">949-735-1284</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fth">Location</div>
+      <ul class="ftul">
+        <li><a href="#">Newport Beach, CA</a></li>
+        <li><a href="#">Southern California + Beyond</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ftbot">
+    <span class="ftc">&copy; 2026 29 Eleven Interiors</span>
+    <span class="ftc">29eleveninteriors.com</span>
+  </div>
+</footer>
+
+</div><!-- /.page-wrap -->
+</main>
+
+<!-- Design N Page Transition + Letterbox Animation -->
+<script>
+// Page transitions &mdash; intercept internal links
+(function(){
+  var wrap = document.querySelector('.page-wrap');
+  if(!wrap) return;
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a');
+    if(!a) return;
+    var href = a.getAttribute('href');
+    if(!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:') || a.target === '_blank') return;
+    e.preventDefault();
+    wrap.classList.add('designL-out');
+    setTimeout(function(){ window.location.href = href; }, 320);
+  });
+})();
+</script>
+
+<script>
+// ─── LOGO INTRO CLEANUP ───
+// ─── POPUP DELAY &mdash; only show once, backdrop click closes it ───
+const popEl = document.getElementById('pop');
+popEl.style.display = 'none';
+// Popup disabled for now — uncomment to re-enable
+// setTimeout(() => {
+//   popEl.style.display = 'flex';
+//   requestAnimationFrame(() => { popEl.classList.add('pop-visible'); });
+// }, 45000);
+// Click backdrop (not inner box) to close
+popEl.addEventListener('click', function(e) {
+  if(e.target === popEl) {
+    popEl.classList.remove('pop-visible');
+    // Reset stroke-dashoffset so the draw animation replays next time
+    var envPaths = popEl.querySelectorAll('.pop-env');
+    var flapPaths = popEl.querySelectorAll('.pop-flap');
+    envPaths.forEach(function(p){ p.style.transition='none'; p.style.strokeDashoffset='72'; });
+    flapPaths.forEach(function(p){ p.style.transition='none'; p.style.strokeDashoffset='30'; });
+    setTimeout(function(){
+      envPaths.forEach(function(p){ p.style.transition=''; p.style.strokeDashoffset=''; });
+      flapPaths.forEach(function(p){ p.style.transition=''; p.style.strokeDashoffset=''; });
+      popEl.style.display = 'none';
+    }, 50);
+  }
+});
+
+// ─── HERO: Auto-size to show full 3:2 image, no cropping ───
+(function(){
+  const hero = document.querySelector('.hero');
+  const ratio = 2/3; // height = width × (2/3) for 3:2 landscape
+  function sizeHero(){
+    const w = hero.offsetWidth;
+    hero.style.height = Math.round(w * ratio) + 'px';
+  }
+  sizeHero();
+  window.addEventListener('resize', sizeHero);
+})();
+
+// ─── HERO: STILLS SLIDESHOW ───
+// Strategy: video plays continuously. Every 8s we briefly overlay a still photo
+// for 4s, then fade back to video &mdash; mimicking the editorial intercut feel.
+const stills = document.querySelectorAll('.still-layer .still');
+const dots = document.querySelectorAll('.dot');
+const mediaType = document.getElementById('media-type');
+let stillIdx = -1; // -1 = showing video
+let heroMode = 'video'; // 'video' | 'still'
+
+function showStill(i) {
+  stills.forEach((s,idx) => s.classList.toggle('on', idx === i));
+  dots.forEach((d,idx) => d.classList.toggle('on', idx === i));
+  mediaType.textContent = 'Photography';
+  stillIdx = i;
+  heroMode = 'still';
+}
+
+function showVideo() {
+  stills.forEach(s => s.classList.remove('on'));
+  dots.forEach(d => d.classList.remove('on'));
+  mediaType.textContent = 'Live';
+  stillIdx = -1;
+  heroMode = 'video';
+}
+
+function goStill(i) {
+  showStill(i);
+  clearInterval(heroTimer);
+  heroTimer = setInterval(cycleMoments, 4000);
+}
+
+let phase = 0;
+// Sequence: video(8s) &rarr; still1(5s) &rarr; video(8s) &rarr; still2(5s) &rarr; ...
+const sequence = ['still','still','still','still','still'];
+const stillMap = [0,1,2,3,4];
+let seqIdx = 0;
+
+function cycleMoments() {
+  const next = sequence[seqIdx % sequence.length];
+  if(false && next === 'video') {
+    showVideo();
+    clearInterval(heroTimer);
+    heroTimer = setInterval(cycleMoments, 4000);
+  } else {
+    const sIdx = stillMap[seqIdx % 5];
+    showStill(sIdx);
+    clearInterval(heroTimer);
+    heroTimer = setInterval(cycleMoments, 4000);
+  }
+  seqIdx++;
+}
+
+showStill(0); seqIdx = 1; let heroTimer = setInterval(cycleMoments, 4000);
+
+// If video fails to load, always show stills
+const heroVid = document.getElementById('hero-vid');
+heroVid.addEventListener('error', () => { showStill(0); });
+heroVid.addEventListener('stalled', () => { if(heroMode==='video') showStill(0); });
+
+// ─── PORTFOLIO — (Design N: numbered reveal grid) ───
+
+
+// ─── FIREWORK REVEAL ENGINE — Buttonhook from last hashmark to "Reveal." ───
+const FW_GOLD=[212,200,154],FW_CHAMP=[184,168,112],FW_COPPER=[196,149,106];
+function fwRgba(c,a){return `rgba(${c[0]},${c[1]},${c[2]},${a})`}
+function fwGoldPick(){return [FW_GOLD,FW_CHAMP,FW_COPPER,[222,210,164],[200,185,130]][Math.floor(Math.random()*5)]}
+function fwBezier(t,p0,p1,p2){
+  const u=1-t;
+  return {x:u*u*p0.x+2*u*t*p1.x+t*t*p2.x, y:u*u*p0.y+2*u*t*p1.y+t*t*p2.y};
+}
+
+function launchFirework(){
+  const canvas=document.getElementById('fw-canvas');
+  const section=document.querySelector('.process');
+  if(!canvas||!section) return;
+  canvas.width=section.offsetWidth;
+  canvas.height=section.offsetHeight;
+  const ctx=canvas.getContext('2d');
+  const w=canvas.width,h=canvas.height;
+  const sectionRect=section.getBoundingClientRect();
+
+  // Launch from last hashmark (right edge of last step)
+  const lastStep=section.querySelector('.step:last-child');
+  const stepRect=lastStep.getBoundingClientRect();
+  const launchX=stepRect.right-sectionRect.left;
+  const launchY=(stepRect.top-sectionRect.top)-62;
+
+  // Burst over the word "Reveal."
+  const revealEl=document.getElementById('reveal-word');
+  const revealRect=revealEl.getBoundingClientRect();
+  const burstX=revealRect.left-sectionRect.left+revealRect.width/2;
+  const burstY=(revealRect.top-sectionRect.top)-8;
+
+  // Bezier: launch → arc up → curve left to burst
+  const p0={x:launchX,y:launchY};
+  const p2={x:burstX,y:burstY};
+  const apexY=Math.min(launchY,burstY)-h*0.25;
+  const p1={x:launchX-(launchX-burstX)*0.3,y:apexY};
+
+  // Subtle config (option 1)
+  const cfg={particles:28,burstRadius:70,trailDots:3};
+
+  let phase='rise',t=0,trail=[],glitterParticles=[],frame=0,flashAlpha=0;
+
+  function createGlitter(){
+    const count=cfg.particles*3;
+    const spreadX=cfg.burstRadius*1.2;
+    for(let i=0;i<count;i++){
+      const delay=Math.random()*40;
+      const roll=Math.random();
+      let size,alpha;
+      if(roll<.7){size=.3+Math.random()*.6;alpha=.25+Math.random()*.2;}
+      else if(roll<.9){size=.6+Math.random()*1;alpha=.35+Math.random()*.2;}
+      else{size=1+Math.random()*1.2;alpha=.5+Math.random()*.2;}
+      glitterParticles.push({
+        x:p2.x+(Math.random()-.5)*spreadX*2,y:p2.y-10+Math.random()*20,
+        vx:(Math.random()-.5)*.25,vy:0.15+Math.random()*0.35,
+        color:fwGoldPick(),life:250+Math.random()*100,maxLife:250+Math.random()*100,
+        size:size,baseAlphaMax:alpha,shimmer:Math.random()*Math.PI*2,
+        twinkleSpeed:.06+Math.random()*.14,delay:delay,active:false
+      });
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    frame++;
+
+    if(phase==='rise'){
+      t+=0.018;
+      if(t>1) t=1;
+      const pos=fwBezier(t,p0,p1,p2);
+      trail.push({x:pos.x+(Math.random()-.5)*2,y:pos.y});
+      if(trail.length>32) trail.shift();
+      for(let i=0;i<trail.length;i++){
+        const alpha=(i/trail.length)*.7,size=(i/trail.length)*2.5;
+        ctx.beginPath();ctx.arc(trail[i].x,trail[i].y,size,0,Math.PI*2);
+        ctx.fillStyle=fwRgba(FW_GOLD,alpha);ctx.fill();
+      }
+      for(let i=0;i<cfg.trailDots;i++){
+        const st=Math.max(0,t-Math.random()*.06);
+        const sp=fwBezier(st,p0,p1,p2);
+        ctx.beginPath();ctx.arc(sp.x+(Math.random()-.5)*6,sp.y+(Math.random()-.5)*6,.5+Math.random(),0,Math.PI*2);
+        ctx.fillStyle=fwRgba(FW_CHAMP,.3+Math.random()*.4);ctx.fill();
+      }
+      ctx.beginPath();ctx.arc(pos.x,pos.y,2.5,0,Math.PI*2);
+      ctx.fillStyle=fwRgba(FW_GOLD,.9);ctx.fill();
+      const grd=ctx.createRadialGradient(pos.x,pos.y,0,pos.x,pos.y,8);
+      grd.addColorStop(0,fwRgba(FW_GOLD,.3));grd.addColorStop(1,fwRgba(FW_GOLD,0));
+      ctx.beginPath();ctx.arc(pos.x,pos.y,8,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();
+      if(t>=1){phase='glitter';trail=[];flashAlpha=0.6;createGlitter();}
+    }
+
+    if(phase==='glitter'){
+      if(flashAlpha>0){
+        const fg=ctx.createRadialGradient(p2.x,p2.y,0,p2.x,p2.y,cfg.burstRadius);
+        fg.addColorStop(0,fwRgba(FW_GOLD,flashAlpha*.5));
+        fg.addColorStop(.5,fwRgba(FW_GOLD,flashAlpha*.2));
+        fg.addColorStop(1,fwRgba(FW_GOLD,0));
+        ctx.beginPath();ctx.arc(p2.x,p2.y,cfg.burstRadius,0,Math.PI*2);
+        ctx.fillStyle=fg;ctx.fill();
+        flashAlpha-=0.03;
+      }
+      let alive=0;
+      glitterParticles.forEach(p=>{
+        if(!p.active){if(p.delay<=0)p.active=true;else{p.delay--;return;}}
+        if(p.life<=0)return;
+        alive++;
+        p.x+=p.vx+Math.sin(frame*.02+p.shimmer)*.25;
+        p.y+=p.vy;
+        p.life--;
+        const lifePct=p.life/p.maxLife;
+        const fadeAlpha=lifePct<.4?lifePct/.4:1;
+        const baseAlpha=fadeAlpha*p.baseAlphaMax;
+        const twinkle=Math.sin(frame*p.twinkleSpeed+p.shimmer);
+        const glitterAlpha=twinkle>0.2?baseAlpha:baseAlpha*.1;
+        ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+        ctx.fillStyle=fwRgba(p.color,glitterAlpha);ctx.fill();
+        if(twinkle>.85&&p.size>1){
+          const sg=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.size*3);
+          sg.addColorStop(0,fwRgba(FW_GOLD,baseAlpha*.35));
+          sg.addColorStop(1,fwRgba(FW_GOLD,0));
+          ctx.beginPath();ctx.arc(p.x,p.y,p.size*3,0,Math.PI*2);
+          ctx.fillStyle=sg;ctx.fill();
+        }
+      });
+      if(alive===0&&glitterParticles.every(p=>p.active)){
+        phase='done';ctx.clearRect(0,0,w,h);return;
+      }
+    }
+    if(phase!=='done') requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+}
+
+// ─── AUTO-ANIMATE PROCESS BAR ON SCROLL ───
+function autoAnimateProcess(){
+  const steps=document.querySelectorAll('.process .step');
+  const prog=document.getElementById('prog');
+  if(!steps.length||!prog) return;
+  const pcts=[20,40,60,80,100];
+  let idx=0;
+  function nextStep(){
+    steps.forEach(s=>s.classList.remove('on'));
+    steps[idx].classList.add('on');
+    prog.style.width=pcts[idx]+'%';
+    idx++;
+    if(idx<steps.length){
+      setTimeout(nextStep,2000);
+    } else {
+      setTimeout(launchFirework,500);
+      setTimeout(()=>{
+        idx=0;
+        steps.forEach(s=>s.classList.remove('on'));
+        prog.style.width='0%';
+        setTimeout(nextStep,600);
+      },8000);
+    }
+  }
+  steps.forEach(s=>s.classList.remove('on'));
+  prog.style.width='0%';
+  setTimeout(nextStep,500);
+}
+let processStarted=false;
+const processSection=document.querySelector('.process');
+if(processSection){
+  const procObs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting&&!processStarted){
+        processStarted=true;
+        autoAnimateProcess();
+      }
+    });
+  },{threshold:0.3});
+  procObs.observe(processSection);
+}
+
+</script>
+
+<!-- Nav interceptor removed &mdash; standalone pages use direct URLs -->
+
+</body>
+</html>

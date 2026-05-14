@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NC957DZB4M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NC957DZB4M');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shoppe &mdash; Coming Soon &mdash; 29 Eleven Interiors</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+
+<script>
+// WebP detection for CSS background images
+(function(){var i=new Image;i.onload=i.onerror=function(){
+if(i.height===2)document.documentElement.classList.add('webp')};
+i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';})();
+</script>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+:root{
+  --slate:#1e2630;
+  --slate2:#252f3c;
+  --steel:#2e3d4e;
+  --fog:#8a9aaa;
+  --mist:#b8c4cc;
+  --ice:#dde6ec;
+  --snow:#ffffff;
+  --champ:#d4c89a;
+  --champ2:#b8a870;
+  --white:#fefefe;
+  --nav:210px;
+}
+/* LEFT NAV */
+.nav{position:fixed;left:0;top:0;bottom:0;width:var(--nav);background:transparent;display:flex;flex-direction:column;padding:40px 28px;z-index:500}
+.ncta{display:inline-block;margin-bottom:10px;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--champ2);text-decoration:none;transition:color .2s;font-weight:400}
+/* HERO */
+.phero{height:68vh;position:relative;overflow:hidden}
+@keyframes heroKB{0%{transform:scale(1)}100%{transform:scale(1.06)}}
+.phero-bg{position:absolute;inset:0;background:url('./images/general/found-and-styled-003.jpg') center/cover no-repeat;animation:heroKB 18s ease infinite alternate}
+.phero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,38,48,.15) 0%,transparent 35%,rgba(30,38,48,.7) 100%)}
+.phero::before,.phero::after{content:'';position:absolute;left:0;right:0;height:48px;background:var(--slate);z-index:3}
+.phero::before{top:0}
+.phero::after{bottom:0}
+.phero-content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:flex-end;padding:0 72px 84px}
+.phero-eyebrow{font-size:7.5px;letter-spacing:.42em;text-transform:uppercase;color:rgba(254,254,254,.48);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.phero-eyebrow span{width:20px;height:1px;background:rgba(254,254,254,.28);display:block}
+.phero-h1{font-family:'Libre Baskerville',serif;font-size:clamp(44px,5vw,68px);line-height:1.06;color:#fefefe}
+.phero-h1 em{font-style:italic;color:var(--champ);display:block}
+.phero-sub{font-size:11px;line-height:1.9;font-weight:200;color:rgba(254,254,254,.52);max-width:480px;margin-top:18px}
+/* INTRO STRIP */
+.intro-strip{background:var(--slate2);padding:44px 72px;display:flex;align-items:center;justify-content:space-between;gap:48px;border-bottom:1px solid rgba(255,255,255,.04)}
+.intro-strip-text{font-family:'Libre Baskerville',serif;font-style:italic;font-size:16px;color:rgba(254,254,254,.55);line-height:1.7;max-width:600px}
+.intro-strip-badge{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.intro-strip-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--champ);animation:pulse 2.5s ease infinite}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+.intro-strip-badge-text{font-size:7.5px;letter-spacing:.3em;text-transform:uppercase;color:rgba(254,254,254,.35)}
+/* COMING SOON ANNOUNCEMENT */
+.cs-announce{text-align:center;padding:96px 72px 100px;background:var(--slate);position:relative}
+.cs-badge{display:none}
+.cs-animated{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:72px}
+.cs-main-text{font-family:'Outfit',sans-serif;font-weight:400;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);opacity:0;animation:csTextFade 1s ease forwards;animation-delay:.2s}
+@keyframes csTextFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.cs-line-wrap{position:relative;width:280px;height:4px;display:flex;align-items:center;justify-content:center}
+.cs-line{position:absolute;height:1px;width:0;background:linear-gradient(90deg,transparent 0%,var(--champ2) 20%,var(--champ2) 80%,transparent 100%);animation:csLineExpand 1.4s ease-out forwards;animation-delay:1s}
+@keyframes csLineExpand{from{width:0}to{width:100%}}
+.cs-sub-text{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:0;animation:csSubFade .8s ease forwards;animation-delay:2.2s}
+@keyframes csSubFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.cs-sub-inner{background:linear-gradient(105deg,#8a7045 0%,#c4956a 20%,#f0d9a8 40%,#ffe8c4 50%,#f0d9a8 60%,#c4956a 80%,#8a7045 100%);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:csShimmer 3s ease-in-out infinite;animation-delay:3s}
+@keyframes csShimmer{0%{background-position:100% 50%}100%{background-position:-100% 50%}}
+.cs-h2{font-family:'Libre Baskerville',serif;font-size:38px;line-height:1.25;color:var(--ice);margin-bottom:18px}
+.cs-h2 em{font-style:italic;color:var(--champ)}
+.cs-body{font-size:12px;line-height:1.9;font-weight:300;color:var(--mist);max-width:560px;margin:0 auto}
+/* PREVIEW + CTA WRAPPER */
+.preview-wrap{position:relative;height:840px;overflow:hidden}
+/* PREVIEW GRID (blurred) */
+.preview-grid{padding:48px 72px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative}
+.preview-grid::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,rgba(255,255,255,.85) 60%,var(--snow) 100%);z-index:2;pointer-events:none}
+.preview-card{position:relative}
+.preview-img{width:100%;aspect-ratio:3/4;background-size:cover;background-position:center;filter:blur(6px) saturate(.7);opacity:.55;transition:none}
+.preview-info{padding:16px 2px 0;filter:blur(4px);opacity:.4}
+.preview-brand{font-size:7px;letter-spacing:.28em;text-transform:uppercase;color:var(--fog);margin-bottom:6px}
+.preview-name{font-family:'Libre Baskerville',serif;font-size:15px;color:var(--slate);line-height:1.3;margin-bottom:6px}
+.preview-price{font-size:12px;font-weight:300;color:var(--fog);letter-spacing:.06em}
+/* UNLOCK CTA */
+.unlock-cta{position:absolute;bottom:0;left:0;right:0;z-index:5;text-align:center;padding:0 72px 72px}
+.unlock-inner{background:var(--slate);padding:56px 64px;max-width:600px;margin:0 auto}
+.unlock-icon{font-size:28px;margin-bottom:16px;opacity:.6}
+.unlock-ey{font-size:7.5px;letter-spacing:.36em;text-transform:uppercase;color:var(--champ);margin-bottom:14px}
+.unlock-h3{font-family:'Libre Baskerville',serif;font-size:24px;color:#fefefe;line-height:1.3;margin-bottom:12px}
+.unlock-h3 em{font-style:italic;color:var(--champ)}
+.unlock-p{font-size:11px;line-height:1.8;font-weight:300;color:var(--fog);margin-bottom:24px}
+.unlock-btn{display:inline-block;padding:14px 36px;border:1px solid var(--champ2);font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--champ);background:none;text-decoration:none;transition:all .3s;cursor:pointer}
+.unlock-btn:hover{background:var(--champ2);color:var(--slate)}
+/* VISION SECTION (replaces Featured Edit) */
+.vision{display:grid;grid-template-columns:1fr 1fr;min-height:80vh}
+.vision-image{position:relative;overflow:hidden}
+.vision-image-bg{position:absolute;inset:0;background:url('./images/general/found-and-styled-004.jpg') center/cover no-repeat;animation:feKB 20s ease infinite alternate}
+@keyframes feKB{0%{transform:scale(1)}100%{transform:scale(1.05)}}
+.vision-content{background:var(--slate);padding:96px 72px;display:flex;flex-direction:column;justify-content:center}
+.vision-ey{font-size:8px;letter-spacing:.36em;text-transform:uppercase;color:var(--fog);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.vision-ey::before{content:'';width:18px;height:1px;background:var(--champ2)}
+.vision-h2{font-family:'Libre Baskerville',serif;font-size:40px;line-height:1.1;color:#fefefe;margin-bottom:18px}
+.vision-h2 em{font-style:italic;color:var(--champ)}
+.vision-body{font-size:11.5px;line-height:1.9;font-weight:300;color:var(--mist);margin-bottom:28px;max-width:420px}
+.vision-items{margin-bottom:32px}
+.vision-item{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.vision-item-dot{width:5px;height:5px;border-radius:50%;background:var(--champ2);flex-shrink:0}
+.vision-item-text{font-size:10.5px;letter-spacing:.06em;color:var(--mist);font-weight:300}
+/* HOW IT WORKS */
+.how-strip{padding:96px 72px;background:var(--snow)}
+.how-header{text-align:center;margin-bottom:64px}
+.how-eyebrow{font-size:8px;letter-spacing:.36em;text-transform:uppercase;color:var(--fog);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:14px}
+.how-eyebrow::before,.how-eyebrow::after{content:'';width:24px;height:1px;background:var(--ice)}
+.how-h2{font-family:'Libre Baskerville',serif;font-size:36px;line-height:1.15;color:var(--slate)}
+.how-h2 em{font-style:italic;color:var(--champ2)}
+.how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.how-step{text-align:center}
+.how-num{font-family:'Libre Baskerville',serif;font-style:italic;font-size:42px;color:var(--champ2);opacity:.6;display:block;margin-bottom:12px}
+.how-step-title{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--slate);margin-bottom:10px;font-weight:500}
+.how-step-desc{font-size:11px;line-height:1.7;font-weight:300;color:var(--fog);max-width:200px;margin:0 auto}
+/* CTA */
+.cta-strip{position:relative;min-height:340px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.cta-bg{position:absolute;inset:0;background:url('./images/general/found-and-styled-005.jpg') center/cover no-repeat}
+.cta-bg::after{content:'';position:absolute;inset:0;background:rgba(30,38,48,.65)}
+.cta-inner{position:relative;z-index:2;max-width:500px;padding:64px 32px}
+.cta-eyebrow{font-size:8px;letter-spacing:.36em;text-transform:uppercase;color:var(--champ);margin-bottom:14px}
+.cta-h2{font-family:'Libre Baskerville',serif;font-size:36px;line-height:1.1;color:#fefefe;margin-bottom:14px}
+.cta-h2 em{font-style:italic;color:var(--champ)}
+.cta-p{font-size:11px;line-height:1.8;font-weight:300;color:rgba(254,254,254,.55);margin-bottom:28px}
+.cta-btn{display:inline-block;padding:14px 38px;border:1px solid var(--champ2);font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:#fefefe;text-decoration:none;transition:all .3s}
+.cta-btn:hover{background:var(--champ2);color:var(--slate)}
+/* FOOTER */
+footer{background:var(--slate);padding:80px 72px 48px}
+.ftg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+.ftlog img{width:130px;margin-bottom:20px}
+.fttag{font-size:10px;line-height:1.8;font-weight:300;color:var(--fog);max-width:260px}
+.fth{font-size:7.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--champ2);margin-bottom:18px}
+.ftul a{font-size:10.5px;color:var(--mist);text-decoration:none;transition:color .2s;font-weight:300}
+.ftul a:hover{color:#fefefe}
+.ftbot{padding-top:28px;display:flex;justify-content:space-between}
+.ftc{font-size:8px;letter-spacing:.14em;color:var(--fog)}
+/* REVEAL ANIMATION */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+/* ─── RESPONSIVE: TABLET ─── */
+@media(max-width:1023px){
+  .phero{height:55vh}
+  .phero-content{padding:0 28px 64px}
+  .phero-h1{font-size:48px}
+  .intro-strip{padding:36px 28px;gap:28px}
+  .intro-strip-text{font-size:14px}
+  .cs-announce{padding:72px 28px 80px}
+  .cs-h2{font-size:30px}
+  .preview-wrap{height:600px}
+  .preview-grid{padding:36px 28px 20px;grid-template-columns:repeat(2,1fr);gap:20px}
+  .unlock-cta{padding:0 28px 56px}
+  .vision{grid-template-columns:1fr;min-height:auto}
+  .vision-image{min-height:360px}
+  .vision-content{padding:72px 28px}
+  .vision-h2{font-size:32px}
+  .how-strip{padding:72px 28px}
+  .how-h2{font-size:28px}
+  .how-steps{grid-template-columns:repeat(2,1fr);gap:32px}
+  .cta-strip{min-height:280px}
+  .cta-h2{font-size:28px}
+}
+/* ─── RESPONSIVE: PHONE ─── */
+@media(max-width:767px){
+  .phero{height:50vh}
+  .phero-content{padding:0 20px 56px}
+  .phero-h1{font-size:36px}
+  .intro-strip{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:16px}
+  .intro-strip-text{font-size:13px}
+  .cs-announce{padding:56px 20px 64px}
+  .cs-h2{font-size:24px}
+  .cs-body{font-size:11px}
+  .preview-wrap{height:480px}
+  .preview-grid{padding:28px 20px 16px;grid-template-columns:1fr;gap:16px}
+  .unlock-cta{padding:0 20px 40px}
+  .unlock-inner{padding:40px 28px}
+  .unlock-h3{font-size:20px}
+  .vision{grid-template-columns:1fr;min-height:auto}
+  .vision-image{min-height:280px}
+  .vision-content{padding:56px 20px}
+  .vision-h2{font-size:26px}
+  .how-strip{padding:56px 20px}
+  .how-h2{font-size:24px}
+  .how-steps{grid-template-columns:1fr;gap:28px}
+  .how-num{font-size:32px}
+  .cta-strip{min-height:260px}
+  .cta-h2{font-size:24px}
+  .cta-inner{padding:48px 20px}
+}
+</style>
+<meta name="description" content="Shop curated home decor and one-of-a-kind finds from 29 Eleven Interiors. Early access coming soon.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shoppe — 29 Eleven Interiors">
+<meta property="og:description" content="Curated home decor, vintage finds, and designer picks. Early access coming soon.">
+<meta property="og:image" content="https://29eleveninteriors.com/images/heroes/RGP-1454.jpg">
+<meta property="og:url" content="https://29eleveninteriors.com/shoppe.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+</head>
+<body>
+
+<!-- MOBILE NAV BAR -->
+<div class="mobile-nav">
+  <img class="mobile-nav-logo" src="./images/brand/intro-logo-1.png" alt="29 Eleven Interiors" onclick="document.querySelector('.nav-overlay').classList.add('open')">
+  <button class="mobile-nav-menu" onclick="document.querySelector('.nav-overlay').classList.add('open')">Menu</button>
+</div>
+<!-- MOBILE NAV OVERLAY -->
+<div class="nav-overlay">
+  <button class="nav-overlay-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <img class="nav-overlay-logo" src="./images/brand/intro-logo-1.png" alt="29 Eleven Interiors">
+  <div class="nav-overlay-line"></div>
+  <a href="./index.html">Home</a>
+  <a href="./our-story.html">Our Story</a>
+  <a href="./interiors.html">Interiors</a>
+  <a href="./services.html">Services</a>
+  <a href="./shoppe.html" class="on">Shoppe</a>
+  <a href="./the-edit.html">The Edit</a>
+  <a href="./inquire.html">Inquire</a>
+  <div class="nav-overlay-line" style="margin-top:8px"></div>
+  <div class="nav-overlay-loc">Newport Beach, CA</div>
+</div>
+
+<!-- LEFT NAV -->
+<nav class="nav">
+  <div class="nl"><picture><source srcset="./images/general/found-and-styled-001.webp" type="image/webp"><img src="./images/general/found-and-styled-001.png" alt="29 Eleven Interiors"></picture></div>
+  <ul class="nlinks">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./our-story.html">Our Story</a></li>
+    <li><a href="./interiors.html">Interiors</a></li>
+    <li><a href="./services.html">Services</a></li>
+    <li class="on"><a href="./shoppe.html">Shoppe</a></li>
+    <li><a href="./the-edit.html">The Edit</a></li>
+    <li><a href="./inquire.html">Inquire</a></li>
+    
+    
+    
+    
+    
+    
+  </ul>
+  <div class="nft">
+    <a href="./inquire.html" class="ncta">+ let&rsquo;s connect</a>
+    <div class="ncity">Newport Beach, CA</div>
+  </div>
+</nav>
+
+<main>
+<div class="page-wrap">
+
+<!-- HERO -->
+<section class="phero">
+  <div class="phero-bg"></div>
+  <div class="phero-content">
+    <h1 class="phero-h1">The<em>Shoppe</em></h1>
+  </div>
+</section>
+
+
+<!-- COMING SOON ANNOUNCEMENT -->
+<div class="cs-announce">
+  <div class="cs-animated">
+    <div class="cs-main-text">Coming Soon</div>
+    <div class="cs-line-wrap"><div class="cs-line"></div></div>
+    <div class="cs-sub-text"><span class="cs-sub-inner">A New Way to Shop Design</span></div>
+  </div>
+  <h2 class="cs-h2">Something beautiful<br>is <em>on its way</em></h2>
+  <p class="cs-body">A curated collection of the furniture, lighting, textiles, + objects that define the 29 Eleven aesthetic. Every piece hand-picked, every selection intentional, made available directly to you.</p>
+</div>
+
+<!-- PREVIEW GRID (blurred tease) -->
+<div class="preview-wrap">
+<div class="preview-grid">
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/found-and-styled-006.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-brand">Curated Selection</div>
+      <div class="preview-name">Designer Armchair</div>
+      <div class="preview-price">$&mdash;</div>
+    </div>
+  </div>
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/found-and-styled-007.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-brand">Curated Selection</div>
+      <div class="preview-name">Statement Lighting</div>
+      <div class="preview-price">$&mdash;</div>
+    </div>
+  </div>
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/found-and-styled-008.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-brand">Curated Selection</div>
+      <div class="preview-name">Natural Textures</div>
+      <div class="preview-price">$&mdash;</div>
+    </div>
+  </div>
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/found-and-styled-009.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-brand">Curated Selection</div>
+      <div class="preview-name">Artisan Textiles</div>
+      <div class="preview-price">$&mdash;</div>
+    </div>
+  </div>
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/found-and-styled-010.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-brand">Curated Selection</div>
+      <div class="preview-name">Accent Pieces</div>
+      <div class="preview-price">$&mdash;</div>
+    </div>
+  </div>
+  <div class="preview-card">
+    <div class="preview-img" style="background-image:url('./images/general/found-and-styled-011.jpg')"></div>
+    <div class="preview-info">
+      <div class="preview-brand">Curated Selection</div>
+      <div class="preview-name">Collected Objects</div>
+      <div class="preview-price">$&mdash;</div>
+    </div>
+  </div>
+</div>
+
+<!-- UNLOCK CTA -->
+<div class="unlock-cta">
+  <div class="unlock-inner reveal">
+    <div class="unlock-ey">Early Access</div>
+    <h3 class="unlock-h3">Be the first<br>to <em>shop the collection</em></h3>
+    <p class="unlock-p">Sign up for early access + be notified the moment Shoppe goes live. Founding members receive priority access to new arrivals + exclusive studio picks.</p>
+    <a href="./inquire.html" class="unlock-btn">Request Early Access</a>
+  </div>
+</div>
+</div><!-- /.preview-wrap -->
+
+
+<!-- HOW IT WORKS -->
+<section class="how-strip">
+  <div class="how-header">
+    <div class="how-eyebrow">How It Works</div>
+    <h2 class="how-h2">From screen <em>to your home</em></h2>
+  </div>
+  <div class="how-steps">
+    <div class="how-step reveal">
+      <span class="how-num">01</span>
+      <div class="how-step-title">Browse</div>
+      <div class="how-step-desc">Explore our curated collection of designer-selected pieces.</div>
+    </div>
+    <div class="how-step reveal">
+      <span class="how-num">02</span>
+      <div class="how-step-title">Select</div>
+      <div class="how-step-desc">Add your favorites to your cart. Each piece ships directly to you.</div>
+    </div>
+    <div class="how-step reveal">
+      <span class="how-num">03</span>
+      <div class="how-step-title">Consult</div>
+      <div class="how-step-desc">Need styling advice? Our team offers placement guidance.</div>
+    </div>
+    <div class="how-step reveal">
+      <span class="how-num">04</span>
+      <div class="how-step-title">Enjoy</div>
+      <div class="how-step-desc">White-glove delivery brings your selection home, styled + ready.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Can&rsquo;t Wait?</div>
+    <h2 class="cta-h2">Let us <em>source it now.</em></h2>
+    <p class="cta-p">I have access to thousands of trade-exclusive pieces today. Tell me what you&rsquo;re looking for + I&rsquo;ll find it for you. No project required.</p>
+    <a href="./inquire.html" class="cta-btn">Start a Request</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftg">
+    <div>
+      <div class="ftlog"><picture><source srcset="./images/general/found-and-styled-002.webp" type="image/webp"><img src="./images/general/found-and-styled-002.png" alt="29 Eleven Interiors"></picture></div>
+      <div class="ft-services">Interior &bull; Architectural Design<br>Renovations &bull; New Construction<br>Fine Furnishings &bull; Home Styling</div>
+    </div>
+    <div>
+      <div class="fth">Studio</div>
+      <ul class="ftul">
+        <li><a href="./our-story.html">Our Story</a></li>
+        <li><a href="./interiors.html">Interiors</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./shoppe.html">Shoppe</a></li>
+        <li><a href="./the-edit.html">The Edit</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fth">Connect</div>
+      <ul class="ftul">
+        <li><a href="./inquire.html">Inquire</a></li>
+        <li><a href="#">@29eleveninteriors</a></li>
+        <li><a href="#">info@29eleveninteriors.com</a></li>
+        <li><a href="tel:9497351284">949-735-1284</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fth">Location</div>
+      <ul class="ftul">
+        <li><a href="#">Newport Beach, CA</a></li>
+        <li><a href="#">Southern California + Beyond</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ftbot">
+    <span class="ftc">&copy; 2026 29 Eleven Interiors</span>
+    <span class="ftc">29eleveninteriors.com</span>
+  </div>
+</footer>
+
+</div><!-- /.page-wrap -->
+
+<!-- Design N Page Transition -->
+<script>
+(function(){
+  var wrap = document.querySelector(".page-wrap");
+  if(!wrap) return;
+  document.addEventListener("click", function(e){
+    var a = e.target.closest("a");
+    if(!a) return;
+    var href = a.getAttribute("href");
+    if(!href || href.startsWith("#") || href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:") || a.target === "_blank") return;
+    e.preventDefault();
+    wrap.classList.add("designL-out");
+    setTimeout(function(){ window.location.href = href; }, 320);
+  });
+})();
+</script>
+
+</main>
+
+<script>
+// Scroll-based reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<script>
+// Internal navigation
+document.addEventListener('click', function(e) {
+  // nav: links replaced with real URLs during extraction;
+  // nav handler removed - using real URLs
+});
+</script>
+
+</body>
+</html>
