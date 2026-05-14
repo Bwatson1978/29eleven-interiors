@@ -1,123 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://29eleveninteriors.com/</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.29eleveninteriors.com/</loc>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://29eleveninteriors.com/our-story.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://29eleveninteriors.com/interiors.html</loc>
-    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.29eleveninteriors.com/interiors.html</loc>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://29eleveninteriors.com/services.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://29eleveninteriors.com/shoppe.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://29eleveninteriors.com/the-edit.html</loc>
-    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/inquire.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.29eleveninteriors.com/services.html</loc>
     <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/projects/harbor-cove.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://www.29eleveninteriors.com/our-story.html</loc>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.29eleveninteriors.com/inquire.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.29eleveninteriors.com/shoppe.html</loc>
     <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/projects/mesa-del-mar.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.29eleveninteriors.com/the-edit.html</loc>
     <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/projects/lake-arrowhead.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://www.29eleveninteriors.com/projects/harbor-cove.html</loc>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/articles/design-philosophy.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://www.29eleveninteriors.com/projects/lake-arrowhead.html</loc>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.29eleveninteriors.com/projects/mesa-del-mar.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.29eleveninteriors.com/articles/design-philosophy.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/articles/harbor-cove-reveal.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.29eleveninteriors.com/articles/california-light.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/articles/lake-arrowhead-reveal.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.29eleveninteriors.com/articles/choosing-a-designer.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/articles/california-light.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.29eleveninteriors.com/articles/how-we-source.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/articles/choosing-a-designer.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.29eleveninteriors.com/articles/indoor-outdoor-living.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/articles/how-we-source.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.29eleveninteriors.com/articles/kitchen-decisions.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/articles/indoor-outdoor-living.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.29eleveninteriors.com/articles/textures-2026.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/articles/kitchen-decisions.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.29eleveninteriors.com/articles/builder-timelines.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/articles/textures-2026.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.29eleveninteriors.com/articles/harbor-cove-reveal.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://29eleveninteriors.com/articles/builder-timelines.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.29eleveninteriors.com/articles/lake-arrowhead-reveal.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>

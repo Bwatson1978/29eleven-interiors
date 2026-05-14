@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /hero-select.html
 
-Sitemap: https://29eleveninteriors.com/sitemap.xml
+Sitemap: https://www.29eleveninteriors.com/sitemap.xml
