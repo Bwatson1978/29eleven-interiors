@@ -710,8 +710,7 @@ function submitForm(){
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  // Replace YOUR_FORM_ID with your Formspree form ID
-  fetch('https://formspree.io/f/YOUR_FORM_ID', {
+  fetch('https://formspree.io/f/xlgzyldd', {
     method: 'POST',
     headers: {'Content-Type':'application/json','Accept':'application/json'},
     body: JSON.stringify(data)

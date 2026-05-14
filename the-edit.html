@@ -295,12 +295,37 @@ footer{background:var(--slate2);padding:64px 72px 30px}
     <div class="nl-ey">Be the First to Read</div>
     <h3 class="nl-h3">Get The Edit<br><em>before anyone else</em></h3>
     <p class="nl-p">Sign up + I&rsquo;ll send you the first articles the moment they go live. No spam, no fluff. Just the things I think are worth saying.</p>
-    <div class="nl-form">
-      <input class="nl-input" type="text" placeholder="First name">
-      <input class="nl-input" type="email" placeholder="Email address">
-      <button class="nl-submit">Notify Me</button>
-      <div class="nl-fine">No spam. Unsubscribe any time.</div>
+    <div class="nl-form" id="editWaitlistForm">
+      <input class="nl-input" type="text" id="editName" placeholder="First name">
+      <input class="nl-input" type="email" id="editEmail" placeholder="Email address">
+      <button class="nl-submit" onclick="submitEditWaitlist(event)">Notify Me</button>
+      <div class="nl-fine" id="editFine">No spam. Unsubscribe any time.</div>
     </div>
+    <script>
+    function submitEditWaitlist(e){
+      e.preventDefault();
+      var name=document.getElementById('editName').value;
+      var email=document.getElementById('editEmail').value;
+      if(!name||!email){alert('Please enter your name and email.');return;}
+      var btn=e.target;btn.textContent='Sending...';btn.disabled=true;
+      fetch('https://formspree.io/f/mojrolvw',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({name:name,email:email,source:'The Edit Waitlist'})
+      }).then(function(r){
+        if(r.ok){
+          document.getElementById('editWaitlistForm').innerHTML='<div style="font-family:Libre Baskerville,serif;font-size:18px;color:var(--champ);font-style:italic;padding:16px 0">You\'re on the list.</div><div class="nl-fine">We\'ll let you know when The Edit goes live.</div>';
+          if(typeof gtag==='function') gtag('event','sign_up',{event_category:'waitlist',event_label:'the_edit'});
+        } else {
+          alert('Something went wrong. Please try again.');
+          btn.textContent='Notify Me';btn.disabled=false;
+        }
+      }).catch(function(){
+        alert('Network error. Please check your connection.');
+        btn.textContent='Notify Me';btn.disabled=false;
+      });
+    }
+    </script>
   </div>
 </div><!-- /preview-wrap -->
 </div>

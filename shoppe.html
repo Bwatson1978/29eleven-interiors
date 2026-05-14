@@ -97,6 +97,13 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 .unlock-p{font-size:11px;line-height:1.8;font-weight:300;color:var(--fog);margin-bottom:24px}
 .unlock-btn{display:inline-block;padding:14px 36px;border:1px solid var(--champ2);font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:var(--champ);background:none;text-decoration:none;transition:all .3s;cursor:pointer}
 .unlock-btn:hover{background:var(--champ2);color:var(--slate)}
+.unlock-form{display:flex;gap:8px;margin-top:20px;max-width:420px;margin-left:auto;margin-right:auto}
+.unlock-input{flex:1;padding:12px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(212,200,154,.25);font-family:'Outfit',sans-serif;font-size:11px;color:#fefefe;outline:none;transition:border-color .2s}
+.unlock-input::placeholder{color:rgba(255,255,255,.3)}
+.unlock-input:focus{border-color:var(--champ2)}
+.unlock-submit{padding:12px 24px;background:var(--champ2);border:none;font-family:'Outfit',sans-serif;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);cursor:pointer;transition:background .2s;white-space:nowrap}
+.unlock-submit:hover{background:var(--champ)}
+.unlock-fine{font-size:9px;color:rgba(255,255,255,.25);margin-top:10px;font-weight:300}
 /* VISION SECTION (replaces Featured Edit) */
 .vision{display:grid;grid-template-columns:1fr 1fr;min-height:80vh}
 .vision-image{position:relative;overflow:hidden}
@@ -176,6 +183,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
   .unlock-cta{padding:0 20px 40px}
   .unlock-inner{padding:40px 28px}
   .unlock-h3{font-size:20px}
+  .unlock-form{flex-direction:column}
   .vision{grid-template-columns:1fr;min-height:auto}
   .vision-image{min-height:280px}
   .vision-content{padding:56px 20px}
@@ -330,7 +338,14 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
     <div class="unlock-ey">Early Access</div>
     <h3 class="unlock-h3">Be the first<br>to <em>shop the collection</em></h3>
     <p class="unlock-p">Sign up for early access + be notified the moment Shoppe goes live. Founding members receive priority access to new arrivals + exclusive studio picks.</p>
-    <a href="./inquire.html" class="unlock-btn">Request Early Access</a>
+    <div id="shoppeWaitlistForm">
+      <div class="unlock-form">
+        <input class="unlock-input" type="text" id="shoppeName" placeholder="First name">
+        <input class="unlock-input" type="email" id="shoppeEmail" placeholder="Email address">
+        <button class="unlock-submit" onclick="submitShoppeWaitlist()">Join Waitlist</button>
+      </div>
+      <div class="unlock-fine">No spam. We'll only email you when Shoppe launches.</div>
+    </div>
   </div>
 </div>
 </div><!-- /.preview-wrap -->
@@ -454,6 +469,30 @@ document.addEventListener('click', function(e) {
 });
 </script>
 
+<script>
+function submitShoppeWaitlist(){
+  var name=document.getElementById('shoppeName').value;
+  var email=document.getElementById('shoppeEmail').value;
+  if(!name||!email){alert('Please enter your name and email.');return;}
+  var btn=document.querySelector('.unlock-submit');btn.textContent='Sending...';btn.disabled=true;
+  fetch('https://formspree.io/f/xgodjzvz',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:name,email:email,source:'Shoppe Waitlist'})
+  }).then(function(r){
+    if(r.ok){
+      document.getElementById('shoppeWaitlistForm').innerHTML='<div style="font-family:Libre Baskerville,serif;font-size:18px;color:var(--champ);font-style:italic;padding:16px 0;text-align:center">You\'re on the list.</div><div class="unlock-fine">We\'ll notify you the moment Shoppe goes live.</div>';
+      if(typeof gtag==='function') gtag('event','sign_up',{event_category:'waitlist',event_label:'shoppe'});
+    } else {
+      alert('Something went wrong. Please try again.');
+      btn.textContent='Join Waitlist';btn.disabled=false;
+    }
+  }).catch(function(){
+    alert('Network error. Please check your connection.');
+    btn.textContent='Join Waitlist';btn.disabled=false;
+  });
+}
+</script>
 <script src="./js/ga-events.js" defer></script>
 </body>
 </html>
