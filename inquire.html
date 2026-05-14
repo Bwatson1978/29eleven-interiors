@@ -103,9 +103,14 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 .field-note{font-size:9px;color:var(--mist);margin-top:4px;font-weight:300}
 /* Attach buttons */
 .iq-attach{display:flex;gap:10px;margin-bottom:14px;margin-top:20px}
-.iq-attach-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border:1px dashed var(--ice);background:transparent;color:var(--fog);font-family:'Outfit',sans-serif;font-size:8px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:border-color .3s, color .3s;border-radius:3px}
+.iq-attach-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border:1px dashed var(--ice);background:transparent;color:var(--fog);font-family:'Outfit',sans-serif;font-size:8px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:border-color .3s, color .3s;border-radius:3px;box-sizing:border-box}
 .iq-attach-btn:hover{border-color:var(--champ2);color:var(--champ2)}
 .iq-attach-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+/* File list */
+.file-item{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(30,38,48,.03);border:1px solid var(--ice);margin-bottom:4px;font-size:10px;color:var(--fog);font-family:'Outfit',sans-serif}
+.file-item span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.file-remove{background:none;border:none;color:var(--mist);cursor:pointer;font-size:14px;padding:0 0 0 12px;transition:color .2s}
+.file-remove:hover{color:var(--champ2)}
 /* Thank you state */
 .thank-you{display:none;text-align:center;padding:40px 0}
 .ty-icon{font-size:32px;margin-bottom:20px;color:var(--champ2)}
@@ -322,6 +327,9 @@ footer{background:var(--slate2);padding:64px 72px 30px}
       </div>
     </div>
 
+    <form id="inquiryForm" enctype="multipart/form-data">
+    <!-- Hidden field for services chips -->
+    <input type="hidden" name="services" id="servicesHidden" value="">
     <!-- SECTION 1 &mdash; About You -->
     <div class="form-section active" id="sec1">
       <div class="field-row">
@@ -449,10 +457,13 @@ footer{background:var(--slate2);padding:64px 72px 30px}
         <div class="field">
           <label>Share photos or files of your space (optional)</label>
           <div class="iq-attach">
-            <button type="button" class="iq-attach-btn"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</button>
-            <button type="button" class="iq-attach-btn"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</button>
+            <label class="iq-attach-btn" for="photoInput"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</label>
+            <input type="file" id="photoInput" name="attachments" accept="image/*,video/*" capture="environment" multiple style="display:none" onchange="updateFileList()">
+            <label class="iq-attach-btn" for="fileInput"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</label>
+            <input type="file" id="fileInput" name="attachments" accept="image/*,video/*,.pdf,.doc,.docx,.dwg,.sketch,.ai" multiple style="display:none" onchange="updateFileList()">
           </div>
-          <span class="field-note">Floor plans, inspiration images, or photos of your current space help us understand the project faster.</span>
+          <div id="fileList" style="margin-top:8px"></div>
+          <span class="field-note">Floor plans, inspiration images, or photos of your current space help us understand the project faster. Max 10MB per file.</span>
         </div>
       </div>
       <div class="form-nav">
@@ -461,6 +472,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
       </div>
     </div>
 
+    </form>
     <!-- THANK YOU -->
     <div class="thank-you" id="thanks">
       <div class="ty-icon">&#10022;</div>
@@ -577,50 +589,75 @@ function selectBudget(el){
   document.querySelectorAll('.bopt').forEach(b=>b.classList.remove('selected'));
   el.classList.add('selected');
 }
+// Track all selected files across both inputs
+var allFiles = [];
+function updateFileList(){
+  // Merge files from both inputs
+  var photoFiles = document.getElementById('photoInput').files;
+  var docFiles = document.getElementById('fileInput').files;
+  allFiles = [];
+  for(var i=0;i<photoFiles.length;i++) allFiles.push({src:'photo',file:photoFiles[i]});
+  for(var i=0;i<docFiles.length;i++) allFiles.push({src:'file',file:docFiles[i]});
+  renderFileList();
+}
+function renderFileList(){
+  var list = document.getElementById('fileList');
+  if(!allFiles.length){ list.innerHTML=''; return; }
+  var html = '';
+  allFiles.forEach(function(f,i){
+    var size = f.file.size<1024*1024 ? (f.file.size/1024).toFixed(0)+'KB' : (f.file.size/(1024*1024)).toFixed(1)+'MB';
+    html += '<div class="file-item"><span>'+f.file.name+' ('+size+')</span><button type="button" class="file-remove" onclick="removeFile('+i+')">&times;</button></div>';
+  });
+  list.innerHTML=html;
+}
+function removeFile(idx){
+  allFiles.splice(idx,1);
+  // Clear the native inputs (can't selectively remove files, so we clear both)
+  document.getElementById('photoInput').value='';
+  document.getElementById('fileInput').value='';
+  renderFileList();
+}
+
 function submitForm(){
-  // Collect all form data
-  var data = {};
-  // Text inputs + textareas
-  document.querySelectorAll('.split-right input, .split-right textarea').forEach(function(el){
-    if(el.name) data[el.name] = el.value;
-  });
-  // Select dropdowns
-  document.querySelectorAll('.split-right select').forEach(function(el){
-    if(el.name) data[el.name] = el.value;
-  });
-  // Service chips (selected)
+  // Update hidden services field from chips
   var chips = [];
   document.querySelectorAll('#chips .chip.selected').forEach(function(el){
     chips.push(el.textContent.trim());
   });
-  data['services'] = chips.join(', ') || 'None selected';
+  document.getElementById('servicesHidden').value = chips.join(', ') || 'None selected';
 
-  // Basic validation — require first name, last name, email
-  if(!data.first_name || !data.last_name || !data.email){
+  var form = document.getElementById('inquiryForm');
+  var fd = new FormData(form);
+
+  // Remove the raw file inputs from FormData (they duplicate) and re-add from allFiles
+  fd.delete('attachments');
+  allFiles.forEach(function(f){
+    fd.append('attachments',f.file,f.file.name);
+  });
+
+  // Basic validation
+  if(!fd.get('first_name') || !fd.get('last_name') || !fd.get('email')){
     alert('Please fill in your name and email before submitting.');
     return;
   }
 
-  // Send via Formspree
   var btn = document.querySelector('.btn-submit');
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  // Replace YOUR_FORM_ID with your Formspree form ID (e.g. xwpkgpkd)
+  // Replace YOUR_FORM_ID with your Formspree form ID
   fetch('https://formspree.io/f/YOUR_FORM_ID', {
     method: 'POST',
-    headers: {'Content-Type':'application/json','Accept':'application/json'},
-    body: JSON.stringify(data)
+    headers: {'Accept':'application/json'},
+    body: fd
   })
   .then(function(res){
     if(res.ok){
-      // Show thank-you state
       document.getElementById('sec3').classList.remove('active');
       document.getElementById('steps').style.display='none';
       document.querySelector('.form-header').style.display='none';
       document.getElementById('thanks').style.display='block';
       document.querySelector('.split-right').scrollTo({top:0,behavior:'smooth'});
-      // GA4 event
       if(typeof gtag==='function'){
         gtag('event','generate_lead',{event_category:'form',event_label:'inquiry_form'});
       }
