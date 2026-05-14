@@ -327,37 +327,37 @@ footer{background:var(--slate2);padding:64px 72px 30px}
       <div class="field-row">
         <div class="field">
           <label>First Name</label>
-          <input type="text" placeholder="First name">
+          <input type="text" name="first_name" placeholder="First name" required>
         </div>
         <div class="field">
           <label>Last Name</label>
-          <input type="text" placeholder="Last name">
+          <input type="text" name="last_name" placeholder="Last name" required>
         </div>
       </div>
       <div class="field-row solo" style="margin-bottom:16px">
         <div class="field">
           <label>Email</label>
-          <input type="email" placeholder="your@email.com">
+          <input type="email" name="email" placeholder="your@email.com" required>
         </div>
       </div>
       <div class="field-row solo" style="margin-bottom:16px">
         <div class="field">
           <label>Phone (optional)</label>
-          <input type="tel" placeholder="(949) 000-0000">
+          <input type="tel" name="phone" placeholder="(949) 000-0000">
         </div>
       </div>
       <div class="field-row solo">
         <div class="field">
           <label>How did you hear about us?</label>
-          <select>
+          <select name="how_did_you_hear">
             <option value="" disabled selected>Select one</option>
-            <option>Instagram</option>
-            <option>Referral from a friend</option>
-            <option>Houzz</option>
-            <option>Google search</option>
-            <option>As Seen In / Press</option>
-            <option>Returning client</option>
-            <option>Other</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Referral">Referral from a friend</option>
+            <option value="Houzz">Houzz</option>
+            <option value="Google">Google search</option>
+            <option value="Press">As Seen In / Press</option>
+            <option value="Returning">Returning client</option>
+            <option value="Other">Other</option>
           </select>
         </div>
       </div>
@@ -372,24 +372,24 @@ footer{background:var(--slate2);padding:64px 72px 30px}
       <div class="field-row solo" style="margin-bottom:20px">
         <div class="field">
           <label>Project Location</label>
-          <input type="text" placeholder="City, State">
+          <input type="text" name="location" placeholder="City, State">
           <span class="field-note">We serve Southern California + select nationwide projects.</span>
         </div>
       </div>
       <div class="field-row solo" style="margin-bottom:20px">
         <div class="field">
           <label>What type of project is this?</label>
-          <select>
+          <select name="project_type">
             <option value="" disabled selected>Select one</option>
-            <option>New construction &mdash; full interior</option>
-            <option>Whole home renovation</option>
-            <option>Single floor / partial renovation</option>
-            <option>Primary suite or bedroom</option>
-            <option>Kitchen or bath</option>
-            <option>Furnishings + d&eacute;cor only</option>
-            <option>Staging or styling</option>
-            <option>E-Design (remote)</option>
-            <option>Not sure yet</option>
+            <option value="New construction">New construction — full interior</option>
+            <option value="Whole home renovation">Whole home renovation</option>
+            <option value="Partial renovation">Single floor / partial renovation</option>
+            <option value="Primary suite/bedroom">Primary suite or bedroom</option>
+            <option value="Kitchen or bath">Kitchen or bath</option>
+            <option value="Furnishings + decor">Furnishings + décor only</option>
+            <option value="Staging or styling">Staging or styling</option>
+            <option value="E-Design">E-Design (remote)</option>
+            <option value="Not sure yet">Not sure yet</option>
           </select>
         </div>
       </div>
@@ -408,13 +408,13 @@ footer{background:var(--slate2);padding:64px 72px 30px}
       <div class="field-row solo">
         <div class="field">
           <label>Approximate project timeline</label>
-          <select>
+          <select name="timeline">
             <option value="" disabled selected>When are you hoping to begin?</option>
-            <option>As soon as possible</option>
-            <option>Within 3 months</option>
-            <option>3&ndash;6 months from now</option>
-            <option>6&ndash;12 months from now</option>
-            <option>Still in planning phase</option>
+            <option value="ASAP">As soon as possible</option>
+            <option value="Within 3 months">Within 3 months</option>
+            <option value="3-6 months">3–6 months from now</option>
+            <option value="6-12 months">6–12 months from now</option>
+            <option value="Planning phase">Still in planning phase</option>
           </select>
         </div>
       </div>
@@ -429,20 +429,20 @@ footer{background:var(--slate2);padding:64px 72px 30px}
       <div class="field-row solo" style="margin-bottom:20px">
         <div class="field">
           <label>What's your approximate budget for this project?</label>
-          <input type="text" placeholder="e.g. $150,000">
+          <input type="text" name="budget" placeholder="e.g. $150,000">
           <span class="field-note">An estimate is fine. This helps us understand scope + tailor our approach.</span>
         </div>
       </div>
       <div class="field-row solo" style="margin-bottom:16px">
         <div class="field">
           <label>Tell us about your vision &mdash; + how you want your home to feel</label>
-          <textarea placeholder="No need to have it all figured out. Tell us what's exciting you, what isn't working, what kind of life you want to live in this space..."></textarea>
+          <textarea name="vision" placeholder="No need to have it all figured out. Tell us what's exciting you, what isn't working, what kind of life you want to live in this space..."></textarea>
         </div>
       </div>
       <div class="field-row solo">
         <div class="field">
           <label>Anything else we should know? (optional)</label>
-          <textarea placeholder="Project constraints, inspiration sources, past design experiences, key dates..."></textarea>
+          <textarea name="additional_notes" placeholder="Project constraints, inspiration sources, past design experiences, key dates..."></textarea>
         </div>
       </div>
       <div class="field-row solo">
@@ -578,10 +578,66 @@ function selectBudget(el){
   el.classList.add('selected');
 }
 function submitForm(){
-  document.getElementById('sec3').classList.remove('active');
-  document.getElementById('steps').style.display='none';
-  document.getElementByI
-});
+  // Collect all form data
+  var data = {};
+  // Text inputs + textareas
+  document.querySelectorAll('.split-right input, .split-right textarea').forEach(function(el){
+    if(el.name) data[el.name] = el.value;
+  });
+  // Select dropdowns
+  document.querySelectorAll('.split-right select').forEach(function(el){
+    if(el.name) data[el.name] = el.value;
+  });
+  // Service chips (selected)
+  var chips = [];
+  document.querySelectorAll('#chips .chip.selected').forEach(function(el){
+    chips.push(el.textContent.trim());
+  });
+  data['services'] = chips.join(', ') || 'None selected';
+
+  // Basic validation — require first name, last name, email
+  if(!data.first_name || !data.last_name || !data.email){
+    alert('Please fill in your name and email before submitting.');
+    return;
+  }
+
+  // Send via Formspree
+  var btn = document.querySelector('.btn-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  // Replace YOUR_FORM_ID with your Formspree form ID (e.g. xwpkgpkd)
+  fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json','Accept':'application/json'},
+    body: JSON.stringify(data)
+  })
+  .then(function(res){
+    if(res.ok){
+      // Show thank-you state
+      document.getElementById('sec3').classList.remove('active');
+      document.getElementById('steps').style.display='none';
+      document.querySelector('.form-header').style.display='none';
+      document.getElementById('thanks').style.display='block';
+      document.querySelector('.split-right').scrollTo({top:0,behavior:'smooth'});
+      // GA4 event
+      if(typeof gtag==='function'){
+        gtag('event','generate_lead',{event_category:'form',event_label:'inquiry_form'});
+      }
+    } else {
+      res.json().then(function(d){
+        alert('Something went wrong: '+(d.errors?d.errors.map(function(e){return e.message}).join(', '):'Please try again.'));
+        btn.textContent='Submit Inquiry +';
+        btn.disabled=false;
+      });
+    }
+  })
+  .catch(function(){
+    alert('Network error — please check your connection and try again.');
+    btn.textContent='Submit Inquiry +';
+    btn.disabled=false;
+  });
+}
 </script>
 
 <!-- Nav interceptor removed &mdash; standalone pages use direct URLs -->
