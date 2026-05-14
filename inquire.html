@@ -107,10 +107,19 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 .iq-attach-btn:hover{border-color:var(--champ2);color:var(--champ2)}
 .iq-attach-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 /* File list */
-.file-item{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(30,38,48,.03);border:1px solid var(--ice);margin-bottom:4px;font-size:10px;color:var(--fog);font-family:'Outfit',sans-serif}
-.file-item span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
-.file-remove{background:none;border:none;color:var(--mist);cursor:pointer;font-size:14px;padding:0 0 0 12px;transition:color .2s}
+.file-item{display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(30,38,48,.03);border:1px solid var(--ice);margin-bottom:4px;font-size:10px;color:var(--fog);font-family:'Outfit',sans-serif}
+.file-item .fi-thumb{width:32px;height:32px;object-fit:cover;border:1px solid var(--ice);flex-shrink:0}
+.file-item .fi-info{flex:1;overflow:hidden}
+.file-item .fi-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
+.file-item .fi-status{font-size:8px;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;display:block}
+.fi-status.uploading{color:var(--champ2)}
+.fi-status.done{color:#5a8a5a}
+.fi-status.error{color:#a85555}
+.file-remove{background:none;border:none;color:var(--mist);cursor:pointer;font-size:14px;padding:0;transition:color .2s;flex-shrink:0}
 .file-remove:hover{color:var(--champ2)}
+/* Upload progress bar */
+.fi-progress{width:100%;height:2px;background:var(--ice);margin-top:3px;overflow:hidden}
+.fi-progress-bar{height:100%;background:var(--champ2);transition:width .2s;width:0%}
 /* Thank you state */
 .thank-you{display:none;text-align:center;padding:40px 0}
 .ty-icon{font-size:32px;margin-bottom:20px;color:var(--champ2)}
@@ -327,9 +336,6 @@ footer{background:var(--slate2);padding:64px 72px 30px}
       </div>
     </div>
 
-    <form id="inquiryForm" enctype="multipart/form-data">
-    <!-- Hidden field for services chips -->
-    <input type="hidden" name="services" id="servicesHidden" value="">
     <!-- SECTION 1 &mdash; About You -->
     <div class="form-section active" id="sec1">
       <div class="field-row">
@@ -458,12 +464,12 @@ footer{background:var(--slate2);padding:64px 72px 30px}
           <label>Share photos or files of your space (optional)</label>
           <div class="iq-attach">
             <label class="iq-attach-btn" for="photoInput"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</label>
-            <input type="file" id="photoInput" name="attachments" accept="image/*,video/*" capture="environment" multiple style="display:none" onchange="updateFileList()">
+            <input type="file" id="photoInput" accept="image/*,video/*" capture="environment" multiple style="display:none" onchange="handleFiles(this.files)">
             <label class="iq-attach-btn" for="fileInput"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</label>
-            <input type="file" id="fileInput" name="attachments" accept="image/*,video/*,.pdf,.doc,.docx,.dwg,.sketch,.ai" multiple style="display:none" onchange="updateFileList()">
+            <input type="file" id="fileInput" accept="image/*,video/*,.pdf,.doc,.docx,.dwg,.sketch,.ai,.heic,.heif" multiple style="display:none" onchange="handleFiles(this.files)">
           </div>
           <div id="fileList" style="margin-top:8px"></div>
-          <span class="field-note">Floor plans, inspiration images, or photos of your current space help us understand the project faster. Max 10MB per file.</span>
+          <span class="field-note">Floor plans, inspiration images, photos, videos &mdash; up to 100MB per file. Files upload instantly as you select them.</span>
         </div>
       </div>
       <div class="form-nav">
@@ -472,7 +478,6 @@ footer{background:var(--slate2);padding:64px 72px 30px}
       </div>
     </div>
 
-    </form>
     <!-- THANK YOU -->
     <div class="thank-you" id="thanks">
       <div class="ty-icon">&#10022;</div>
@@ -589,54 +594,114 @@ function selectBudget(el){
   document.querySelectorAll('.bopt').forEach(b=>b.classList.remove('selected'));
   el.classList.add('selected');
 }
-// Track all selected files across both inputs
-var allFiles = [];
-function updateFileList(){
-  // Merge files from both inputs
-  var photoFiles = document.getElementById('photoInput').files;
-  var docFiles = document.getElementById('fileInput').files;
-  allFiles = [];
-  for(var i=0;i<photoFiles.length;i++) allFiles.push({src:'photo',file:photoFiles[i]});
-  for(var i=0;i<docFiles.length;i++) allFiles.push({src:'file',file:docFiles[i]});
-  renderFileList();
+// ─── UPLOADCARE FILE HANDLING ───
+// Replace YOUR_PUBLIC_KEY with your Uploadcare public key
+var UC_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+var uploadedFiles = []; // {id, name, size, url, status}
+
+function handleFiles(fileList){
+  for(var i=0;i<fileList.length;i++){
+    uploadToUploadcare(fileList[i]);
+  }
+  // Reset inputs so the same file can be re-selected
+  document.getElementById('photoInput').value='';
+  document.getElementById('fileInput').value='';
 }
+
+function uploadToUploadcare(file){
+  var id = Date.now()+'_'+Math.random().toString(36).substr(2,6);
+  var size = file.size<1024*1024 ? (file.size/1024).toFixed(0)+'KB' : (file.size/(1024*1024)).toFixed(1)+'MB';
+  var entry = {id:id, name:file.name, size:size, url:'', status:'uploading', progress:0};
+  uploadedFiles.push(entry);
+  renderFileList();
+
+  var fd = new FormData();
+  fd.append('UPLOADCARE_PUB_KEY', UC_PUBLIC_KEY);
+  fd.append('UPLOADCARE_STORE', '1');
+  fd.append('file', file);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST','https://upload.uploadcare.com/base/');
+
+  xhr.upload.onprogress = function(e){
+    if(e.lengthComputable){
+      entry.progress = Math.round((e.loaded/e.total)*100);
+      renderFileList();
+    }
+  };
+
+  xhr.onload = function(){
+    if(xhr.status===200){
+      var res = JSON.parse(xhr.responseText);
+      entry.url = 'https://ucarecdn.com/'+res.file+'/';
+      entry.status = 'done';
+    } else {
+      entry.status = 'error';
+    }
+    renderFileList();
+  };
+
+  xhr.onerror = function(){
+    entry.status = 'error';
+    renderFileList();
+  };
+
+  xhr.send(fd);
+}
+
 function renderFileList(){
   var list = document.getElementById('fileList');
-  if(!allFiles.length){ list.innerHTML=''; return; }
+  if(!uploadedFiles.length){ list.innerHTML=''; return; }
   var html = '';
-  allFiles.forEach(function(f,i){
-    var size = f.file.size<1024*1024 ? (f.file.size/1024).toFixed(0)+'KB' : (f.file.size/(1024*1024)).toFixed(1)+'MB';
-    html += '<div class="file-item"><span>'+f.file.name+' ('+size+')</span><button type="button" class="file-remove" onclick="removeFile('+i+')">&times;</button></div>';
+  uploadedFiles.forEach(function(f,i){
+    var statusText = f.status==='uploading' ? 'Uploading '+f.progress+'%' : f.status==='done' ? 'Uploaded' : 'Failed — tap to retry';
+    var statusClass = f.status;
+    html += '<div class="file-item">';
+    html += '<div class="fi-info"><span class="fi-name">'+f.name+' ('+f.size+')</span>';
+    html += '<span class="fi-status '+statusClass+'">'+statusText+'</span>';
+    if(f.status==='uploading') html += '<div class="fi-progress"><div class="fi-progress-bar" style="width:'+f.progress+'%"></div></div>';
+    html += '</div>';
+    html += '<button type="button" class="file-remove" onclick="removeUpload('+i+')">&times;</button>';
+    html += '</div>';
   });
   list.innerHTML=html;
 }
-function removeFile(idx){
-  allFiles.splice(idx,1);
-  // Clear the native inputs (can't selectively remove files, so we clear both)
-  document.getElementById('photoInput').value='';
-  document.getElementById('fileInput').value='';
+
+function removeUpload(idx){
+  uploadedFiles.splice(idx,1);
   renderFileList();
 }
 
 function submitForm(){
-  // Update hidden services field from chips
+  // Check if any files are still uploading
+  var stillUploading = uploadedFiles.some(function(f){ return f.status==='uploading'; });
+  if(stillUploading){
+    alert('Some files are still uploading. Please wait a moment and try again.');
+    return;
+  }
+
+  // Collect form data manually
+  var data = {};
+  document.querySelectorAll('.split-right input[name], .split-right textarea[name]').forEach(function(el){
+    data[el.name] = el.value;
+  });
+  document.querySelectorAll('.split-right select[name]').forEach(function(el){
+    data[el.name] = el.value;
+  });
+
+  // Service chips
   var chips = [];
   document.querySelectorAll('#chips .chip.selected').forEach(function(el){
     chips.push(el.textContent.trim());
   });
-  document.getElementById('servicesHidden').value = chips.join(', ') || 'None selected';
+  data['services'] = chips.join(', ') || 'None selected';
 
-  var form = document.getElementById('inquiryForm');
-  var fd = new FormData(form);
-
-  // Remove the raw file inputs from FormData (they duplicate) and re-add from allFiles
-  fd.delete('attachments');
-  allFiles.forEach(function(f){
-    fd.append('attachments',f.file,f.file.name);
-  });
+  // Attach file URLs from Uploadcare
+  var fileUrls = uploadedFiles.filter(function(f){ return f.status==='done'; }).map(function(f){ return f.name+': '+f.url; });
+  if(fileUrls.length) data['attached_files'] = fileUrls.join('\n');
 
   // Basic validation
-  if(!fd.get('first_name') || !fd.get('last_name') || !fd.get('email')){
+  if(!data.first_name || !data.last_name || !data.email){
     alert('Please fill in your name and email before submitting.');
     return;
   }
@@ -648,8 +713,8 @@ function submitForm(){
   // Replace YOUR_FORM_ID with your Formspree form ID
   fetch('https://formspree.io/f/YOUR_FORM_ID', {
     method: 'POST',
-    headers: {'Accept':'application/json'},
-    body: fd
+    headers: {'Content-Type':'application/json','Accept':'application/json'},
+    body: JSON.stringify(data)
   })
   .then(function(res){
     if(res.ok){
