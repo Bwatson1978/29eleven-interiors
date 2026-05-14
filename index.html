@@ -320,6 +320,13 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 .iq-attach-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .iqsub{width:100%;margin-top:4px;padding:13px;background:var(--slate);color:#fff;border:none;cursor:pointer;font-family:'Outfit',sans-serif;font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;transition:background .3s;border-radius:3px}
 .iqsub:hover{background:var(--steel)}
+.hp-file-item{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:8px;letter-spacing:.12em;color:var(--fog)}
+.hp-file-item .hp-fname{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hp-file-item .hp-fprog{width:60px;height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.hp-file-item .hp-fbar{height:100%;background:var(--champ2);width:0;transition:width .2s}
+.hp-file-item .hp-fstat{min-width:32px;text-align:right;font-size:7px;letter-spacing:.08em;color:var(--champ2)}
+.hp-file-item .hp-frem{cursor:pointer;color:var(--fog);opacity:.5;transition:opacity .2s;background:none;border:none;font-size:11px;padding:0 2px}
+.hp-file-item .hp-frem:hover{opacity:1}
 /* footer inherited from shared.css */
 /* === K.3 SOFT HALO TEXT TREATMENT === */
 .hh1{text-shadow:0 2px 10px rgba(30,38,48,0.5),0 4px 30px rgba(30,38,48,0.4),0 8px 60px rgba(30,38,48,0.35),0 12px 100px rgba(30,38,48,0.25);}
@@ -855,13 +862,13 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
     <h2 class="iqh">Let's design your home <em>together.</em></h2>
     <p class="iqp">We take on a limited number of projects each year. Every client gets our full attention.</p>
     <div class="iqrow">
-      <div class="iqf"><label class="iqlbl">First Name</label><input class="iqin" placeholder="Jane"></div>
-      <div class="iqf"><label class="iqlbl">Last Name</label><input class="iqin" placeholder="Smith"></div>
+      <div class="iqf"><label class="iqlbl">First Name</label><input id="hpFirstName" class="iqin" placeholder="Jane"></div>
+      <div class="iqf"><label class="iqlbl">Last Name</label><input id="hpLastName" class="iqin" placeholder="Smith"></div>
     </div>
-    <div class="iqf"><label class="iqlbl">Email Address</label><input class="iqin" type="email" placeholder="jane@email.com"></div>
+    <div class="iqf"><label class="iqlbl">Email Address</label><input id="hpEmail" class="iqin" type="email" placeholder="jane@email.com"></div>
     <div class="iqf">
       <label class="iqlbl">Service Interested In</label>
-      <select class="iqsel">
+      <select id="hpService" class="iqsel">
         <option value="">Select a service</option>
         <option>Full Service Design, Renovation</option>
         <option>Full Service Design, New Construction</option>
@@ -870,14 +877,93 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
         <option>Styling + Staging</option>
       </select>
     </div>
-    <div class="iqf"><label class="iqlbl">Tell Us About Your Project</label><textarea class="iqta" placeholder="Share your vision, timeline, and space..."></textarea></div>
+    <div class="iqf"><label class="iqlbl">Tell Us About Your Project</label><textarea id="hpMessage" class="iqta" placeholder="Share your vision, timeline, and space..."></textarea></div>
     <div class="iq-attach">
-      <button type="button" class="iq-attach-btn"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</button>
-      <button type="button" class="iq-attach-btn"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</button>
+      <label class="iq-attach-btn" for="hpPhotoInput"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</label>
+      <input type="file" id="hpPhotoInput" accept="image/*,video/*" capture="environment" multiple style="display:none" onchange="hpHandleFiles(this.files)">
+      <label class="iq-attach-btn" for="hpFileInput"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</label>
+      <input type="file" id="hpFileInput" accept="image/*,video/*,.pdf,.doc,.docx,.dwg,.sketch,.ai,.heic,.heif" multiple style="display:none" onchange="hpHandleFiles(this.files)">
     </div>
-    <button class="iqsub">Submit Your Inquiry +</button>
+    <div id="hpFileList"></div>
+    <button class="iqsub" onclick="hpSubmitInquiry()">Submit Your Inquiry +</button>
   </div>
 </div>
+
+<script>
+/* ─── HOME PAGE INQUIRY FORM — Uploadcare + Formspree ─── */
+var HP_UC_KEY = '50e4103851ceb48fdd21';
+var hpUploads = [];
+
+function hpHandleFiles(fileList){
+  for(var i=0;i<fileList.length;i++) hpUploadFile(fileList[i]);
+}
+function hpUploadFile(file){
+  var entry={name:file.name,size:file.size,progress:0,status:'uploading',url:''};
+  hpUploads.push(entry);
+  hpRenderFiles();
+  var fd=new FormData();
+  fd.append('UPLOADCARE_PUB_KEY',HP_UC_KEY);
+  fd.append('UPLOADCARE_STORE','auto');
+  fd.append('file',file);
+  var xhr=new XMLHttpRequest();
+  var idx=hpUploads.length-1;
+  xhr.upload.onprogress=function(e){if(e.lengthComputable){entry.progress=Math.round(e.loaded/e.total*100);hpRenderFiles();}};
+  xhr.onload=function(){
+    if(xhr.status===200){var r=JSON.parse(xhr.responseText);entry.url='https://ucarecdn.com/'+r.file+'/'+file.name;entry.status='done';entry.progress=100;}
+    else{entry.status='error';}
+    hpRenderFiles();
+  };
+  xhr.onerror=function(){entry.status='error';hpRenderFiles();};
+  xhr.open('POST','https://upload.uploadcare.com/base/');
+  xhr.send(fd);
+}
+function hpRenderFiles(){
+  var el=document.getElementById('hpFileList');
+  if(!hpUploads.length){el.innerHTML='';return;}
+  var h='';
+  for(var i=0;i<hpUploads.length;i++){
+    var u=hpUploads[i];
+    h+='<div class="hp-file-item"><span class="hp-fname">'+u.name+'</span>';
+    if(u.status==='uploading') h+='<span class="hp-fprog"><span class="hp-fbar" style="width:'+u.progress+'%"></span></span>';
+    h+='<span class="hp-fstat">'+(u.status==='done'?'&#10003;':u.status==='error'?'error':u.progress+'%')+'</span>';
+    h+='<button class="hp-frem" onclick="hpRemoveFile('+i+')">&times;</button></div>';
+  }
+  el.innerHTML=h;
+}
+function hpRemoveFile(i){hpUploads.splice(i,1);hpRenderFiles();}
+
+function hpSubmitInquiry(){
+  var fn=document.getElementById('hpFirstName').value.trim();
+  var ln=document.getElementById('hpLastName').value.trim();
+  var em=document.getElementById('hpEmail').value.trim();
+  var sv=document.getElementById('hpService').value;
+  var msg=document.getElementById('hpMessage').value.trim();
+  if(!fn||!ln||!em){alert('Please fill in your name and email.');return;}
+  if(!em.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){alert('Please enter a valid email address.');return;}
+  /* check uploads still in progress */
+  for(var i=0;i<hpUploads.length;i++){if(hpUploads[i].status==='uploading'){alert('Please wait for uploads to finish.');return;}}
+  var fileUrls=[];
+  for(var i=0;i<hpUploads.length;i++){if(hpUploads[i].status==='done') fileUrls.push(hpUploads[i].url);}
+  var btn=document.querySelector('.iqsub');
+  btn.textContent='Sending...';btn.disabled=true;
+  var payload={
+    first_name:fn, last_name:ln, email:em,
+    service_interested_in:sv,
+    message:msg,
+    _subject:'New Inquiry from '+fn+' '+ln+' (Home Page)'
+  };
+  if(fileUrls.length) payload.uploaded_files=fileUrls.join('\n');
+  fetch('https://formspree.io/f/xlgzyldd',{
+    method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify(payload)
+  }).then(function(r){return r.json();}).then(function(data){
+    if(data.ok||data.next){
+      document.querySelector('.iqr').innerHTML='<div class="iqey">Thank You</div><h2 class="iqh">We\'ll be in touch soon.</h2><p class="iqp">Ashley and the 29 Eleven team will review your inquiry and reach out within 48 hours.</p>';
+      if(typeof gtag==='function') gtag('event','generate_lead',{event_category:'inquiry',event_label:'home_page',value:1});
+    } else {btn.textContent='Submit Your Inquiry +';btn.disabled=false;alert('Something went wrong. Please try again.');}
+  }).catch(function(){btn.textContent='Submit Your Inquiry +';btn.disabled=false;alert('Network error. Please try again.');});
+}
+</script>
 
 <!-- FOOTER -->
 
