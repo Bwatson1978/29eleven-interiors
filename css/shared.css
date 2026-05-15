@@ -8,7 +8,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;background:var(--snow);color:var(--slate);overflow-x:hidden}
 /* ─── LEFT NAV ─── */ .nav{position:fixed;left:0;top:0;bottom:0;width:var(--nav);background:transparent;display:flex;flex-direction:column;padding:40px 28px;z-index:500}
 .nl{margin-bottom:52px}
-.nl img{width:130px;display:block}
+.nl img{width:130px;height:auto;display:block}
 .nlinks{list-style:none;flex:1}
 .nlinks li{margin-bottom:20px}
 .nlinks a{font-size:8.5px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--steel);text-decoration:none;transition:color .3s;display:flex;align-items:center}
