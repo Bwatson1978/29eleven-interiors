@@ -142,6 +142,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
 .phil-left{position:relative;overflow:hidden}
 .values{position:relative;overflow:hidden}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 /* ─── RECOGNITION / FEATURED IN ─── */
 .recognition-minimal{text-align:center;padding:0 72px 48px;background:var(--snow)}
 .recognition-minimal h3{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:400;color:var(--fog);letter-spacing:.1em}
@@ -205,15 +206,20 @@ footer{background:var(--slate2);padding:64px 72px 30px}
 <meta property="og:type" content="website">
 <meta property="og:title" content="Our Story — 29 Eleven Interiors">
 <meta property="og:description" content="Led by Ashley Porter. Where the complicated becomes simple and everything just connects.">
-<meta property="og:image" content="https://29eleveninteriors.com/images/heroes/intro-ashley.jpg">
-<meta property="og:url" content="https://29eleveninteriors.com/our-story.html">
+<meta property="og:image" content="https://www.29eleveninteriors.com/images/heroes/intro-ashley.jpg">
+<meta property="og:url" content="https://www.29eleveninteriors.com/our-story.html">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our Story — 29 Eleven Interiors">
+<meta name="twitter:description" content="Led by Ashley Porter. Where the complicated becomes simple and everything just connects.">
+<meta name="twitter:image" content="https://www.29eleveninteriors.com/images/heroes/intro-ashley.jpg">
+<link rel="canonical" href="https://www.29eleveninteriors.com/our-story.html">
 <link rel="icon" type="image/x-icon" href="./favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 </head>
 <body>
+<h1 class="sr-only">About 29 Eleven Interiors — Newport Beach Interior Designer</h1>
 
 <!-- MOBILE NAV BAR -->
 <div class="mobile-nav">
@@ -298,7 +304,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
 <section class="ashley">
   <div class="ashley-inner">
     <div class="ashley-photo-wrap">
-      <img class="ashley-photo" src="images/heroes/Ashley%20Headshot.jpg" alt="Ashley Porter, Principal Designer, 29 Eleven Interiors">
+      <img class="ashley-photo" loading="lazy" src="images/heroes/Ashley%20Headshot.jpg" alt="Ashley Porter, Principal Designer, 29 Eleven Interiors">
       <div class="ashley-nameplate">
         <span class="ashley-name">Ashley Porter</span>
         <span class="ashley-title">Principal Designer + Founder</span>

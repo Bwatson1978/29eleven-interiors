@@ -162,6 +162,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
 .pgrid-comp-track{flex:1;height:4px;background:rgba(255,255,255,.15);border-radius:2px;overflow:hidden}
 .pgrid-comp-fill{height:100%;background:var(--champ);border-radius:2px}
 .pgrid-comp-pct{font-size:10px;letter-spacing:.12em;color:rgba(254,254,254,.8);font-weight:500}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 /* ─── RESPONSIVE: TABLET ─── */
 @media(max-width:1023px){
   .filter-bar{padding:0 28px;overflow-x:auto}
@@ -210,15 +211,20 @@ footer{background:var(--slate2);padding:64px 72px 30px}
 <meta property="og:type" content="website">
 <meta property="og:title" content="Interiors — 29 Eleven Interiors">
 <meta property="og:description" content="Sophisticated, distinct, and layered to stand out. Explore our curated portfolio of residential interiors.">
-<meta property="og:image" content="https://29eleveninteriors.com/images/heroes/interiors-003.jpg">
-<meta property="og:url" content="https://29eleveninteriors.com/interiors.html">
+<meta property="og:image" content="https://www.29eleveninteriors.com/images/heroes/interiors-003.jpg">
+<meta property="og:url" content="https://www.29eleveninteriors.com/interiors.html">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Interiors — 29 Eleven Interiors">
+<meta name="twitter:description" content="Sophisticated, distinct, and layered to stand out. Explore our curated portfolio of residential interiors.">
+<meta name="twitter:image" content="https://www.29eleveninteriors.com/images/heroes/interiors-003.jpg">
+<link rel="canonical" href="https://www.29eleveninteriors.com/interiors.html">
 <link rel="icon" type="image/x-icon" href="./favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 </head>
 <body>
+<h1 class="sr-only">Interior Design Portfolio — 29 Eleven Interiors</h1>
 
 <!-- MOBILE NAV BAR -->
 <div class="mobile-nav">
@@ -290,7 +296,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
     <a class="pgrid-card" href="./projects/harbor-cove.html">
       <picture>
         <source srcset="./images/heroes/portfolio-harbor-cove.webp" type="image/webp">
-        <picture><source srcset="./images/heroes/portfolio-harbor-cove.webp" type="image/webp"><img class="pgrid-img" src="./images/heroes/portfolio-harbor-cove.jpg" alt="Harbor Cove"></picture>
+        <picture><source srcset="./images/heroes/portfolio-harbor-cove.webp" type="image/webp"><img class="pgrid-img" loading="lazy" src="./images/heroes/portfolio-harbor-cove.jpg" alt="Harbor Cove"></picture>
       </picture>
       <div class="pgrid-info">
         <span class="pgrid-name ls-wide">Harbor Cove</span>
@@ -300,7 +306,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
     <a class="pgrid-card" href="./projects/mesa-del-mar.html">
       <picture>
         <source srcset="./images/heroes/portfolio-mesa-del-mar.webp" type="image/webp">
-        <picture><source srcset="./images/heroes/portfolio-mesa-del-mar.webp" type="image/webp"><img class="pgrid-img" src="./images/heroes/portfolio-mesa-del-mar.jpg" alt="Mesa Del Mar"></picture>
+        <picture><source srcset="./images/heroes/portfolio-mesa-del-mar.webp" type="image/webp"><img class="pgrid-img" loading="lazy" src="./images/heroes/portfolio-mesa-del-mar.jpg" alt="Mesa Del Mar"></picture>
       </picture>
       <div class="pgrid-info">
         <span class="pgrid-name ls-wide">Mesa Del Mar</span>
@@ -310,7 +316,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
     <a class="pgrid-card" href="./projects/lake-arrowhead.html">
       <picture>
         <source srcset="./images/heroes/portfolio-lake-arrowhead.webp" type="image/webp">
-        <picture><source srcset="./images/heroes/portfolio-lake-arrowhead.webp" type="image/webp"><img class="pgrid-img" src="./images/heroes/portfolio-lake-arrowhead.jpg" alt="Lake Arrowhead"></picture>
+        <picture><source srcset="./images/heroes/portfolio-lake-arrowhead.webp" type="image/webp"><img class="pgrid-img" loading="lazy" src="./images/heroes/portfolio-lake-arrowhead.jpg" alt="Lake Arrowhead"></picture>
       </picture>
       <div class="pgrid-info">
         <span class="pgrid-name ls-wide">Lake View Retreat</span>
@@ -447,7 +453,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
     <a href="./projects/harbor-cove.html" class="ed-card ed-card--uncrop" data-filter="full-service">
       <picture>
         <source srcset="./images/heroes/index-009.webp" type="image/webp">
-        <picture><source srcset="./images/heroes/index-009.webp" type="image/webp"><img src="./images/heroes/index-009.jpg" alt="Harbor Cove" style="width:100%;height:100%;object-fit:cover;display:block"></picture>
+        <picture><source srcset="./images/heroes/index-009.webp" type="image/webp"><img loading="lazy" src="./images/heroes/index-009.jpg" alt="Harbor Cove" style="width:100%;height:100%;object-fit:cover;display:block"></picture>
       </picture>
     </a>
   </div>
@@ -477,7 +483,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
 <footer>
   <div class="ftg">
     <div>
-      <a href="./index.html" class="ftlog" style="display:block;text-decoration:none"><picture><source srcset="./images/general/interiors-002.webp" type="image/webp"><img src="./images/general/interiors-002.png" alt="29 Eleven Interiors"></picture></a>
+      <a href="./index.html" class="ftlog" style="display:block;text-decoration:none"><picture><source srcset="./images/general/interiors-002.webp" type="image/webp"><img loading="lazy" src="./images/general/interiors-002.png" alt="29 Eleven Interiors"></picture></a>
       <div class="ft-services">Interior &bull; Architectural Design<br>Renovations &bull; New Construction<br>Fine Furnishings &bull; Home Styling</div>
     </div>
     <div>
