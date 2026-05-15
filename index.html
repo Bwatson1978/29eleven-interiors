@@ -14,8 +14,9 @@
 <title>29 Eleven Interiors | Luxury Interior Design, Newport Beach CA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="image" href="./images/heroes/hero-slide-01.jpg">
 
 <script>
 // WebP detection for CSS background images
@@ -543,7 +544,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 <!-- POPUP -->
 <div id="pop">
   <div class="pb">
-    <button class="px" onclick="document.getElementById('pop').style.display='none'">&#10005;</button>
+    <button class="px" onclick="document.getElementById('pop').style.display='none'" aria-label="Close popup">&#10005;</button>
     <div class="pi"><div class="piq">A space for every season of life.</div></div>
     <div class="pd">
       <div class="ptag"><svg class="pop-anim" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px"><rect x="1" y="1" width="20" height="16" rx="2" stroke="var(--champ2)" stroke-width="1" fill="none" class="pop-env"/><path d="M1 1 L11 10 L21 1" stroke="var(--champ2)" stroke-width="1" fill="none" class="pop-flap"/></svg>Join the Studio</div>
@@ -563,7 +564,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 </div>
 <!-- MOBILE NAV OVERLAY -->
 <div class="nav-overlay">
-  <button class="nav-overlay-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <button class="nav-overlay-close" onclick="this.parentElement.classList.remove('open')" aria-label="Close menu">&times;</button>
   <img class="nav-overlay-logo" onclick="window.location.href='./index.html'" src="./images/brand/intro-logo-1.png" alt="29 Eleven Interiors">
   <div class="nav-overlay-line"></div>
   <a href="./index.html" class="on">Home</a>
@@ -636,11 +637,11 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
   <!-- Dots -->
   <div class="hdots">
     <div class="dr">
-      <button class="dot on" onclick="goStill(0)"></button>
-      <button class="dot" onclick="goStill(1)"></button>
-      <button class="dot" onclick="goStill(2)"></button>
-      <button class="dot" onclick="goStill(3)"></button>
-      <button class="dot" onclick="goStill(4)"></button>
+      <button class="dot on" onclick="goStill(0)" aria-label="Slide 1"></button>
+      <button class="dot" onclick="goStill(1)" aria-label="Slide 2"></button>
+      <button class="dot" onclick="goStill(2)" aria-label="Slide 3"></button>
+      <button class="dot" onclick="goStill(3)" aria-label="Slide 4"></button>
+      <button class="dot" onclick="goStill(4)" aria-label="Slide 5"></button>
     </div>
   </div>
 
@@ -852,7 +853,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
     </div>
     <div class="iqf"><label class="iqlbl">Email Address</label><input id="hpEmail" class="iqin" type="email" placeholder="jane@email.com"></div>
     <div class="iqf">
-      <label class="iqlbl">Service Interested In</label>
+      <label class="iqlbl" for="hpService">Service Interested In</label>
       <select id="hpService" class="iqsel">
         <option value="">Select a service</option>
         <option>Full Service Design, Renovation</option>

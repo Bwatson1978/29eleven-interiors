@@ -14,7 +14,8 @@
 <title>Lake Arrowhead Cabin — 29 Eleven Interiors</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet"></noscript>
 
 
 <script>
@@ -224,7 +225,7 @@ footer{background:var(--slate);padding:64px 72px 36px}
 </div>
 <!-- MOBILE NAV OVERLAY -->
 <div class="nav-overlay">
-  <button class="nav-overlay-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <button class="nav-overlay-close" onclick="this.parentElement.classList.remove('open')" aria-label="Close menu">&times;</button>
   <img class="nav-overlay-logo" onclick="window.location.href='../index.html'" src="../images/brand/intro-logo-1.png" alt="29 Eleven Interiors">
   <div class="nav-overlay-line"></div>
   <a href="../index.html">Home</a>

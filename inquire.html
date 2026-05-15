@@ -14,7 +14,8 @@
 <title>Inquire &mdash; 29 Eleven Interiors</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet"></noscript>
 
 
 <script>
@@ -234,7 +235,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
 </div>
 <!-- MOBILE NAV OVERLAY -->
 <div class="nav-overlay">
-  <button class="nav-overlay-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <button class="nav-overlay-close" onclick="this.parentElement.classList.remove('open')" aria-label="Close menu">&times;</button>
   <img class="nav-overlay-logo" onclick="window.location.href='./index.html'" src="./images/brand/intro-logo-1.png" alt="29 Eleven Interiors">
   <div class="nav-overlay-line"></div>
   <a href="./index.html">Home</a>
@@ -368,8 +369,8 @@ footer{background:var(--slate2);padding:64px 72px 30px}
       </div>
       <div class="field-row solo">
         <div class="field">
-          <label>How did you hear about us?</label>
-          <select name="how_did_you_hear">
+          <label for="how_did_you_hear">How did you hear about us?</label>
+          <select name="how_did_you_hear" id="how_did_you_hear">
             <option value="" disabled selected>Select one</option>
             <option value="Instagram">Instagram</option>
             <option value="Referral">Referral from a friend</option>
@@ -398,8 +399,8 @@ footer{background:var(--slate2);padding:64px 72px 30px}
       </div>
       <div class="field-row solo" style="margin-bottom:20px">
         <div class="field">
-          <label>What type of project is this?</label>
-          <select name="project_type">
+          <label for="project_type">What type of project is this?</label>
+          <select name="project_type" id="project_type">
             <option value="" disabled selected>Select one</option>
             <option value="New construction">New construction — full interior</option>
             <option value="Whole home renovation">Whole home renovation</option>
@@ -427,8 +428,8 @@ footer{background:var(--slate2);padding:64px 72px 30px}
       </div>
       <div class="field-row solo">
         <div class="field">
-          <label>Approximate project timeline</label>
-          <select name="timeline">
+          <label for="timeline">Approximate project timeline</label>
+          <select name="timeline" id="timeline">
             <option value="" disabled selected>When are you hoping to begin?</option>
             <option value="ASAP">As soon as possible</option>
             <option value="Within 3 months">Within 3 months</option>
