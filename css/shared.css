@@ -87,7 +87,7 @@ main{margin-left:var(--nav)}
 .mc-date{font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--fog);margin-top:10px;font-weight:200}
 /* ─── FOOTER ─── */ footer{background:var(--slate2);padding:64px 72px 30px}
 .ftg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:44px;margin-bottom:22px}
-.ftlog img{width:154px;display:block;margin-bottom:14px}
+.ftlog img{width:154px;height:auto;display:block;margin-bottom:14px}
 .ft-services{font-family:'Raleway',sans-serif;font-size:9.2px;letter-spacing:.12em;text-transform:uppercase;color:rgba(138,154,170,.98);line-height:2;font-weight:500;white-space:nowrap}
 .fttag{font-size:11px;line-height:1.9;color:rgba(138,154,170,.58);font-weight:300;max-width:220px}
 .fth{font-size:8.7px;letter-spacing:.3em;text-transform:uppercase;color:var(--fog);margin-bottom:16px}
