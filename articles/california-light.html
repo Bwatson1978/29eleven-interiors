@@ -22,7 +22,31 @@
 if(i.height===2)document.documentElement.classList.add('webp')};
 i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';})();
 </script>
-<link rel="stylesheet" href="../css/shared.css">
+<style id="critical">
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--slate:#1e2630;--slate2:#252f3c;--steel:#2e3d4e;--fog:#8a9aaa;--mist:#b8c4cc;--ice:#dde6ec;--snow:#ffffff;--champ:#d4c89a;--champ2:#b8a870;--nav:210px;--body-max:680px}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--snow);color:var(--slate);overflow-x:hidden}
+.nav{position:fixed;left:0;top:0;bottom:0;width:var(--nav);background:transparent;display:flex;flex-direction:column;padding:40px 28px;z-index:500}
+.nl{margin-bottom:52px}.nl img{width:130px;display:block}
+.nlinks{list-style:none;flex:1}.nlinks li{margin-bottom:20px}
+.nlinks a{font-size:8.5px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--steel);text-decoration:none;transition:color .3s;display:flex;align-items:center}
+.nlinks a::before{content:'+';font-size:10px;color:var(--champ2);opacity:0;transition:opacity .32s;flex-shrink:0;margin-right:0;transition:opacity .32s, margin-right .32s}
+.nlinks a:hover,.nlinks .on a{color:var(--slate)}.nlinks a:hover::before,.nlinks .on a::before{opacity:1;margin-right:6px}
+.nft{margin-top:auto;padding-top:18px;border-top:1px solid rgba(30,38,48,.12)}
+.ncta{display:inline-block;margin-bottom:10px;font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--champ2);text-decoration:none;transition:color .2s}
+.ncta:hover{color:var(--slate)}
+.ncity{font-size:7.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
+main{margin-left:var(--nav)}
+.page-wrap{opacity:0;transform:translateY(8px);animation:designL-fadeIn .6s ease .1s forwards}
+@keyframes designL-fadeIn{to{opacity:1;transform:translateY(0)}}
+.mobile-nav{display:none}
+.nav-overlay{display:none;position:fixed;inset:0;background:var(--slate);z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:18px;opacity:0;transition:opacity .4s ease;pointer-events:none}
+.nav-overlay.open{display:flex;opacity:1;pointer-events:auto}
+@media(max-width:1023px){.nav{display:none!important}main{margin-left:0!important}:root{--nav:0px}.mobile-nav{display:flex;position:fixed;top:0;left:0;right:0;z-index:900;height:64px;background:linear-gradient(180deg,rgba(30,38,48,.95) 0%,rgba(30,38,48,.7) 55%,rgba(30,38,48,0) 100%);flex-direction:row;align-items:center;gap:12px;padding:0 20px}.mobile-nav-logo{height:24px;width:auto;filter:drop-shadow(0 0 6px rgba(0,0,0,.4)) drop-shadow(0 0 16px rgba(0,0,0,.2))}.mobile-nav-menu{font-size:6px;letter-spacing:.36em;text-transform:uppercase;color:var(--champ);cursor:pointer;background:none;border:none;font-family:'Outfit',sans-serif;text-shadow:0 0 8px rgba(0,0,0,.6),0 0 20px rgba(0,0,0,.3);padding:12px 16px;min-height:44px;display:flex;align-items:center}}
+</style>
+<link rel="stylesheet" href="../css/shared.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="../css/shared.css"></noscript>
 <style>
 .art-hero-bg{position:absolute;inset:0;background-image:url(../images/articles/california-light-003.jpg);background-size:cover;background-position:center}
 </style>
