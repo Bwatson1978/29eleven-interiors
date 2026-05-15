@@ -1,6 +1,6 @@
 /* 29 Eleven Interiors --- Shared Design System */
 /* Auto-extracted from K.4 design packet */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap');
+/* Raleway loaded via <link> in HTML — @import removed to avoid duplicate font request */
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{ --slate:#1e2630;--slate2:#252f3c;--steel:#2e3d4e; --fog:#8a9aaa;--mist:#b8c4cc;--ice:#dde6ec; --snow:#ffffff;--champ:#d4c89a;--champ2:#b8a870; --nav:210px; --body-max:680px; }
