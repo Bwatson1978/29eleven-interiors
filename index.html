@@ -16,8 +16,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet"></noscript>
-<link rel="preload" as="image" href="./images/heroes/hero-slide-01.webp" type="image/webp" fetchpriority="high">
-<link rel="preload" as="image" href="./images/heroes/hero-slide-01.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="./images/heroes/hero-slide-01.webp" type="image/webp" fetchpriority="high" media="(min-width:768px)">
+<link rel="preload" as="image" href="./images/heroes/hero-slide-01-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width:767px)">
+<link rel="preload" as="image" href="./images/heroes/hero-slide-01.jpg" fetchpriority="high" media="(min-width:768px)">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
 <script>
 // WebP detection for CSS background images
@@ -39,6 +41,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 @keyframes fi{from{opacity:0}to{opacity:1}}
 .pb{background:var(--white);width:610px;max-width:94vw;display:grid;grid-template-columns:220px 1fr;position:relative;overflow:hidden;border-radius:4px}
 .pi{min-height:370px;background:url('./images/heroes/index-004.jpg') center/cover no-repeat;background-color:#1e2630;position:relative}
+.webp .pi{background-image:url('./images/heroes/index-004.webp')}
 .pi::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(30,38,48,.52),transparent 55%)}
 .piq{position:absolute;bottom:22px;left:18px;right:18px;font-family:'Libre Baskerville',serif;font-style:italic;font-size:16px;color:#fefefe;line-height:1.45}
 .pd{padding:40px 32px;display:flex;flex-direction:column;justify-content:center}
@@ -74,14 +77,11 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
   position:absolute;inset:0;
   background-size:cover;background-position:center bottom;
   opacity:0;transition:opacity 1.8s ease;
+  will-change:opacity;
 }
 .still.on{opacity:1}
 .still.s1{opacity:1}
-/* WebP overrides for hero slides */
-.webp .still.s2{background-image:url('./images/heroes/hero-slide-02.webp')}
-.webp .still.s3{background-image:url('./images/heroes/hero-slide-03.webp')}
-.webp .still.s4{background-image:url('./images/heroes/hero-slide-04.webp')}
-.webp .still.s5{background-image:url('./images/heroes/hero-slide-05.webp')}
+/* Hero slides 2-5 loaded lazily via JS after page load */
 
 /* Overlay gradient */
 .hero::before{display:none}
@@ -223,9 +223,9 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 .td{font-size:11px;line-height:1.75;color:var(--fog);font-weight:200}
 .shimmer-subs{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .shimmer-pill{font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--champ2);padding:5px 14px;border:1px solid rgba(212,200,154,.2);border-radius:20px;position:relative;overflow:hidden}
-.shimmer-pill::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(212,200,154,.12),transparent);animation:shimmer-sweep 4s ease-in-out infinite}
+.shimmer-pill::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(212,200,154,.12),transparent);animation:shimmer-sweep 4s ease-in-out infinite;will-change:transform}
 .shimmer-pill:nth-child(2)::after{animation-delay:2s}
-@keyframes shimmer-sweep{0%{left:-100%}40%{left:100%}100%{left:100%}}
+@keyframes shimmer-sweep{0%{transform:translateX(-100%)}40%{transform:translateX(100%)}100%{transform:translateX(100%)}}
 /* ─── PROCESS ─── */
 .process{padding:96px 72px;background:#ffffff;position:relative;overflow:hidden}
 .fw-canvas{position:absolute;inset:0;pointer-events:none;z-index:10}
@@ -268,6 +268,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
   75%{transform:scale(1.04) translate(-0.4%,0.6%)}
   100%{transform:scale(1.08) translate(-1.6%,-0.2%)}
 }
+.webp .ctabg{background-image:url('./images/heroes/index-011.webp')}
 .ctabg::after{content:'';position:absolute;inset:0;background:rgba(30,38,48,.52)}
 /* Film strip &mdash; stills mixed in (Ralph Lauren element) */
 .ctai{position:relative;z-index:10;max-width:520px;padding:0 36px}
@@ -613,11 +614,11 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 
   <!-- Still photography &mdash; 5-slide hero slideshow -->
   <div class="still-layer" id="still-layer">
-    <div class="still s1"><picture><source srcset="./images/heroes/hero-slide-01.webp" type="image/webp"><img src="./images/heroes/hero-slide-01.jpg" alt="" width="2000" height="1333" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom"></picture></div>
-    <div class="still s2" style="background-image:url('./images/heroes/hero-slide-02.jpg')"></div>
-    <div class="still s3" style="background-image:url('./images/heroes/hero-slide-03.jpg')"></div>
-    <div class="still s4" style="background-image:url('./images/heroes/hero-slide-04.jpg')"></div>
-    <div class="still s5" style="background-image:url('./images/heroes/hero-slide-05.jpg')"></div>
+    <div class="still s1"><picture><source srcset="./images/heroes/hero-slide-01-mobile.webp" type="image/webp" media="(max-width:767px)"><source srcset="./images/heroes/hero-slide-01.webp" type="image/webp"><source srcset="./images/heroes/hero-slide-01.jpg" media="(max-width:767px)"><img src="./images/heroes/hero-slide-01.jpg" alt="" width="2000" height="1333" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom"></picture></div>
+    <div class="still s2"></div>
+    <div class="still s3"></div>
+    <div class="still s4"></div>
+    <div class="still s5"></div>
   </div>
 
   <!-- Letterbox &mdash; cinematic framing bars -->
@@ -667,10 +668,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 <!-- INTRO -->
 <section class="intro">
   <div class="iphoto">
-    <picture>
-      <source srcset="./images/heroes/intro-ashley.webp" type="image/webp">
-      <picture><source srcset="./images/heroes/intro-ashley.webp" type="image/webp"><img class="iphoto-img" loading="lazy" src="./images/heroes/intro-ashley.jpg" alt="29 Eleven Interiors — Lake Arrowhead" width="1221" height="2000"></picture>
-    </picture>
+      <picture><source srcset="./images/heroes/intro-ashley.webp" type="image/webp"><img class="iphoto-img" loading="lazy" decoding="async" src="./images/heroes/intro-ashley.jpg" alt="29 Eleven Interiors — Lake Arrowhead" width="1221" height="2000"></picture>
     <div class="photo-caption">
       <div class="photo-caption-line"></div>
       <div class="photo-caption-names">Jillian Brunello &nbsp;+&nbsp; Ashley Porter</div>
@@ -729,30 +727,21 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 
   <div class="portfolio-grid">
     <a class="pgrid-card" href="./projects/harbor-cove.html">
-      <picture>
-        <source srcset="./images/heroes/portfolio-harbor-cove.webp" type="image/webp">
-        <picture><source srcset="./images/heroes/portfolio-harbor-cove.webp" type="image/webp"><img class="pgrid-img" loading="lazy" src="./images/heroes/portfolio-harbor-cove.jpg" alt="Harbor Cove" width="1333" height="2000"></picture>
-      </picture>
+        <picture><source srcset="./images/heroes/portfolio-harbor-cove.webp" type="image/webp"><img class="pgrid-img" loading="lazy" decoding="async" src="./images/heroes/portfolio-harbor-cove.jpg" alt="Harbor Cove" width="1333" height="2000"></picture>
       <div class="pgrid-info">
         <span class="pgrid-name ls-wide">Harbor Cove</span>
         <span class="pgrid-loc">Newport Beach</span>
       </div>
     </a>
     <a class="pgrid-card" href="./projects/mesa-del-mar.html">
-      <picture>
-        <source srcset="./images/heroes/portfolio-mesa-del-mar.webp" type="image/webp">
-        <picture><source srcset="./images/heroes/portfolio-mesa-del-mar.webp" type="image/webp"><img class="pgrid-img" loading="lazy" src="./images/heroes/portfolio-mesa-del-mar.jpg" alt="Mesa Del Mar" width="1333" height="2000"></picture>
-      </picture>
+        <picture><source srcset="./images/heroes/portfolio-mesa-del-mar.webp" type="image/webp"><img class="pgrid-img" loading="lazy" decoding="async" src="./images/heroes/portfolio-mesa-del-mar.jpg" alt="Mesa Del Mar" width="1333" height="2000"></picture>
       <div class="pgrid-info">
         <span class="pgrid-name ls-wide">Mesa Del Mar</span>
         <span class="pgrid-loc">Costa Mesa</span>
       </div>
     </a>
     <a class="pgrid-card" href="./projects/lake-arrowhead.html">
-      <picture>
-        <source srcset="./images/heroes/portfolio-lake-arrowhead.webp" type="image/webp">
-        <picture><source srcset="./images/heroes/portfolio-lake-arrowhead.webp" type="image/webp"><img class="pgrid-img" loading="lazy" src="./images/heroes/portfolio-lake-arrowhead.jpg" alt="Lake Arrowhead" width="1333" height="2000"></picture>
-      </picture>
+        <picture><source srcset="./images/heroes/portfolio-lake-arrowhead.webp" type="image/webp"><img class="pgrid-img" loading="lazy" decoding="async" src="./images/heroes/portfolio-lake-arrowhead.jpg" alt="Lake Arrowhead" width="1333" height="2000"></picture>
       <div class="pgrid-info">
         <span class="pgrid-name ls-wide">Lake View Retreat</span>
         <span class="pgrid-loc">Lake Arrowhead</span>
@@ -956,7 +945,7 @@ function hpSubmitInquiry(){
 <footer>
   <div class="ftg">
     <div>
-      <a href="./index.html" class="ftlog" style="display:block;text-decoration:none"><picture><source srcset="./images/heroes/index-003.webp" type="image/webp"><img loading="lazy" src="./images/heroes/index-003.png" alt="29 Eleven Interiors" width="990" height="347"></picture></a>
+      <a href="./index.html" class="ftlog" style="display:block;text-decoration:none"><picture><source srcset="./images/heroes/index-003.webp" type="image/webp"><img loading="lazy" decoding="async" src="./images/heroes/index-003.png" alt="29 Eleven Interiors" width="990" height="347"></picture></a>
       <div class="ft-services">Interior &bull; Architectural Design<br>Renovations &bull; New Construction<br>Fine Furnishings &bull; Home Styling</div>
     </div>
     <div>
@@ -1105,6 +1094,25 @@ function cycleMoments() {
 }
 
 showStill(0); seqIdx = 1; let heroTimer = setInterval(cycleMoments, 4000);
+
+// Lazy-load hero slides 2-5 after page load (deferred from initial HTML)
+(function(){
+  var hasWebP = document.documentElement.classList.contains('webp');
+  var slideData = [
+    {sel:'.still.s2', jpg:'./images/heroes/hero-slide-02.jpg', webp:'./images/heroes/hero-slide-02.webp'},
+    {sel:'.still.s3', jpg:'./images/heroes/hero-slide-03.jpg', webp:'./images/heroes/hero-slide-03.webp'},
+    {sel:'.still.s4', jpg:'./images/heroes/hero-slide-04.jpg', webp:'./images/heroes/hero-slide-04.webp'},
+    {sel:'.still.s5', jpg:'./images/heroes/hero-slide-05.jpg', webp:'./images/heroes/hero-slide-05.webp'}
+  ];
+  function loadSlides(){
+    slideData.forEach(function(s){
+      var el = document.querySelector(s.sel);
+      if(el) el.style.backgroundImage = 'url(\'' + (hasWebP ? s.webp : s.jpg) + '\')';
+    });
+  }
+  if(document.readyState === 'complete') loadSlides();
+  else window.addEventListener('load', loadSlides);
+})();
 
 
 // ─── PORTFOLIO — (Design N: numbered reveal grid) ───
