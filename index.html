@@ -62,23 +62,8 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
   pointer-events:auto;
 }
 /* nav/footer sizes inherited from shared.css */
-/* ─── HERO &mdash; Cinematic video background (Own The Sky + Luminarc elements) ─── */
+/* ─── HERO ─── */
 .hero{position:relative;overflow:hidden}
-/* Video background layer */
-.hero-video{display:none;
-  position:absolute;inset:0;z-index:0;
-  background:var(--slate);
-}
-.hero-video video{
-  width:100%;height:100%;object-fit:cover;
-  filter:saturate(.85) brightness(.72);
-  transform:scale(1.04); /* slight scale to allow subtle drift */
-  animation:vd-drift 30s ease-in-out infinite alternate;
-}
-@keyframes vd-drift{
-  0%{transform:scale(1.04) translateX(0) translateY(0)}
-  100%{transform:scale(1.07) translateX(-1%) translateY(-0.5%)}
-}
 /* Still slides layer &mdash; 5-slide hero slideshow */
 .still-layer{
   position:absolute;inset:0;z-index:1;
@@ -625,18 +610,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 <!-- &#9313; HERO &mdash; Cinematic video background (Own The Sky) + stills intercut (Ralph Lauren) -->
 <section class="hero">
 
-  <!-- Cinematic video layer &mdash; Coverr free stock, luxury interior pan shot -->
-  <div class="hero-video" id="hero-video-wrap">
-    <video id="hero-vid" autoplay muted playsinline preload="auto"
-      poster="./images/heroes/index-301.jpg">
-      <!-- Primary: luxury interior living room slow pan &mdash; Coverr CDN -->
-      <source src="./videos/index-video-01.mp4" type="video/mp4">
-      <!-- Fallback: contemporary home with scenic view -->
-      <source src="./videos/index-video-02.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- Still photography intercut &mdash; 5-slide hero slideshow -->
+  <!-- Still photography &mdash; 5-slide hero slideshow -->
   <div class="still-layer" id="still-layer">
     <div class="still s1" style="background-image:url('./images/heroes/hero-slide-01.jpg')"></div>
     <div class="still s2" style="background-image:url('./images/heroes/hero-slide-02.jpg')"></div>
@@ -1131,10 +1105,6 @@ function cycleMoments() {
 
 showStill(0); seqIdx = 1; let heroTimer = setInterval(cycleMoments, 4000);
 
-// If video fails to load, always show stills
-const heroVid = document.getElementById('hero-vid');
-heroVid.addEventListener('error', () => { showStill(0); });
-heroVid.addEventListener('stalled', () => { if(heroMode==='video') showStill(0); });
 
 // ─── PORTFOLIO — (Design N: numbered reveal grid) ───
 
