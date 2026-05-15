@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="image" href="./images/brand/intro-logo-1.webp" type="image/webp" fetchpriority="high">
 <link rel="preload" as="image" href="./images/brand/intro-logo-1.png" fetchpriority="high">
 <link rel="preload" as="image" href="./images/heroes/hero-slide-01.webp" type="image/webp" fetchpriority="high" media="(min-width:768px)">
 <link rel="preload" as="image" href="./images/heroes/hero-slide-01-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width:767px)">
@@ -482,8 +483,8 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
   <div class="intro-wrap">
     <div class="intro-glow" id="introGlow"></div>
     <div class="intro-logo-wrap" id="introLogoWrap">
-      <img class="intro-logo-white" src="images/brand/intro-logo-1.png" alt="29 Eleven Interiors logo" width="440" height="154" fetchpriority="high">
-      <img class="intro-logo-color" src="images/brand/intro-logo-2.png" alt="29 Eleven Interiors" width="440" height="154">
+      <picture><source srcset="images/brand/intro-logo-1.webp" type="image/webp"><img class="intro-logo-white" src="images/brand/intro-logo-1.png" alt="29 Eleven Interiors logo" width="440" height="154" fetchpriority="high"></picture>
+      <picture><source srcset="images/brand/intro-logo-2.webp" type="image/webp"><img class="intro-logo-color" src="images/brand/intro-logo-2.png" alt="29 Eleven Interiors" width="440" height="154"></picture>
     </div>
     <div class="intro-divider" id="introDiv"></div>
     <div class="intro-tag" id="introTag">Design with Intention</div>
@@ -669,7 +670,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 <!-- INTRO -->
 <section class="intro">
   <div class="iphoto">
-      <picture><source srcset="./images/heroes/intro-ashley.webp" type="image/webp"><img class="iphoto-img" loading="lazy" decoding="async" src="./images/heroes/intro-ashley.jpg" alt="29 Eleven Interiors — Lake Arrowhead" width="610" height="1000"></picture>
+      <picture><source srcset="./images/heroes/intro-ashley.webp" type="image/webp"><img class="iphoto-img" decoding="async" src="./images/heroes/intro-ashley.jpg" alt="29 Eleven Interiors — Lake Arrowhead" width="610" height="1000"></picture>
     <div class="photo-caption">
       <div class="photo-caption-line"></div>
       <div class="photo-caption-names">Jillian Brunello &nbsp;+&nbsp; Ashley Porter</div>
