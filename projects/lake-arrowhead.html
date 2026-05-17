@@ -39,7 +39,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 .proj-hero-bg{position:absolute;inset:0;
   background:url('../images/projects/lake-arrowhead-003.jpg') center/cover no-repeat;
   background-color:#1e2630}
-.proj-hero-bg::after{display:none}
+.proj-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(30,38,48,.55) 100%);pointer-events:none;z-index:1}
 .media-badge{position:absolute;top:36px;left:36px;z-index:20;display:flex;align-items:center;gap:8px;padding:7px 14px;background:rgba(30,38,48,.45);backdrop-filter:blur(10px);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:rgba(254,254,254,.55)}
 .media-badge-dot{width:6px;height:6px;background:#d4c89a;border-radius:50%;animation:mbpulse 2s infinite}
 @keyframes mbpulse{0%,100%{opacity:.5}50%{opacity:1}}

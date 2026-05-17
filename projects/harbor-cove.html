@@ -38,7 +38,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
   background:url('../images/projects/harbor-cove-011.jpg') center/cover no-repeat;
   background-color:#1e2630}
 .proj-hero-img{display:block;width:100%;height:auto;filter:saturate(.88) brightness(.75)}
-.proj-hero-bg::after{display:none}
+.proj-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(30,38,48,.55) 100%);pointer-events:none;z-index:1}
 /* Back link below hero */
 .back-link-bar{padding:14px 72px;text-align:right}
 .back-link-below{font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--fog);text-decoration:none;transition:color .3s}
