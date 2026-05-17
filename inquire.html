@@ -226,6 +226,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 </head>
 <body>
+<a href="#main-content" class="skip-nav">Skip to content</a>
 <div class="inq-letterbox"></div>
 
 <!-- MOBILE NAV BAR -->
@@ -273,7 +274,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
   </div>
 </nav>
 
-<main>
+<main id="main-content">
 <div class="page-wrap">
 
 <!-- SPLIT LAYOUT -->
@@ -322,24 +323,24 @@ footer{background:var(--slate2);padding:64px 72px 30px}
     <div class="form-section active" id="sec1">
       <div class="field-row">
         <div class="field">
-          <label>First Name</label>
-          <input type="text" name="first_name" placeholder="First name" required>
+          <label for="iq_first_name">First Name</label>
+          <input type="text" name="first_name" id="iq_first_name" placeholder="First name" required>
         </div>
         <div class="field">
-          <label>Last Name</label>
-          <input type="text" name="last_name" placeholder="Last name" required>
-        </div>
-      </div>
-      <div class="field-row solo" style="margin-bottom:16px">
-        <div class="field">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="your@email.com" required>
+          <label for="iq_last_name">Last Name</label>
+          <input type="text" name="last_name" id="iq_last_name" placeholder="Last name" required>
         </div>
       </div>
       <div class="field-row solo" style="margin-bottom:16px">
         <div class="field">
-          <label>Phone (optional)</label>
-          <input type="tel" name="phone" placeholder="(949) 000-0000">
+          <label for="iq_email">Email</label>
+          <input type="email" name="email" id="iq_email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="field-row solo" style="margin-bottom:16px">
+        <div class="field">
+          <label for="iq_phone">Phone (optional)</label>
+          <input type="tel" name="phone" id="iq_phone" placeholder="(949) 000-0000">
         </div>
       </div>
       <div class="field-row solo">
@@ -367,8 +368,8 @@ footer{background:var(--slate2);padding:64px 72px 30px}
     <div class="form-section" id="sec2">
       <div class="field-row solo" style="margin-bottom:20px">
         <div class="field">
-          <label>Project Location</label>
-          <input type="text" name="location" placeholder="City, State">
+          <label for="iq_location">Project Location</label>
+          <input type="text" name="location" id="iq_location" placeholder="City, State">
           <span class="field-note">We serve Southern California + select nationwide projects.</span>
         </div>
       </div>
@@ -424,30 +425,30 @@ footer{background:var(--slate2);padding:64px 72px 30px}
     <div class="form-section" id="sec3">
       <div class="field-row solo" style="margin-bottom:20px">
         <div class="field">
-          <label>What's your approximate budget for this project?</label>
-          <input type="text" name="budget" placeholder="e.g. $150,000">
+          <label for="iq_budget">What's your approximate budget for this project?</label>
+          <input type="text" name="budget" id="iq_budget" placeholder="e.g. $150,000">
           <span class="field-note">An estimate is fine. This helps us understand scope + tailor our approach.</span>
         </div>
       </div>
       <div class="field-row solo" style="margin-bottom:16px">
         <div class="field">
-          <label>Tell us about your vision &mdash; + how you want your home to feel</label>
-          <textarea name="vision" placeholder="No need to have it all figured out. Tell us what's exciting you, what isn't working, what kind of life you want to live in this space..."></textarea>
+          <label for="iq_vision">Tell us about your vision &mdash; + how you want your home to feel</label>
+          <textarea name="vision" id="iq_vision" placeholder="No need to have it all figured out. Tell us what's exciting you, what isn't working, what kind of life you want to live in this space..."></textarea>
         </div>
       </div>
       <div class="field-row solo">
         <div class="field">
-          <label>Anything else we should know? (optional)</label>
-          <textarea name="additional_notes" placeholder="Project constraints, inspiration sources, past design experiences, key dates..."></textarea>
+          <label for="iq_notes">Anything else we should know? (optional)</label>
+          <textarea name="additional_notes" id="iq_notes" placeholder="Project constraints, inspiration sources, past design experiences, key dates..."></textarea>
         </div>
       </div>
       <div class="field-row solo">
         <div class="field">
           <label>Share photos or files of your space (optional)</label>
           <div class="iq-attach">
-            <label class="iq-attach-btn" for="photoInput"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</label>
+            <label class="iq-attach-btn" for="photoInput"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</label>
             <input type="file" id="photoInput" accept="image/*,video/*" capture="environment" style="display:none" onchange="handleFiles(this.files)">
-            <label class="iq-attach-btn" for="fileInput"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</label>
+            <label class="iq-attach-btn" for="fileInput"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</label>
             <input type="file" id="fileInput" accept="image/*,video/*,.pdf,.doc,.docx,.dwg,.sketch,.ai,.heic,.heif" multiple style="display:none" onchange="handleFiles(this.files)">
           </div>
           <div id="fileList" style="margin-top:8px"></div>

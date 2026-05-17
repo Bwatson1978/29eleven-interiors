@@ -217,6 +217,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 </head>
 <body>
+<a href="#main-content" class="skip-nav">Skip to content</a>
 
 <!-- MOBILE NAV BAR -->
 <div class="mobile-nav">
@@ -263,7 +264,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
   </div>
 </nav>
 
-<main>
+<main id="main-content">
 <div class="page-wrap">
 
 <!-- HERO -->
@@ -347,7 +348,9 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
     <p class="unlock-p">Sign up for early access + be notified the moment Shoppe goes live. Founding members receive priority access to new arrivals + exclusive studio picks.</p>
     <div id="shoppeWaitlistForm">
       <div class="unlock-form">
+        <label for="shoppeName" class="sr-only">First name</label>
         <input class="unlock-input" type="text" id="shoppeName" placeholder="First name">
+        <label for="shoppeEmail" class="sr-only">Email address</label>
         <input class="unlock-input" type="email" id="shoppeEmail" placeholder="Email address">
         <button class="unlock-submit" onclick="submitShoppeWaitlist()">Join Waitlist</button>
       </div>

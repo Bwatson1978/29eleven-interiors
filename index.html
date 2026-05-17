@@ -476,6 +476,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 </head>
 <body>
+<a href="#main-content" class="skip-nav">Skip to content</a>
 <h1 class="sr-only">Luxury Interior Design in Newport Beach, California</h1>
 
 <!-- ANIMATED LOADING SCREEN &mdash; Golden Pulse -->
@@ -553,7 +554,8 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
       <div class="ptag"><svg class="pop-anim" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px"><rect x="1" y="1" width="20" height="16" rx="2" stroke="var(--champ2)" stroke-width="1" fill="none" class="pop-env"/><path d="M1 1 L11 10 L21 1" stroke="var(--champ2)" stroke-width="1" fill="none" class="pop-flap"/></svg>Join the Studio</div>
       <h3 class="ph">Design notes worth keeping.</h3>
       <p class="pp">Project reveals, studio ideas, + 29 Eleven inspiration, delivered to your inbox.</p>
-      <input class="pin" type="email" placeholder="Your email address">
+      <label for="popEmail" class="sr-only">Email address</label>
+      <input class="pin" type="email" id="popEmail" placeholder="Your email address">
       <button class="pbtn">Subscribe to The Great Indoors</button>
       <div class="psk" onclick="document.getElementById('pop').style.display='none'">No thanks, continue browsing</div>
     </div>
@@ -608,7 +610,7 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
   </div>
 </nav>
 
-<main>
+<main id="main-content">
 <div class="page-wrap">
 
 <!-- &#9313; HERO &mdash; Cinematic video background (Own The Sky) + stills intercut (Ralph Lauren) -->
@@ -691,19 +693,19 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
           <div style="margin-bottom:6px;"><span style="font-family:'Libre Baskerville',serif; font-size:15px; color:#C49A3C; font-weight:400;">Orange Coast</span></div>
           <div style="display:flex; flex-direction:column; gap:2px;">
             <span style="font-family:'Libre Baskerville',serif; font-size:9px; color:var(--steel); font-style:italic;">A Romantic Retreat</span>
-            <a href="https://orangecoast.com/style-and-home/step-inside-this-romantic-outdoor-retreat-designed-for-cozy-nights-in/" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif; font-size:7.5px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:#C49A3C; text-decoration:none;">Read Article +</a>
+            <a href="https://orangecoast.com/style-and-home/step-inside-this-romantic-outdoor-retreat-designed-for-cozy-nights-in/" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif; font-size:7.5px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:#C49A3C; text-decoration:none;">Read: A Romantic Retreat +</a>
           </div>
         </div>
         <div style="display:flex; flex-direction:column;">
           <div style="margin-bottom:6px;"><img loading="lazy" src="./images/heroes/index-002.svg" alt="Newport Beach Magazine" style="height:38px; width:auto;"></div>
           <div style="display:flex; flex-direction:column; gap:2px;">
             <span style="font-family:'Libre Baskerville',serif; font-size:9px; color:var(--steel); font-style:italic;">Outdoor Entertaining, Newport Beach Style</span>
-            <a href="https://www.newportbeachmagazine.com/outdoor-entertainment/" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif; font-size:7.5px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:#2a2a2a; text-decoration:none;">Read Article +</a>
+            <a href="https://www.newportbeachmagazine.com/outdoor-entertainment/" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif; font-size:7.5px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:#2a2a2a; text-decoration:none;">Read: Outdoor Entertaining +</a>
           </div>
           <div style="width:100%; height:1px; background:var(--ice); margin:8px 0;"></div>
           <div style="display:flex; flex-direction:column; gap:2px;">
             <span style="font-family:'Libre Baskerville',serif; font-size:9px; color:var(--steel); font-style:italic;">Ahead of the Curve</span>
-            <a href="https://www.newportbeachmagazine.com/curved-design/" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif; font-size:7.5px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:#2a2a2a; text-decoration:none;">Read Article +</a>
+            <a href="https://www.newportbeachmagazine.com/curved-design/" target="_blank" rel="noopener" style="font-family:'Inter',sans-serif; font-size:7.5px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:#2a2a2a; text-decoration:none;">Read: Ahead of the Curve +</a>
           </div>
         </div>
         <div style="display:flex; flex-direction:column;">
@@ -839,10 +841,10 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
     <h2 class="iqh">Let's design your home <em>together.</em></h2>
     <p class="iqp">We take on a limited number of projects each year. Every client gets our full attention.</p>
     <div class="iqrow">
-      <div class="iqf"><label class="iqlbl">First Name</label><input id="hpFirstName" class="iqin" placeholder="Jane"></div>
-      <div class="iqf"><label class="iqlbl">Last Name</label><input id="hpLastName" class="iqin" placeholder="Smith"></div>
+      <div class="iqf"><label class="iqlbl" for="hpFirstName">First Name</label><input id="hpFirstName" class="iqin" placeholder="Jane"></div>
+      <div class="iqf"><label class="iqlbl" for="hpLastName">Last Name</label><input id="hpLastName" class="iqin" placeholder="Smith"></div>
     </div>
-    <div class="iqf"><label class="iqlbl">Email Address</label><input id="hpEmail" class="iqin" type="email" placeholder="jane@email.com"></div>
+    <div class="iqf"><label class="iqlbl" for="hpEmail">Email Address</label><input id="hpEmail" class="iqin" type="email" placeholder="jane@email.com"></div>
     <div class="iqf">
       <label class="iqlbl" for="hpService">Service Interested In</label>
       <select id="hpService" class="iqsel">
@@ -854,11 +856,11 @@ i.src='data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
         <option>Styling + Staging</option>
       </select>
     </div>
-    <div class="iqf"><label class="iqlbl">Tell Us About Your Project</label><textarea id="hpMessage" class="iqta" placeholder="Share your vision, timeline, and space..."></textarea></div>
+    <div class="iqf"><label class="iqlbl" for="hpMessage">Tell Us About Your Project</label><textarea id="hpMessage" class="iqta" placeholder="Share your vision, timeline, and space..."></textarea></div>
     <div class="iq-attach">
-      <label class="iq-attach-btn" for="hpPhotoInput"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</label>
+      <label class="iq-attach-btn" for="hpPhotoInput"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Take Photo or Video</label>
       <input type="file" id="hpPhotoInput" accept="image/*,video/*" capture="environment" style="display:none" onchange="hpHandleFiles(this.files)">
-      <label class="iq-attach-btn" for="hpFileInput"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</label>
+      <label class="iq-attach-btn" for="hpFileInput"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload File</label>
       <input type="file" id="hpFileInput" accept="image/*,video/*,.pdf,.doc,.docx,.dwg,.sketch,.ai,.heic,.heif" multiple style="display:none" onchange="hpHandleFiles(this.files)">
     </div>
     <div id="hpFileList"></div>

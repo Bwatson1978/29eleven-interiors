@@ -180,6 +180,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 </head>
 <body>
+<a href="#main-content" class="skip-nav">Skip to content</a>
 
 <!-- MOBILE NAV BAR -->
 <div class="mobile-nav">
@@ -219,7 +220,7 @@ footer{background:var(--slate2);padding:64px 72px 30px}
   </div>
 </nav>
 
-<main>
+<main id="main-content">
 <div class="page-wrap">
 
 <!-- HERO -->
@@ -303,7 +304,9 @@ footer{background:var(--slate2);padding:64px 72px 30px}
     <h3 class="nl-h3">Get The Edit<br><em>before anyone else</em></h3>
     <p class="nl-p">Sign up + I&rsquo;ll send you the first articles the moment they go live. No spam, no fluff. Just the things I think are worth saying.</p>
     <div class="nl-form" id="editWaitlistForm">
+      <label for="editName" class="sr-only">First name</label>
       <input class="nl-input" type="text" id="editName" placeholder="First name">
+      <label for="editEmail" class="sr-only">Email address</label>
       <input class="nl-input" type="email" id="editEmail" placeholder="Email address">
       <button class="nl-submit" onclick="submitEditWaitlist(event)">Notify Me</button>
       <div class="nl-fine" id="editFine">No spam. Unsubscribe any time.</div>

@@ -354,7 +354,32 @@ textarea { border-radius: 4px !important; }
   }
   .page-wrap{animation:none !important;opacity:1 !important;transform:none !important}
   .pgrid-card,.pgrid-img{transition:none !important}
+  .kb-pan,.art-hero-bg,.ghost-bg{animation:none !important}
+  .scroll-line,.media-badge-dot{animation:none !important}
+  .ed-card-bg,.ed-card::after,.ed-card-info,.pgrid-info,.pgrid-line,.pgrid-cta{transition:none !important}
 }
+
+/* ═══ ACCESSIBILITY ═══ */
+
+/* Skip navigation */
+.skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--slate);color:var(--snow);padding:12px 24px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;z-index:99999;border-radius:0 0 4px 4px;transition:top .2s}
+.skip-nav:focus{top:0}
+
+/* Focus visible */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--champ2);outline-offset:2px}
+
+/* Body text contrast on light backgrounds */
+.pp,.ed-tc-body,.byline-role,.portfolio-header-ey{color:#5c6b7a}
+
+/* Nav CTA contrast */
+.ncta{color:#7a6b35 !important}.ncta:hover{color:var(--slate) !important}
+
+/* Nav link touch targets */
+.nlinks a{min-height:44px;padding:12px 0;display:flex;align-items:center}
+.nlinks li{margin-bottom:4px}
+
+/* Visually-hidden utility */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* ═══════════════════════════════════════════════════════
    RESPONSIVE — Mobile Nav + Tablet/Phone Breakpoints
